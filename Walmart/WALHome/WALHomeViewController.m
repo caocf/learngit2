@@ -58,7 +58,7 @@
 //        }
 //    }];
     [self setupUI];
-    [self didClickChoiceSegmentView:_FDCType];
+//    [self didClickChoiceSegmentView:_FDCType];
 }
 
 - (void)didReceiveMemoryWarning {
