@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>536AB98D-B39B-4979-AB78-6E669EBFE6E8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Walmart</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>cd7e2fb2-48cc-9947-80b5-d15d56822240++4847</key>
+		<string>http://192.168.0.240:82/svn/IOS/Walmart</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Walmart.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>cd7e2fb2-48cc-9947-80b5-d15d56822240++4847</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>cd7e2fb2-48cc-9947-80b5-d15d56822240++4847</key>
+		<string>http://192.168.0.240:82/svn/IOS</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>http://192.168.0.240:82/svn/IOS/Walmart/Walmart.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>cd7e2fb2-48cc-9947-80b5-d15d56822240++4847</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>cd7e2fb2-48cc-9947-80b5-d15d56822240++4847</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Walmart</string>
+		</dict>
+	</array>
+</dict>
+</plist>

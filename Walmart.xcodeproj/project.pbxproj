@@ -1,0 +1,1311 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7852D8241BA8FC1900645C7B /* WALChildAreaVehicleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852D8231BA8FC1900645C7B /* WALChildAreaVehicleViewController.m */; };
+		7852D8271BA8FC8000645C7B /* WALAreaTotalVehicleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852D8261BA8FC8000645C7B /* WALAreaTotalVehicleViewController.m */; };
+		7852D82A1BA9064600645C7B /* WALHomeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852D8291BA9064600645C7B /* WALHomeService.m */; };
+		7852D82D1BA9089700645C7B /* WALReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852D82C1BA9089700645C7B /* WALReport.m */; };
+		7852D83A1BA9218200645C7B /* GKBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852D8311BA9218200645C7B /* GKBar.m */; };
+		7852D83B1BA9218200645C7B /* GKBarGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852D8331BA9218200645C7B /* GKBarGraph.m */; };
+		7852D83D1BA9218200645C7B /* UIColor+GraphKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852D8391BA9218200645C7B /* UIColor+GraphKit.m */; };
+		7852D84A1BA9375100645C7B /* NSArray+MK_Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852D8411BA9375100645C7B /* NSArray+MK_Block.m */; };
+		7852D84B1BA9375100645C7B /* NSArray+MK_Misc.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852D8431BA9375100645C7B /* NSArray+MK_Misc.m */; };
+		7852D84C1BA9375100645C7B /* NSMutableArray+MK_Misc.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852D8451BA9375100645C7B /* NSMutableArray+MK_Misc.m */; };
+		7852D84D1BA9375100645C7B /* NSMutableArray+MK_Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852D8471BA9375100645C7B /* NSMutableArray+MK_Queue.m */; };
+		7852D84E1BA9375100645C7B /* NSMutableArray+MK_Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852D8491BA9375100645C7B /* NSMutableArray+MK_Stack.m */; };
+		785AF4E41BA7B49F0065DEE7 /* WALStatusCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 785AF4E31BA7B49F0065DEE7 /* WALStatusCount.m */; };
+		785AF4E71BA7BA6C0065DEE7 /* WALChildVehicleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 785AF4E61BA7BA6C0065DEE7 /* WALChildVehicleViewController.m */; };
+		785AF4EA1BA7C42C0065DEE7 /* WALCarDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 785AF4E91BA7C42C0065DEE7 /* WALCarDetail.m */; };
+		786145151BA65B6800368B9D /* ChoiceSegmentedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 786145141BA65B6800368B9D /* ChoiceSegmentedView.m */; };
+		786145181BA65BDD00368B9D /* WALTotalVehicleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 786145171BA65BDD00368B9D /* WALTotalVehicleViewController.m */; };
+		7861451B1BA65BF000368B9D /* WALAreaVehicleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7861451A1BA65BF000368B9D /* WALAreaVehicleViewController.m */; };
+		7861452F1BA663E600368B9D /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7861451F1BA663E600368B9D /* EGORefreshTableHeaderView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		786145301BA663E600368B9D /* LoadMoreTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 786145211BA663E600368B9D /* LoadMoreTableFooterView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		786145311BA663E600368B9D /* MessageInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 786145231BA663E600368B9D /* MessageInterceptor.m */; };
+		786145321BA663E600368B9D /* PullTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 786145251BA663E600368B9D /* PullTableView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		786145331BA663E600368B9D /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 786145271BA663E600368B9D /* blackArrow.png */; };
+		786145341BA663E600368B9D /* blackArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 786145281BA663E600368B9D /* blackArrow@2x.png */; };
+		786145351BA663E600368B9D /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 786145291BA663E600368B9D /* blueArrow.png */; };
+		786145361BA663E600368B9D /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7861452A1BA663E600368B9D /* blueArrow@2x.png */; };
+		786145371BA663E600368B9D /* grayArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7861452B1BA663E600368B9D /* grayArrow.png */; };
+		786145381BA663E600368B9D /* grayArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7861452C1BA663E600368B9D /* grayArrow@2x.png */; };
+		786145391BA663E600368B9D /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7861452D1BA663E600368B9D /* whiteArrow.png */; };
+		7861453A1BA663E600368B9D /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7861452E1BA663E600368B9D /* whiteArrow@2x.png */; };
+		7861453E1BA664B000368B9D /* DejalActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7861453D1BA664B000368B9D /* DejalActivityView.m */; };
+		786145411BA6652B00368B9D /* WALCarDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 786145401BA6652B00368B9D /* WALCarDetailViewController.m */; };
+		786145441BA6671E00368B9D /* WALCarTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 786145431BA6671E00368B9D /* WALCarTableViewCell.m */; };
+		786145481BA668A800368B9D /* WALCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 786145471BA668A800368B9D /* WALCar.m */; };
+		7861455C1BA6706B00368B9D /* WALFindCarTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7861455B1BA6706B00368B9D /* WALFindCarTrackViewController.m */; };
+		7861455F1BA6707B00368B9D /* WALCarPositionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7861455E1BA6707B00368B9D /* WALCarPositionViewController.m */; };
+		786145621BA6708D00368B9D /* WALCarTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 786145611BA6708D00368B9D /* WALCarTrackViewController.m */; };
+		786145651BA6711400368B9D /* WALTipsButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 786145641BA6711400368B9D /* WALTipsButton.m */; };
+		786145681BA6743100368B9D /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 786145671BA6743100368B9D /* BaseViewController.m */; };
+		7861456B1BA6774600368B9D /* WALChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7861456A1BA6774600368B9D /* WALChooseView.m */; };
+		7861456E1BA6780000368B9D /* WALFindCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7861456D1BA6780000368B9D /* WALFindCarViewController.m */; };
+		786145711BA694C900368B9D /* WALTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 786145701BA694C900368B9D /* WALTableViewCell.m */; };
+		786145741BA69EC900368B9D /* WALFindCarTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 786145731BA69EC900368B9D /* WALFindCarTableViewCell.m */; };
+		786145771BA6A14A00368B9D /* WALCarTapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 786145761BA6A14A00368B9D /* WALCarTapView.m */; };
+		7861457A1BA6A43300368B9D /* WALTipsLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 786145791BA6A43300368B9D /* WALTipsLabel.m */; };
+		7861457D1BA6B7C100368B9D /* WALAreaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7861457C1BA6B7C100368B9D /* WALAreaTableViewCell.m */; };
+		786145801BA6B82800368B9D /* WALArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 7861457F1BA6B82800368B9D /* WALArea.m */; };
+		786145831BA6C29100368B9D /* WALCarInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 786145821BA6C29100368B9D /* WALCarInfoView.m */; };
+		786145861BA6C4C200368B9D /* WALBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 786145851BA6C4C200368B9D /* WALBoardView.m */; };
+		786145891BA6CF1300368B9D /* WALCarService.m in Sources */ = {isa = PBXBuildFile; fileRef = 786145881BA6CF1300368B9D /* WALCarService.m */; };
+		788586E31BA7CF660004ADAA /* WALSimpleCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 788586E21BA7CF660004ADAA /* WALSimpleCar.m */; };
+		788586E61BA7ED1F0004ADAA /* NSDate+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 788586E51BA7ED1F0004ADAA /* NSDate+Addition.m */; };
+		788586E91BA802ED0004ADAA /* WALCarTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 788586E81BA802ED0004ADAA /* WALCarTrack.m */; };
+		788586EC1BA805D20004ADAA /* WALCarPlayTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 788586EB1BA805D20004ADAA /* WALCarPlayTrack.m */; };
+		AD0687D71BA3BC6E00F66C7A /* WALSettingBtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0687D61BA3BC6E00F66C7A /* WALSettingBtnView.m */; };
+		AD0687DD1BA3C6FA00F66C7A /* NSArray+NSArray_Resource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0687DC1BA3C6FA00F66C7A /* NSArray+NSArray_Resource.m */; };
+		AD0687E01BA3CEAC00F66C7A /* NSDictionary+NSDictionary_Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0687DF1BA3CEAC00F66C7A /* NSDictionary+NSDictionary_Addition.m */; };
+		AD0687E31BA3D74D00F66C7A /* UIColor+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0687E21BA3D74D00F66C7A /* UIColor+Addition.m */; };
+		ADCCE5521BA2D96E00DB1C17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCCE5511BA2D96E00DB1C17 /* main.m */; };
+		ADCCE5551BA2D96E00DB1C17 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = ADCCE5541BA2D96E00DB1C17 /* AppDelegate.mm */; };
+		ADCCE55D1BA2D96E00DB1C17 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADCCE55C1BA2D96E00DB1C17 /* Images.xcassets */; };
+		ADCCE56C1BA2D96E00DB1C17 /* WalmartTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCCE56B1BA2D96E00DB1C17 /* WalmartTests.m */; };
+		ADCCE57B1BA2DA5B00DB1C17 /* NSUserDefaults+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCCE5781BA2DA5B00DB1C17 /* NSUserDefaults+Addition.m */; };
+		ADCCE57C1BA2DA5B00DB1C17 /* UIView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCCE57A1BA2DA5B00DB1C17 /* UIView+Addition.m */; };
+		ADCCE5891BA2DA7300DB1C17 /* JVFloatingDrawerSpringAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCCE5831BA2DA7300DB1C17 /* JVFloatingDrawerSpringAnimator.m */; };
+		ADCCE58A1BA2DA7300DB1C17 /* JVFloatingDrawerView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCCE5851BA2DA7300DB1C17 /* JVFloatingDrawerView.m */; };
+		ADCCE58B1BA2DA7300DB1C17 /* JVFloatingDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCCE5871BA2DA7300DB1C17 /* JVFloatingDrawerViewController.m */; };
+		ADCCE58F1BA2DA7E00DB1C17 /* RotationAwareNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCCE58E1BA2DA7E00DB1C17 /* RotationAwareNavigationController.m */; };
+		ADCCE5921BA2DA8800DB1C17 /* WALBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCCE5911BA2DA8800DB1C17 /* WALBaseViewController.m */; };
+		ADCCE5961BA2DAB300DB1C17 /* WALHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCCE5951BA2DAB300DB1C17 /* WALHomeViewController.m */; };
+		ADCCE59B1BA2DAD600DB1C17 /* WALVehicleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCCE59A1BA2DAD600DB1C17 /* WALVehicleViewController.m */; };
+		ADCCE59F1BA2DAE100DB1C17 /* WALWaybillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCCE59E1BA2DAE100DB1C17 /* WALWaybillViewController.m */; };
+		ADCCE5A31BA2DAEE00DB1C17 /* WALSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCCE5A21BA2DAEE00DB1C17 /* WALSettingViewController.m */; };
+		ADCCE5A61BA2DAF600DB1C17 /* YLYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCCE5A51BA2DAF600DB1C17 /* YLYTabBarController.m */; };
+		ADE2A4891BA426BC003CF7A1 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A4631BA426BC003CF7A1 /* AFHTTPRequestOperation.m */; };
+		ADE2A48A1BA426BC003CF7A1 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A4651BA426BC003CF7A1 /* AFHTTPRequestOperationManager.m */; };
+		ADE2A48B1BA426BC003CF7A1 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A4671BA426BC003CF7A1 /* AFHTTPSessionManager.m */; };
+		ADE2A48C1BA426BC003CF7A1 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A46A1BA426BC003CF7A1 /* AFNetworkReachabilityManager.m */; };
+		ADE2A48D1BA426BC003CF7A1 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A46C1BA426BC003CF7A1 /* AFSecurityPolicy.m */; };
+		ADE2A48E1BA426BC003CF7A1 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A46E1BA426BC003CF7A1 /* AFURLConnectionOperation.m */; };
+		ADE2A48F1BA426BC003CF7A1 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A4701BA426BC003CF7A1 /* AFURLRequestSerialization.m */; };
+		ADE2A4901BA426BC003CF7A1 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A4721BA426BC003CF7A1 /* AFURLResponseSerialization.m */; };
+		ADE2A4911BA426BC003CF7A1 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A4741BA426BC003CF7A1 /* AFURLSessionManager.m */; };
+		ADE2A4941BA426BC003CF7A1 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A4791BA426BC003CF7A1 /* AFNetworkActivityIndicatorManager.m */; };
+		ADE2A4951BA426BC003CF7A1 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A47B1BA426BC003CF7A1 /* UIActivityIndicatorView+AFNetworking.m */; };
+		ADE2A4961BA426BC003CF7A1 /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A47D1BA426BC003CF7A1 /* UIAlertView+AFNetworking.m */; };
+		ADE2A4971BA426BC003CF7A1 /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A47F1BA426BC003CF7A1 /* UIButton+AFNetworking.m */; };
+		ADE2A4981BA426BC003CF7A1 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A4811BA426BC003CF7A1 /* UIImageView+AFNetworking.m */; };
+		ADE2A4991BA426BC003CF7A1 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A4841BA426BC003CF7A1 /* UIProgressView+AFNetworking.m */; };
+		ADE2A49A1BA426BC003CF7A1 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A4861BA426BC003CF7A1 /* UIRefreshControl+AFNetworking.m */; };
+		ADE2A49B1BA426BC003CF7A1 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A4881BA426BC003CF7A1 /* UIWebView+AFNetworking.m */; };
+		ADE5F87B1BA6667200C1C304 /* WALTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE5F87A1BA6667200C1C304 /* WALTextField.m */; };
+		ADE5F87E1BA66A4A00C1C304 /* WALLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE5F87D1BA66A4A00C1C304 /* WALLoginViewController.m */; };
+		ADE5F8841BA67A3D00C1C304 /* WALLoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE5F8831BA67A3D00C1C304 /* WALLoginService.m */; };
+		ADE5F8871BA67B2300C1C304 /* DesEncryptDecipher.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE5F8861BA67B2300C1C304 /* DesEncryptDecipher.m */; };
+		ADE5F88A1BA67BD000C1C304 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE5F8891BA67BD000C1C304 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		ADE5F88D1BA6968500C1C304 /* WALUser.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE5F88C1BA6968500C1C304 /* WALUser.m */; };
+		ADE5F8931BA6A4A300C1C304 /* NSString+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE5F8921BA6A4A300C1C304 /* NSString+Addition.m */; };
+		ADE5F8991BA6BB8B00C1C304 /* TKAlertCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE5F8961BA6BB8B00C1C304 /* TKAlertCenter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		ADE5F89A1BA6BB8B00C1C304 /* UIView+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE5F8981BA6BB8B00C1C304 /* UIView+TKCategory.m */; };
+		ADE5F89C1BA6BF9B00C1C304 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADE5F89B1BA6BF9B00C1C304 /* QuartzCore.framework */; };
+		ADE5F89E1BA6BFA400C1C304 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADE5F89D1BA6BFA400C1C304 /* Accelerate.framework */; };
+		ADE5F8A01BA6BFAA00C1C304 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADE5F89F1BA6BFAA00C1C304 /* UIKit.framework */; };
+		ADE5F8A21BA6BFB500C1C304 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADE5F8A11BA6BFB500C1C304 /* Foundation.framework */; };
+		ADE5F8A41BA6BFBE00C1C304 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADE5F8A31BA6BFBE00C1C304 /* CoreGraphics.framework */; };
+		ADE5F8A81BA6BFDF00C1C304 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE5F8A71BA6BFDF00C1C304 /* FXBlurView.m */; };
+		ADE5F8AC1BA6C7A400C1C304 /* NetworkCheckUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE5F8AB1BA6C7A400C1C304 /* NetworkCheckUtil.m */; };
+		ADEDCE471BA7A6960000470F /* WALSystemSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEDCE461BA7A6960000470F /* WALSystemSettingViewController.m */; };
+		ADEDCE4A1BA7A6AF0000470F /* WALChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEDCE491BA7A6AF0000470F /* WALChangePasswordViewController.m */; };
+		ADEDCE4D1BA7A6E60000470F /* WALFeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEDCE4C1BA7A6E60000470F /* WALFeedBackViewController.m */; };
+		ADEDCF181BA803AB0000470F /* BaiduMapAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADEDCF171BA803AB0000470F /* BaiduMapAPI.framework */; };
+		ADEDCF1A1BA803C30000470F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADEDCF191BA803C30000470F /* CoreLocation.framework */; };
+		ADEDCF1C1BA803DA0000470F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADEDCF1B1BA803DA0000470F /* OpenGLES.framework */; };
+		ADEDCF1E1BA803E70000470F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADEDCF1D1BA803E70000470F /* SystemConfiguration.framework */; };
+		ADEDCF201BA803FB0000470F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADEDCF1F1BA803FB0000470F /* Security.framework */; };
+		ADEDCF221BA8052A0000470F /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ADEDCF211BA8052A0000470F /* mapapi.bundle */; };
+		ADEDCF251BA8088E0000470F /* WALWaybillDetaillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEDCF241BA8088E0000470F /* WALWaybillDetaillViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ADCCE5661BA2D96E00DB1C17 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADCCE5441BA2D96E00DB1C17 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADCCE54B1BA2D96E00DB1C17;
+			remoteInfo = Walmart;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7852D8221BA8FC1900645C7B /* WALChildAreaVehicleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALChildAreaVehicleViewController.h; sourceTree = "<group>"; };
+		7852D8231BA8FC1900645C7B /* WALChildAreaVehicleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALChildAreaVehicleViewController.m; sourceTree = "<group>"; };
+		7852D8251BA8FC8000645C7B /* WALAreaTotalVehicleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALAreaTotalVehicleViewController.h; sourceTree = "<group>"; };
+		7852D8261BA8FC8000645C7B /* WALAreaTotalVehicleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALAreaTotalVehicleViewController.m; sourceTree = "<group>"; };
+		7852D8281BA9064600645C7B /* WALHomeService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALHomeService.h; sourceTree = "<group>"; };
+		7852D8291BA9064600645C7B /* WALHomeService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALHomeService.m; sourceTree = "<group>"; };
+		7852D82B1BA9089700645C7B /* WALReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALReport.h; sourceTree = "<group>"; };
+		7852D82C1BA9089700645C7B /* WALReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALReport.m; sourceTree = "<group>"; };
+		7852D8301BA9218200645C7B /* GKBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKBar.h; sourceTree = "<group>"; };
+		7852D8311BA9218200645C7B /* GKBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKBar.m; sourceTree = "<group>"; };
+		7852D8321BA9218200645C7B /* GKBarGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKBarGraph.h; sourceTree = "<group>"; };
+		7852D8331BA9218200645C7B /* GKBarGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKBarGraph.m; sourceTree = "<group>"; };
+		7852D8341BA9218200645C7B /* GraphKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphKit.h; sourceTree = "<group>"; };
+		7852D8381BA9218200645C7B /* UIColor+GraphKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+GraphKit.h"; sourceTree = "<group>"; };
+		7852D8391BA9218200645C7B /* UIColor+GraphKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+GraphKit.m"; sourceTree = "<group>"; };
+		7852D83F1BA9375100645C7B /* NSArray+MK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MK.h"; sourceTree = "<group>"; };
+		7852D8401BA9375100645C7B /* NSArray+MK_Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MK_Block.h"; sourceTree = "<group>"; };
+		7852D8411BA9375100645C7B /* NSArray+MK_Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MK_Block.m"; sourceTree = "<group>"; };
+		7852D8421BA9375100645C7B /* NSArray+MK_Misc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MK_Misc.h"; sourceTree = "<group>"; };
+		7852D8431BA9375100645C7B /* NSArray+MK_Misc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MK_Misc.m"; sourceTree = "<group>"; };
+		7852D8441BA9375100645C7B /* NSMutableArray+MK_Misc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+MK_Misc.h"; sourceTree = "<group>"; };
+		7852D8451BA9375100645C7B /* NSMutableArray+MK_Misc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+MK_Misc.m"; sourceTree = "<group>"; };
+		7852D8461BA9375100645C7B /* NSMutableArray+MK_Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+MK_Queue.h"; sourceTree = "<group>"; };
+		7852D8471BA9375100645C7B /* NSMutableArray+MK_Queue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+MK_Queue.m"; sourceTree = "<group>"; };
+		7852D8481BA9375100645C7B /* NSMutableArray+MK_Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+MK_Stack.h"; sourceTree = "<group>"; };
+		7852D8491BA9375100645C7B /* NSMutableArray+MK_Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+MK_Stack.m"; sourceTree = "<group>"; };
+		785AF4E21BA7B49F0065DEE7 /* WALStatusCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALStatusCount.h; sourceTree = "<group>"; };
+		785AF4E31BA7B49F0065DEE7 /* WALStatusCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALStatusCount.m; sourceTree = "<group>"; };
+		785AF4E51BA7BA6C0065DEE7 /* WALChildVehicleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALChildVehicleViewController.h; sourceTree = "<group>"; };
+		785AF4E61BA7BA6C0065DEE7 /* WALChildVehicleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALChildVehicleViewController.m; sourceTree = "<group>"; };
+		785AF4E81BA7C42C0065DEE7 /* WALCarDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALCarDetail.h; sourceTree = "<group>"; };
+		785AF4E91BA7C42C0065DEE7 /* WALCarDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALCarDetail.m; sourceTree = "<group>"; };
+		786145131BA65B6800368B9D /* ChoiceSegmentedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoiceSegmentedView.h; sourceTree = "<group>"; };
+		786145141BA65B6800368B9D /* ChoiceSegmentedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoiceSegmentedView.m; sourceTree = "<group>"; };
+		786145161BA65BDD00368B9D /* WALTotalVehicleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALTotalVehicleViewController.h; sourceTree = "<group>"; };
+		786145171BA65BDD00368B9D /* WALTotalVehicleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALTotalVehicleViewController.m; sourceTree = "<group>"; };
+		786145191BA65BF000368B9D /* WALAreaVehicleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALAreaVehicleViewController.h; sourceTree = "<group>"; };
+		7861451A1BA65BF000368B9D /* WALAreaVehicleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALAreaVehicleViewController.m; sourceTree = "<group>"; };
+		7861451E1BA663E600368B9D /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
+		7861451F1BA663E600368B9D /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
+		786145201BA663E600368B9D /* LoadMoreTableFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadMoreTableFooterView.h; sourceTree = "<group>"; };
+		786145211BA663E600368B9D /* LoadMoreTableFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadMoreTableFooterView.m; sourceTree = "<group>"; };
+		786145221BA663E600368B9D /* MessageInterceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageInterceptor.h; sourceTree = "<group>"; };
+		786145231BA663E600368B9D /* MessageInterceptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageInterceptor.m; sourceTree = "<group>"; };
+		786145241BA663E600368B9D /* PullTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullTableView.h; sourceTree = "<group>"; };
+		786145251BA663E600368B9D /* PullTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullTableView.m; sourceTree = "<group>"; };
+		786145271BA663E600368B9D /* blackArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackArrow.png; sourceTree = "<group>"; };
+		786145281BA663E600368B9D /* blackArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackArrow@2x.png"; sourceTree = "<group>"; };
+		786145291BA663E600368B9D /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
+		7861452A1BA663E600368B9D /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueArrow@2x.png"; sourceTree = "<group>"; };
+		7861452B1BA663E600368B9D /* grayArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayArrow.png; sourceTree = "<group>"; };
+		7861452C1BA663E600368B9D /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayArrow@2x.png"; sourceTree = "<group>"; };
+		7861452D1BA663E600368B9D /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
+		7861452E1BA663E600368B9D /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
+		7861453C1BA664B000368B9D /* DejalActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DejalActivityView.h; sourceTree = "<group>"; };
+		7861453D1BA664B000368B9D /* DejalActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DejalActivityView.m; sourceTree = "<group>"; };
+		7861453F1BA6652B00368B9D /* WALCarDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALCarDetailViewController.h; sourceTree = "<group>"; };
+		786145401BA6652B00368B9D /* WALCarDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALCarDetailViewController.m; sourceTree = "<group>"; };
+		786145421BA6671E00368B9D /* WALCarTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALCarTableViewCell.h; sourceTree = "<group>"; };
+		786145431BA6671E00368B9D /* WALCarTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALCarTableViewCell.m; sourceTree = "<group>"; };
+		786145461BA668A800368B9D /* WALCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALCar.h; sourceTree = "<group>"; };
+		786145471BA668A800368B9D /* WALCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALCar.m; sourceTree = "<group>"; };
+		7861455A1BA6706B00368B9D /* WALFindCarTrackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALFindCarTrackViewController.h; sourceTree = "<group>"; };
+		7861455B1BA6706B00368B9D /* WALFindCarTrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALFindCarTrackViewController.m; sourceTree = "<group>"; };
+		7861455D1BA6707B00368B9D /* WALCarPositionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALCarPositionViewController.h; sourceTree = "<group>"; };
+		7861455E1BA6707B00368B9D /* WALCarPositionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALCarPositionViewController.m; sourceTree = "<group>"; };
+		786145601BA6708D00368B9D /* WALCarTrackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALCarTrackViewController.h; sourceTree = "<group>"; };
+		786145611BA6708D00368B9D /* WALCarTrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALCarTrackViewController.m; sourceTree = "<group>"; };
+		786145631BA6711400368B9D /* WALTipsButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALTipsButton.h; sourceTree = "<group>"; };
+		786145641BA6711400368B9D /* WALTipsButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALTipsButton.m; sourceTree = "<group>"; };
+		786145661BA6743100368B9D /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		786145671BA6743100368B9D /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		786145691BA6774600368B9D /* WALChooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALChooseView.h; sourceTree = "<group>"; };
+		7861456A1BA6774600368B9D /* WALChooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALChooseView.m; sourceTree = "<group>"; };
+		7861456C1BA6780000368B9D /* WALFindCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALFindCarViewController.h; sourceTree = "<group>"; };
+		7861456D1BA6780000368B9D /* WALFindCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALFindCarViewController.m; sourceTree = "<group>"; };
+		7861456F1BA694C900368B9D /* WALTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALTableViewCell.h; sourceTree = "<group>"; };
+		786145701BA694C900368B9D /* WALTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALTableViewCell.m; sourceTree = "<group>"; };
+		786145721BA69EC900368B9D /* WALFindCarTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALFindCarTableViewCell.h; sourceTree = "<group>"; };
+		786145731BA69EC900368B9D /* WALFindCarTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALFindCarTableViewCell.m; sourceTree = "<group>"; };
+		786145751BA6A14A00368B9D /* WALCarTapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALCarTapView.h; sourceTree = "<group>"; };
+		786145761BA6A14A00368B9D /* WALCarTapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALCarTapView.m; sourceTree = "<group>"; };
+		786145781BA6A43300368B9D /* WALTipsLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALTipsLabel.h; sourceTree = "<group>"; };
+		786145791BA6A43300368B9D /* WALTipsLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALTipsLabel.m; sourceTree = "<group>"; };
+		7861457B1BA6B7C100368B9D /* WALAreaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALAreaTableViewCell.h; sourceTree = "<group>"; };
+		7861457C1BA6B7C100368B9D /* WALAreaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALAreaTableViewCell.m; sourceTree = "<group>"; };
+		7861457E1BA6B82800368B9D /* WALArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALArea.h; sourceTree = "<group>"; };
+		7861457F1BA6B82800368B9D /* WALArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALArea.m; sourceTree = "<group>"; };
+		786145811BA6C29100368B9D /* WALCarInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALCarInfoView.h; sourceTree = "<group>"; };
+		786145821BA6C29100368B9D /* WALCarInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALCarInfoView.m; sourceTree = "<group>"; };
+		786145841BA6C4C200368B9D /* WALBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALBoardView.h; sourceTree = "<group>"; };
+		786145851BA6C4C200368B9D /* WALBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALBoardView.m; sourceTree = "<group>"; };
+		786145871BA6CF1300368B9D /* WALCarService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALCarService.h; sourceTree = "<group>"; };
+		786145881BA6CF1300368B9D /* WALCarService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALCarService.m; sourceTree = "<group>"; };
+		788586E11BA7CF660004ADAA /* WALSimpleCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALSimpleCar.h; sourceTree = "<group>"; };
+		788586E21BA7CF660004ADAA /* WALSimpleCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALSimpleCar.m; sourceTree = "<group>"; };
+		788586E41BA7ED1F0004ADAA /* NSDate+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Addition.h"; sourceTree = "<group>"; };
+		788586E51BA7ED1F0004ADAA /* NSDate+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Addition.m"; sourceTree = "<group>"; };
+		788586E71BA802ED0004ADAA /* WALCarTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALCarTrack.h; sourceTree = "<group>"; };
+		788586E81BA802ED0004ADAA /* WALCarTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALCarTrack.m; sourceTree = "<group>"; };
+		788586EA1BA805D20004ADAA /* WALCarPlayTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALCarPlayTrack.h; sourceTree = "<group>"; };
+		788586EB1BA805D20004ADAA /* WALCarPlayTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALCarPlayTrack.m; sourceTree = "<group>"; };
+		AD0687D51BA3BC6E00F66C7A /* WALSettingBtnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALSettingBtnView.h; sourceTree = "<group>"; };
+		AD0687D61BA3BC6E00F66C7A /* WALSettingBtnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALSettingBtnView.m; sourceTree = "<group>"; };
+		AD0687DB1BA3C6FA00F66C7A /* NSArray+NSArray_Resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+NSArray_Resource.h"; sourceTree = "<group>"; };
+		AD0687DC1BA3C6FA00F66C7A /* NSArray+NSArray_Resource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+NSArray_Resource.m"; sourceTree = "<group>"; };
+		AD0687DE1BA3CEAC00F66C7A /* NSDictionary+NSDictionary_Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+NSDictionary_Addition.h"; sourceTree = "<group>"; };
+		AD0687DF1BA3CEAC00F66C7A /* NSDictionary+NSDictionary_Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NSDictionary_Addition.m"; sourceTree = "<group>"; };
+		AD0687E11BA3D74D00F66C7A /* UIColor+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Addition.h"; sourceTree = "<group>"; };
+		AD0687E21BA3D74D00F66C7A /* UIColor+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Addition.m"; sourceTree = "<group>"; };
+		ADCCE54C1BA2D96E00DB1C17 /* Walmart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Walmart.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADCCE5501BA2D96E00DB1C17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADCCE5511BA2D96E00DB1C17 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ADCCE5531BA2D96E00DB1C17 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		ADCCE5541BA2D96E00DB1C17 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		ADCCE55C1BA2D96E00DB1C17 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		ADCCE55F1BA2D96E00DB1C17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		ADCCE5651BA2D96E00DB1C17 /* WalmartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalmartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADCCE56A1BA2D96E00DB1C17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADCCE56B1BA2D96E00DB1C17 /* WalmartTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WalmartTests.m; sourceTree = "<group>"; };
+		ADCCE5751BA2D99E00DB1C17 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		ADCCE5771BA2DA5B00DB1C17 /* NSUserDefaults+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Addition.h"; sourceTree = "<group>"; };
+		ADCCE5781BA2DA5B00DB1C17 /* NSUserDefaults+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+Addition.m"; sourceTree = "<group>"; };
+		ADCCE5791BA2DA5B00DB1C17 /* UIView+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Addition.h"; sourceTree = "<group>"; };
+		ADCCE57A1BA2DA5B00DB1C17 /* UIView+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Addition.m"; sourceTree = "<group>"; };
+		ADCCE57E1BA2DA6B00DB1C17 /* YLYConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLYConstants.h; sourceTree = "<group>"; };
+		ADCCE5811BA2DA7300DB1C17 /* JVFloatingDrawerAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVFloatingDrawerAnimation.h; sourceTree = "<group>"; };
+		ADCCE5821BA2DA7300DB1C17 /* JVFloatingDrawerSpringAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVFloatingDrawerSpringAnimator.h; sourceTree = "<group>"; };
+		ADCCE5831BA2DA7300DB1C17 /* JVFloatingDrawerSpringAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVFloatingDrawerSpringAnimator.m; sourceTree = "<group>"; };
+		ADCCE5841BA2DA7300DB1C17 /* JVFloatingDrawerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVFloatingDrawerView.h; sourceTree = "<group>"; };
+		ADCCE5851BA2DA7300DB1C17 /* JVFloatingDrawerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVFloatingDrawerView.m; sourceTree = "<group>"; };
+		ADCCE5861BA2DA7300DB1C17 /* JVFloatingDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVFloatingDrawerViewController.h; sourceTree = "<group>"; };
+		ADCCE5871BA2DA7300DB1C17 /* JVFloatingDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVFloatingDrawerViewController.m; sourceTree = "<group>"; };
+		ADCCE58D1BA2DA7E00DB1C17 /* RotationAwareNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotationAwareNavigationController.h; sourceTree = "<group>"; };
+		ADCCE58E1BA2DA7E00DB1C17 /* RotationAwareNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotationAwareNavigationController.m; sourceTree = "<group>"; };
+		ADCCE5901BA2DA8800DB1C17 /* WALBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALBaseViewController.h; sourceTree = "<group>"; };
+		ADCCE5911BA2DA8800DB1C17 /* WALBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALBaseViewController.m; sourceTree = "<group>"; };
+		ADCCE5941BA2DAB300DB1C17 /* WALHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALHomeViewController.h; sourceTree = "<group>"; };
+		ADCCE5951BA2DAB300DB1C17 /* WALHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALHomeViewController.m; sourceTree = "<group>"; };
+		ADCCE5991BA2DAD600DB1C17 /* WALVehicleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALVehicleViewController.h; sourceTree = "<group>"; };
+		ADCCE59A1BA2DAD600DB1C17 /* WALVehicleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALVehicleViewController.m; sourceTree = "<group>"; };
+		ADCCE59D1BA2DAE100DB1C17 /* WALWaybillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALWaybillViewController.h; sourceTree = "<group>"; };
+		ADCCE59E1BA2DAE100DB1C17 /* WALWaybillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALWaybillViewController.m; sourceTree = "<group>"; };
+		ADCCE5A11BA2DAEE00DB1C17 /* WALSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALSettingViewController.h; sourceTree = "<group>"; };
+		ADCCE5A21BA2DAEE00DB1C17 /* WALSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALSettingViewController.m; sourceTree = "<group>"; };
+		ADCCE5A41BA2DAF600DB1C17 /* YLYTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLYTabBarController.h; sourceTree = "<group>"; };
+		ADCCE5A51BA2DAF600DB1C17 /* YLYTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLYTabBarController.m; sourceTree = "<group>"; };
+		ADE2A4621BA426BC003CF7A1 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		ADE2A4631BA426BC003CF7A1 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		ADE2A4641BA426BC003CF7A1 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		ADE2A4651BA426BC003CF7A1 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		ADE2A4661BA426BC003CF7A1 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		ADE2A4671BA426BC003CF7A1 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		ADE2A4681BA426BC003CF7A1 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		ADE2A4691BA426BC003CF7A1 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		ADE2A46A1BA426BC003CF7A1 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		ADE2A46B1BA426BC003CF7A1 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		ADE2A46C1BA426BC003CF7A1 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		ADE2A46D1BA426BC003CF7A1 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		ADE2A46E1BA426BC003CF7A1 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		ADE2A46F1BA426BC003CF7A1 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		ADE2A4701BA426BC003CF7A1 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		ADE2A4711BA426BC003CF7A1 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		ADE2A4721BA426BC003CF7A1 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		ADE2A4731BA426BC003CF7A1 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		ADE2A4741BA426BC003CF7A1 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		ADE2A4781BA426BC003CF7A1 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		ADE2A4791BA426BC003CF7A1 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
+		ADE2A47A1BA426BC003CF7A1 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
+		ADE2A47B1BA426BC003CF7A1 /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
+		ADE2A47C1BA426BC003CF7A1 /* UIAlertView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+AFNetworking.h"; sourceTree = "<group>"; };
+		ADE2A47D1BA426BC003CF7A1 /* UIAlertView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+AFNetworking.m"; sourceTree = "<group>"; };
+		ADE2A47E1BA426BC003CF7A1 /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+AFNetworking.h"; sourceTree = "<group>"; };
+		ADE2A47F1BA426BC003CF7A1 /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+AFNetworking.m"; sourceTree = "<group>"; };
+		ADE2A4801BA426BC003CF7A1 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		ADE2A4811BA426BC003CF7A1 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		ADE2A4821BA426BC003CF7A1 /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+AFNetworking.h"; sourceTree = "<group>"; };
+		ADE2A4831BA426BC003CF7A1 /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
+		ADE2A4841BA426BC003CF7A1 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
+		ADE2A4851BA426BC003CF7A1 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
+		ADE2A4861BA426BC003CF7A1 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
+		ADE2A4871BA426BC003CF7A1 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
+		ADE2A4881BA426BC003CF7A1 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		ADE5F8791BA6667200C1C304 /* WALTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALTextField.h; sourceTree = "<group>"; };
+		ADE5F87A1BA6667200C1C304 /* WALTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALTextField.m; sourceTree = "<group>"; };
+		ADE5F87C1BA66A4A00C1C304 /* WALLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALLoginViewController.h; sourceTree = "<group>"; };
+		ADE5F87D1BA66A4A00C1C304 /* WALLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALLoginViewController.m; sourceTree = "<group>"; };
+		ADE5F8821BA67A3D00C1C304 /* WALLoginService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALLoginService.h; sourceTree = "<group>"; };
+		ADE5F8831BA67A3D00C1C304 /* WALLoginService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALLoginService.m; sourceTree = "<group>"; };
+		ADE5F8851BA67B2300C1C304 /* DesEncryptDecipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesEncryptDecipher.h; sourceTree = "<group>"; };
+		ADE5F8861BA67B2300C1C304 /* DesEncryptDecipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesEncryptDecipher.m; sourceTree = "<group>"; };
+		ADE5F8881BA67BD000C1C304 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		ADE5F8891BA67BD000C1C304 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		ADE5F88B1BA6968500C1C304 /* WALUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALUser.h; sourceTree = "<group>"; };
+		ADE5F88C1BA6968500C1C304 /* WALUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALUser.m; sourceTree = "<group>"; };
+		ADE5F8911BA6A4A300C1C304 /* NSString+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Addition.h"; sourceTree = "<group>"; };
+		ADE5F8921BA6A4A300C1C304 /* NSString+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Addition.m"; sourceTree = "<group>"; };
+		ADE5F8951BA6BB8B00C1C304 /* TKAlertCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAlertCenter.h; sourceTree = "<group>"; };
+		ADE5F8961BA6BB8B00C1C304 /* TKAlertCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAlertCenter.m; sourceTree = "<group>"; };
+		ADE5F8971BA6BB8B00C1C304 /* UIView+TKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TKCategory.h"; sourceTree = "<group>"; };
+		ADE5F8981BA6BB8B00C1C304 /* UIView+TKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TKCategory.m"; sourceTree = "<group>"; };
+		ADE5F89B1BA6BF9B00C1C304 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		ADE5F89D1BA6BFA400C1C304 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		ADE5F89F1BA6BFAA00C1C304 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		ADE5F8A11BA6BFB500C1C304 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		ADE5F8A31BA6BFBE00C1C304 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		ADE5F8A61BA6BFDF00C1C304 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
+		ADE5F8A71BA6BFDF00C1C304 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
+		ADE5F8AA1BA6C7A400C1C304 /* NetworkCheckUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkCheckUtil.h; sourceTree = "<group>"; };
+		ADE5F8AB1BA6C7A400C1C304 /* NetworkCheckUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkCheckUtil.m; sourceTree = "<group>"; };
+		ADEDCE451BA7A6960000470F /* WALSystemSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALSystemSettingViewController.h; sourceTree = "<group>"; };
+		ADEDCE461BA7A6960000470F /* WALSystemSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALSystemSettingViewController.m; sourceTree = "<group>"; };
+		ADEDCE481BA7A6AF0000470F /* WALChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALChangePasswordViewController.h; sourceTree = "<group>"; };
+		ADEDCE491BA7A6AF0000470F /* WALChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALChangePasswordViewController.m; sourceTree = "<group>"; };
+		ADEDCE4B1BA7A6E60000470F /* WALFeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALFeedBackViewController.h; sourceTree = "<group>"; };
+		ADEDCE4C1BA7A6E60000470F /* WALFeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALFeedBackViewController.m; sourceTree = "<group>"; };
+		ADEDCF171BA803AB0000470F /* BaiduMapAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI.framework; path = Walmart/BaiduMapAPI.framework; sourceTree = "<group>"; };
+		ADEDCF191BA803C30000470F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		ADEDCF1B1BA803DA0000470F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		ADEDCF1D1BA803E70000470F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		ADEDCF1F1BA803FB0000470F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		ADEDCF211BA8052A0000470F /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = mapapi.bundle; path = Walmart/BaiduMapAPI.framework/Resources/mapapi.bundle; sourceTree = "<group>"; };
+		ADEDCF231BA8088E0000470F /* WALWaybillDetaillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALWaybillDetaillViewController.h; sourceTree = "<group>"; };
+		ADEDCF241BA8088E0000470F /* WALWaybillDetaillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALWaybillDetaillViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ADCCE5491BA2D96E00DB1C17 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADEDCF201BA803FB0000470F /* Security.framework in Frameworks */,
+				ADE5F8A41BA6BFBE00C1C304 /* CoreGraphics.framework in Frameworks */,
+				ADEDCF1E1BA803E70000470F /* SystemConfiguration.framework in Frameworks */,
+				ADEDCF1C1BA803DA0000470F /* OpenGLES.framework in Frameworks */,
+				ADEDCF1A1BA803C30000470F /* CoreLocation.framework in Frameworks */,
+				ADEDCF181BA803AB0000470F /* BaiduMapAPI.framework in Frameworks */,
+				ADE5F8A21BA6BFB500C1C304 /* Foundation.framework in Frameworks */,
+				ADE5F8A01BA6BFAA00C1C304 /* UIKit.framework in Frameworks */,
+				ADE5F89E1BA6BFA400C1C304 /* Accelerate.framework in Frameworks */,
+				ADE5F89C1BA6BF9B00C1C304 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADCCE5621BA2D96E00DB1C17 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7852D82E1BA9218200645C7B /* GraphKit */ = {
+			isa = PBXGroup;
+			children = (
+				7852D82F1BA9218200645C7B /* BarGraph */,
+				7852D8341BA9218200645C7B /* GraphKit.h */,
+				7852D8381BA9218200645C7B /* UIColor+GraphKit.h */,
+				7852D8391BA9218200645C7B /* UIColor+GraphKit.m */,
+			);
+			path = GraphKit;
+			sourceTree = "<group>";
+		};
+		7852D82F1BA9218200645C7B /* BarGraph */ = {
+			isa = PBXGroup;
+			children = (
+				7852D8301BA9218200645C7B /* GKBar.h */,
+				7852D8311BA9218200645C7B /* GKBar.m */,
+				7852D8321BA9218200645C7B /* GKBarGraph.h */,
+				7852D8331BA9218200645C7B /* GKBarGraph.m */,
+			);
+			path = BarGraph;
+			sourceTree = "<group>";
+		};
+		7852D83E1BA9375100645C7B /* NSArray */ = {
+			isa = PBXGroup;
+			children = (
+				7852D83F1BA9375100645C7B /* NSArray+MK.h */,
+				7852D8401BA9375100645C7B /* NSArray+MK_Block.h */,
+				7852D8411BA9375100645C7B /* NSArray+MK_Block.m */,
+				7852D8421BA9375100645C7B /* NSArray+MK_Misc.h */,
+				7852D8431BA9375100645C7B /* NSArray+MK_Misc.m */,
+				7852D8441BA9375100645C7B /* NSMutableArray+MK_Misc.h */,
+				7852D8451BA9375100645C7B /* NSMutableArray+MK_Misc.m */,
+				7852D8461BA9375100645C7B /* NSMutableArray+MK_Queue.h */,
+				7852D8471BA9375100645C7B /* NSMutableArray+MK_Queue.m */,
+				7852D8481BA9375100645C7B /* NSMutableArray+MK_Stack.h */,
+				7852D8491BA9375100645C7B /* NSMutableArray+MK_Stack.m */,
+			);
+			path = NSArray;
+			sourceTree = "<group>";
+		};
+		7861451C1BA663E600368B9D /* EGOTableViewPullRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				7861451D1BA663E600368B9D /* Classes */,
+				786145261BA663E600368B9D /* Resources */,
+			);
+			path = EGOTableViewPullRefresh;
+			sourceTree = "<group>";
+		};
+		7861451D1BA663E600368B9D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7861451E1BA663E600368B9D /* EGORefreshTableHeaderView.h */,
+				7861451F1BA663E600368B9D /* EGORefreshTableHeaderView.m */,
+				786145201BA663E600368B9D /* LoadMoreTableFooterView.h */,
+				786145211BA663E600368B9D /* LoadMoreTableFooterView.m */,
+				786145221BA663E600368B9D /* MessageInterceptor.h */,
+				786145231BA663E600368B9D /* MessageInterceptor.m */,
+				786145241BA663E600368B9D /* PullTableView.h */,
+				786145251BA663E600368B9D /* PullTableView.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		786145261BA663E600368B9D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				786145271BA663E600368B9D /* blackArrow.png */,
+				786145281BA663E600368B9D /* blackArrow@2x.png */,
+				786145291BA663E600368B9D /* blueArrow.png */,
+				7861452A1BA663E600368B9D /* blueArrow@2x.png */,
+				7861452B1BA663E600368B9D /* grayArrow.png */,
+				7861452C1BA663E600368B9D /* grayArrow@2x.png */,
+				7861452D1BA663E600368B9D /* whiteArrow.png */,
+				7861452E1BA663E600368B9D /* whiteArrow@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7861453B1BA664B000368B9D /* DejalActivityView */ = {
+			isa = PBXGroup;
+			children = (
+				7861453C1BA664B000368B9D /* DejalActivityView.h */,
+				7861453D1BA664B000368B9D /* DejalActivityView.m */,
+			);
+			path = DejalActivityView;
+			sourceTree = "<group>";
+		};
+		786145451BA667FB00368B9D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				786145461BA668A800368B9D /* WALCar.h */,
+				786145471BA668A800368B9D /* WALCar.m */,
+				7861457E1BA6B82800368B9D /* WALArea.h */,
+				7861457F1BA6B82800368B9D /* WALArea.m */,
+				785AF4E21BA7B49F0065DEE7 /* WALStatusCount.h */,
+				785AF4E31BA7B49F0065DEE7 /* WALStatusCount.m */,
+				785AF4E81BA7C42C0065DEE7 /* WALCarDetail.h */,
+				785AF4E91BA7C42C0065DEE7 /* WALCarDetail.m */,
+				788586E11BA7CF660004ADAA /* WALSimpleCar.h */,
+				788586E21BA7CF660004ADAA /* WALSimpleCar.m */,
+				788586E71BA802ED0004ADAA /* WALCarTrack.h */,
+				788586E81BA802ED0004ADAA /* WALCarTrack.m */,
+				788586EA1BA805D20004ADAA /* WALCarPlayTrack.h */,
+				788586EB1BA805D20004ADAA /* WALCarPlayTrack.m */,
+				7852D82B1BA9089700645C7B /* WALReport.h */,
+				7852D82C1BA9089700645C7B /* WALReport.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		786145591BA668E900368B9D /* WALService */ = {
+			isa = PBXGroup;
+			children = (
+				786145871BA6CF1300368B9D /* WALCarService.h */,
+				786145881BA6CF1300368B9D /* WALCarService.m */,
+				7852D8281BA9064600645C7B /* WALHomeService.h */,
+				7852D8291BA9064600645C7B /* WALHomeService.m */,
+			);
+			path = WALService;
+			sourceTree = "<group>";
+		};
+		ADCCE5431BA2D96E00DB1C17 = {
+			isa = PBXGroup;
+			children = (
+				ADCCE54E1BA2D96E00DB1C17 /* Walmart */,
+				ADE5F8B41BA6CB8C00C1C304 /* Framework */,
+				ADCCE5681BA2D96E00DB1C17 /* WalmartTests */,
+				ADCCE54D1BA2D96E00DB1C17 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ADCCE54D1BA2D96E00DB1C17 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ADCCE54C1BA2D96E00DB1C17 /* Walmart.app */,
+				ADCCE5651BA2D96E00DB1C17 /* WalmartTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ADCCE54E1BA2D96E00DB1C17 /* Walmart */ = {
+			isa = PBXGroup;
+			children = (
+				786145591BA668E900368B9D /* WALService */,
+				786145451BA667FB00368B9D /* Model */,
+				ADCCE5A41BA2DAF600DB1C17 /* YLYTabBarController.h */,
+				ADCCE5A51BA2DAF600DB1C17 /* YLYTabBarController.m */,
+				ADCCE5A01BA2DAEE00DB1C17 /* WLALeftSetting */,
+				ADCCE59C1BA2DAE100DB1C17 /* WALWaybill */,
+				ADCCE5981BA2DAD600DB1C17 /* WALVehicle */,
+				ADCCE5971BA2DABE00DB1C17 /* WALLogin */,
+				ADCCE5931BA2DAB300DB1C17 /* WALHome */,
+				ADCCE5901BA2DA8800DB1C17 /* WALBaseViewController.h */,
+				ADCCE5911BA2DA8800DB1C17 /* WALBaseViewController.m */,
+				ADCCE58D1BA2DA7E00DB1C17 /* RotationAwareNavigationController.h */,
+				ADCCE58E1BA2DA7E00DB1C17 /* RotationAwareNavigationController.m */,
+				ADCCE57F1BA2DA7300DB1C17 /* Extend */,
+				ADCCE57D1BA2DA6B00DB1C17 /* Common */,
+				ADCCE5761BA2DA5B00DB1C17 /* Additions */,
+				ADCCE5751BA2D99E00DB1C17 /* PrefixHeader.pch */,
+				ADCCE5531BA2D96E00DB1C17 /* AppDelegate.h */,
+				ADCCE5541BA2D96E00DB1C17 /* AppDelegate.mm */,
+				ADCCE55C1BA2D96E00DB1C17 /* Images.xcassets */,
+				ADCCE55E1BA2D96E00DB1C17 /* LaunchScreen.xib */,
+				ADCCE54F1BA2D96E00DB1C17 /* Supporting Files */,
+				786145661BA6743100368B9D /* BaseViewController.h */,
+				786145671BA6743100368B9D /* BaseViewController.m */,
+			);
+			path = Walmart;
+			sourceTree = "<group>";
+		};
+		ADCCE54F1BA2D96E00DB1C17 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ADCCE5501BA2D96E00DB1C17 /* Info.plist */,
+				ADCCE5511BA2D96E00DB1C17 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ADCCE5681BA2D96E00DB1C17 /* WalmartTests */ = {
+			isa = PBXGroup;
+			children = (
+				ADCCE56B1BA2D96E00DB1C17 /* WalmartTests.m */,
+				ADCCE5691BA2D96E00DB1C17 /* Supporting Files */,
+			);
+			path = WalmartTests;
+			sourceTree = "<group>";
+		};
+		ADCCE5691BA2D96E00DB1C17 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ADCCE56A1BA2D96E00DB1C17 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ADCCE5761BA2DA5B00DB1C17 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				788586E41BA7ED1F0004ADAA /* NSDate+Addition.h */,
+				788586E51BA7ED1F0004ADAA /* NSDate+Addition.m */,
+				ADCCE5771BA2DA5B00DB1C17 /* NSUserDefaults+Addition.h */,
+				ADCCE5781BA2DA5B00DB1C17 /* NSUserDefaults+Addition.m */,
+				ADCCE5791BA2DA5B00DB1C17 /* UIView+Addition.h */,
+				ADCCE57A1BA2DA5B00DB1C17 /* UIView+Addition.m */,
+				AD0687DB1BA3C6FA00F66C7A /* NSArray+NSArray_Resource.h */,
+				AD0687DC1BA3C6FA00F66C7A /* NSArray+NSArray_Resource.m */,
+				AD0687DE1BA3CEAC00F66C7A /* NSDictionary+NSDictionary_Addition.h */,
+				AD0687DF1BA3CEAC00F66C7A /* NSDictionary+NSDictionary_Addition.m */,
+				AD0687E11BA3D74D00F66C7A /* UIColor+Addition.h */,
+				AD0687E21BA3D74D00F66C7A /* UIColor+Addition.m */,
+				ADE5F8911BA6A4A300C1C304 /* NSString+Addition.h */,
+				ADE5F8921BA6A4A300C1C304 /* NSString+Addition.m */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
+		ADCCE57D1BA2DA6B00DB1C17 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				786145691BA6774600368B9D /* WALChooseView.h */,
+				7861456A1BA6774600368B9D /* WALChooseView.m */,
+				786145631BA6711400368B9D /* WALTipsButton.h */,
+				786145641BA6711400368B9D /* WALTipsButton.m */,
+				786145131BA65B6800368B9D /* ChoiceSegmentedView.h */,
+				786145141BA65B6800368B9D /* ChoiceSegmentedView.m */,
+				ADCCE57E1BA2DA6B00DB1C17 /* YLYConstants.h */,
+				AD0687D51BA3BC6E00F66C7A /* WALSettingBtnView.h */,
+				AD0687D61BA3BC6E00F66C7A /* WALSettingBtnView.m */,
+				7861456F1BA694C900368B9D /* WALTableViewCell.h */,
+				786145701BA694C900368B9D /* WALTableViewCell.m */,
+				786145781BA6A43300368B9D /* WALTipsLabel.h */,
+				786145791BA6A43300368B9D /* WALTipsLabel.m */,
+				786145841BA6C4C200368B9D /* WALBoardView.h */,
+				786145851BA6C4C200368B9D /* WALBoardView.m */,
+				ADE5F8791BA6667200C1C304 /* WALTextField.h */,
+				ADE5F87A1BA6667200C1C304 /* WALTextField.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		ADCCE57F1BA2DA7300DB1C17 /* Extend */ = {
+			isa = PBXGroup;
+			children = (
+				7852D83E1BA9375100645C7B /* NSArray */,
+				7852D82E1BA9218200645C7B /* GraphKit */,
+				7861453B1BA664B000368B9D /* DejalActivityView */,
+				7861451C1BA663E600368B9D /* EGOTableViewPullRefresh */,
+				ADE5F8A91BA6C7A400C1C304 /* NetworkCheckUtil */,
+				ADE5F8A51BA6BFDF00C1C304 /* FXBlurView */,
+				ADE5F8941BA6BB8B00C1C304 /* TKAlertCenter */,
+				ADE5F8881BA67BD000C1C304 /* JSONKit.h */,
+				ADE5F8891BA67BD000C1C304 /* JSONKit.m */,
+				ADE5F8851BA67B2300C1C304 /* DesEncryptDecipher.h */,
+				ADE5F8861BA67B2300C1C304 /* DesEncryptDecipher.m */,
+				ADE2A4601BA426BC003CF7A1 /* AFNetworking */,
+				ADCCE5801BA2DA7300DB1C17 /* JVF */,
+			);
+			path = Extend;
+			sourceTree = "<group>";
+		};
+		ADCCE5801BA2DA7300DB1C17 /* JVF */ = {
+			isa = PBXGroup;
+			children = (
+				ADCCE5811BA2DA7300DB1C17 /* JVFloatingDrawerAnimation.h */,
+				ADCCE5821BA2DA7300DB1C17 /* JVFloatingDrawerSpringAnimator.h */,
+				ADCCE5831BA2DA7300DB1C17 /* JVFloatingDrawerSpringAnimator.m */,
+				ADCCE5841BA2DA7300DB1C17 /* JVFloatingDrawerView.h */,
+				ADCCE5851BA2DA7300DB1C17 /* JVFloatingDrawerView.m */,
+				ADCCE5861BA2DA7300DB1C17 /* JVFloatingDrawerViewController.h */,
+				ADCCE5871BA2DA7300DB1C17 /* JVFloatingDrawerViewController.m */,
+			);
+			path = JVF;
+			sourceTree = "<group>";
+		};
+		ADCCE5931BA2DAB300DB1C17 /* WALHome */ = {
+			isa = PBXGroup;
+			children = (
+				ADCCE5941BA2DAB300DB1C17 /* WALHomeViewController.h */,
+				ADCCE5951BA2DAB300DB1C17 /* WALHomeViewController.m */,
+			);
+			path = WALHome;
+			sourceTree = "<group>";
+		};
+		ADCCE5971BA2DABE00DB1C17 /* WALLogin */ = {
+			isa = PBXGroup;
+			children = (
+				ADE5F8811BA67A1300C1C304 /* WALLoginService */,
+				ADE5F8801BA67A1300C1C304 /* WALLoginModel */,
+				ADE5F87C1BA66A4A00C1C304 /* WALLoginViewController.h */,
+				ADE5F87D1BA66A4A00C1C304 /* WALLoginViewController.m */,
+			);
+			path = WALLogin;
+			sourceTree = "<group>";
+		};
+		ADCCE5981BA2DAD600DB1C17 /* WALVehicle */ = {
+			isa = PBXGroup;
+			children = (
+				ADCCE5991BA2DAD600DB1C17 /* WALVehicleViewController.h */,
+				ADCCE59A1BA2DAD600DB1C17 /* WALVehicleViewController.m */,
+				786145161BA65BDD00368B9D /* WALTotalVehicleViewController.h */,
+				786145171BA65BDD00368B9D /* WALTotalVehicleViewController.m */,
+				785AF4E51BA7BA6C0065DEE7 /* WALChildVehicleViewController.h */,
+				785AF4E61BA7BA6C0065DEE7 /* WALChildVehicleViewController.m */,
+				786145191BA65BF000368B9D /* WALAreaVehicleViewController.h */,
+				7861451A1BA65BF000368B9D /* WALAreaVehicleViewController.m */,
+				7852D8251BA8FC8000645C7B /* WALAreaTotalVehicleViewController.h */,
+				7852D8261BA8FC8000645C7B /* WALAreaTotalVehicleViewController.m */,
+				7852D8221BA8FC1900645C7B /* WALChildAreaVehicleViewController.h */,
+				7852D8231BA8FC1900645C7B /* WALChildAreaVehicleViewController.m */,
+				7861453F1BA6652B00368B9D /* WALCarDetailViewController.h */,
+				786145401BA6652B00368B9D /* WALCarDetailViewController.m */,
+				786145421BA6671E00368B9D /* WALCarTableViewCell.h */,
+				786145431BA6671E00368B9D /* WALCarTableViewCell.m */,
+				7861455A1BA6706B00368B9D /* WALFindCarTrackViewController.h */,
+				7861455B1BA6706B00368B9D /* WALFindCarTrackViewController.m */,
+				7861455D1BA6707B00368B9D /* WALCarPositionViewController.h */,
+				7861455E1BA6707B00368B9D /* WALCarPositionViewController.m */,
+				786145601BA6708D00368B9D /* WALCarTrackViewController.h */,
+				786145611BA6708D00368B9D /* WALCarTrackViewController.m */,
+				7861456C1BA6780000368B9D /* WALFindCarViewController.h */,
+				7861456D1BA6780000368B9D /* WALFindCarViewController.m */,
+				786145721BA69EC900368B9D /* WALFindCarTableViewCell.h */,
+				786145731BA69EC900368B9D /* WALFindCarTableViewCell.m */,
+				786145751BA6A14A00368B9D /* WALCarTapView.h */,
+				786145761BA6A14A00368B9D /* WALCarTapView.m */,
+				7861457B1BA6B7C100368B9D /* WALAreaTableViewCell.h */,
+				7861457C1BA6B7C100368B9D /* WALAreaTableViewCell.m */,
+				786145811BA6C29100368B9D /* WALCarInfoView.h */,
+				786145821BA6C29100368B9D /* WALCarInfoView.m */,
+			);
+			path = WALVehicle;
+			sourceTree = "<group>";
+		};
+		ADCCE59C1BA2DAE100DB1C17 /* WALWaybill */ = {
+			isa = PBXGroup;
+			children = (
+				ADCCE59D1BA2DAE100DB1C17 /* WALWaybillViewController.h */,
+				ADCCE59E1BA2DAE100DB1C17 /* WALWaybillViewController.m */,
+				ADEDCF231BA8088E0000470F /* WALWaybillDetaillViewController.h */,
+				ADEDCF241BA8088E0000470F /* WALWaybillDetaillViewController.m */,
+			);
+			path = WALWaybill;
+			sourceTree = "<group>";
+		};
+		ADCCE5A01BA2DAEE00DB1C17 /* WLALeftSetting */ = {
+			isa = PBXGroup;
+			children = (
+				ADCCE5A11BA2DAEE00DB1C17 /* WALSettingViewController.h */,
+				ADCCE5A21BA2DAEE00DB1C17 /* WALSettingViewController.m */,
+				ADEDCE451BA7A6960000470F /* WALSystemSettingViewController.h */,
+				ADEDCE461BA7A6960000470F /* WALSystemSettingViewController.m */,
+				ADEDCE481BA7A6AF0000470F /* WALChangePasswordViewController.h */,
+				ADEDCE491BA7A6AF0000470F /* WALChangePasswordViewController.m */,
+				ADEDCE4B1BA7A6E60000470F /* WALFeedBackViewController.h */,
+				ADEDCE4C1BA7A6E60000470F /* WALFeedBackViewController.m */,
+			);
+			path = WLALeftSetting;
+			sourceTree = "<group>";
+		};
+		ADE2A4601BA426BC003CF7A1 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				ADE2A4611BA426BC003CF7A1 /* AFNetworking */,
+				ADE2A4771BA426BC003CF7A1 /* UIKit+AFNetworking */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		ADE2A4611BA426BC003CF7A1 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				ADE2A4621BA426BC003CF7A1 /* AFHTTPRequestOperation.h */,
+				ADE2A4631BA426BC003CF7A1 /* AFHTTPRequestOperation.m */,
+				ADE2A4641BA426BC003CF7A1 /* AFHTTPRequestOperationManager.h */,
+				ADE2A4651BA426BC003CF7A1 /* AFHTTPRequestOperationManager.m */,
+				ADE2A4661BA426BC003CF7A1 /* AFHTTPSessionManager.h */,
+				ADE2A4671BA426BC003CF7A1 /* AFHTTPSessionManager.m */,
+				ADE2A4681BA426BC003CF7A1 /* AFNetworking.h */,
+				ADE2A4691BA426BC003CF7A1 /* AFNetworkReachabilityManager.h */,
+				ADE2A46A1BA426BC003CF7A1 /* AFNetworkReachabilityManager.m */,
+				ADE2A46B1BA426BC003CF7A1 /* AFSecurityPolicy.h */,
+				ADE2A46C1BA426BC003CF7A1 /* AFSecurityPolicy.m */,
+				ADE2A46D1BA426BC003CF7A1 /* AFURLConnectionOperation.h */,
+				ADE2A46E1BA426BC003CF7A1 /* AFURLConnectionOperation.m */,
+				ADE2A46F1BA426BC003CF7A1 /* AFURLRequestSerialization.h */,
+				ADE2A4701BA426BC003CF7A1 /* AFURLRequestSerialization.m */,
+				ADE2A4711BA426BC003CF7A1 /* AFURLResponseSerialization.h */,
+				ADE2A4721BA426BC003CF7A1 /* AFURLResponseSerialization.m */,
+				ADE2A4731BA426BC003CF7A1 /* AFURLSessionManager.h */,
+				ADE2A4741BA426BC003CF7A1 /* AFURLSessionManager.m */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		ADE2A4771BA426BC003CF7A1 /* UIKit+AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				ADE2A4781BA426BC003CF7A1 /* AFNetworkActivityIndicatorManager.h */,
+				ADE2A4791BA426BC003CF7A1 /* AFNetworkActivityIndicatorManager.m */,
+				ADE2A47A1BA426BC003CF7A1 /* UIActivityIndicatorView+AFNetworking.h */,
+				ADE2A47B1BA426BC003CF7A1 /* UIActivityIndicatorView+AFNetworking.m */,
+				ADE2A47C1BA426BC003CF7A1 /* UIAlertView+AFNetworking.h */,
+				ADE2A47D1BA426BC003CF7A1 /* UIAlertView+AFNetworking.m */,
+				ADE2A47E1BA426BC003CF7A1 /* UIButton+AFNetworking.h */,
+				ADE2A47F1BA426BC003CF7A1 /* UIButton+AFNetworking.m */,
+				ADE2A4801BA426BC003CF7A1 /* UIImageView+AFNetworking.h */,
+				ADE2A4811BA426BC003CF7A1 /* UIImageView+AFNetworking.m */,
+				ADE2A4821BA426BC003CF7A1 /* UIKit+AFNetworking.h */,
+				ADE2A4831BA426BC003CF7A1 /* UIProgressView+AFNetworking.h */,
+				ADE2A4841BA426BC003CF7A1 /* UIProgressView+AFNetworking.m */,
+				ADE2A4851BA426BC003CF7A1 /* UIRefreshControl+AFNetworking.h */,
+				ADE2A4861BA426BC003CF7A1 /* UIRefreshControl+AFNetworking.m */,
+				ADE2A4871BA426BC003CF7A1 /* UIWebView+AFNetworking.h */,
+				ADE2A4881BA426BC003CF7A1 /* UIWebView+AFNetworking.m */,
+			);
+			path = "UIKit+AFNetworking";
+			sourceTree = "<group>";
+		};
+		ADE5F8801BA67A1300C1C304 /* WALLoginModel */ = {
+			isa = PBXGroup;
+			children = (
+				ADE5F88B1BA6968500C1C304 /* WALUser.h */,
+				ADE5F88C1BA6968500C1C304 /* WALUser.m */,
+			);
+			path = WALLoginModel;
+			sourceTree = "<group>";
+		};
+		ADE5F8811BA67A1300C1C304 /* WALLoginService */ = {
+			isa = PBXGroup;
+			children = (
+				ADE5F8821BA67A3D00C1C304 /* WALLoginService.h */,
+				ADE5F8831BA67A3D00C1C304 /* WALLoginService.m */,
+			);
+			path = WALLoginService;
+			sourceTree = "<group>";
+		};
+		ADE5F8941BA6BB8B00C1C304 /* TKAlertCenter */ = {
+			isa = PBXGroup;
+			children = (
+				ADE5F8951BA6BB8B00C1C304 /* TKAlertCenter.h */,
+				ADE5F8961BA6BB8B00C1C304 /* TKAlertCenter.m */,
+				ADE5F8971BA6BB8B00C1C304 /* UIView+TKCategory.h */,
+				ADE5F8981BA6BB8B00C1C304 /* UIView+TKCategory.m */,
+			);
+			path = TKAlertCenter;
+			sourceTree = "<group>";
+		};
+		ADE5F8A51BA6BFDF00C1C304 /* FXBlurView */ = {
+			isa = PBXGroup;
+			children = (
+				ADE5F8A61BA6BFDF00C1C304 /* FXBlurView.h */,
+				ADE5F8A71BA6BFDF00C1C304 /* FXBlurView.m */,
+			);
+			path = FXBlurView;
+			sourceTree = "<group>";
+		};
+		ADE5F8A91BA6C7A400C1C304 /* NetworkCheckUtil */ = {
+			isa = PBXGroup;
+			children = (
+				ADE5F8AA1BA6C7A400C1C304 /* NetworkCheckUtil.h */,
+				ADE5F8AB1BA6C7A400C1C304 /* NetworkCheckUtil.m */,
+			);
+			path = NetworkCheckUtil;
+			sourceTree = "<group>";
+		};
+		ADE5F8B41BA6CB8C00C1C304 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				ADEDCF211BA8052A0000470F /* mapapi.bundle */,
+				ADEDCF1F1BA803FB0000470F /* Security.framework */,
+				ADEDCF1D1BA803E70000470F /* SystemConfiguration.framework */,
+				ADEDCF1B1BA803DA0000470F /* OpenGLES.framework */,
+				ADEDCF191BA803C30000470F /* CoreLocation.framework */,
+				ADEDCF171BA803AB0000470F /* BaiduMapAPI.framework */,
+				ADE5F8A31BA6BFBE00C1C304 /* CoreGraphics.framework */,
+				ADE5F8A11BA6BFB500C1C304 /* Foundation.framework */,
+				ADE5F89F1BA6BFAA00C1C304 /* UIKit.framework */,
+				ADE5F89D1BA6BFA400C1C304 /* Accelerate.framework */,
+				ADE5F89B1BA6BF9B00C1C304 /* QuartzCore.framework */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ADCCE54B1BA2D96E00DB1C17 /* Walmart */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADCCE56F1BA2D96E00DB1C17 /* Build configuration list for PBXNativeTarget "Walmart" */;
+			buildPhases = (
+				ADCCE5481BA2D96E00DB1C17 /* Sources */,
+				ADCCE5491BA2D96E00DB1C17 /* Frameworks */,
+				ADCCE54A1BA2D96E00DB1C17 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Walmart;
+			productName = Walmart;
+			productReference = ADCCE54C1BA2D96E00DB1C17 /* Walmart.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ADCCE5641BA2D96E00DB1C17 /* WalmartTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADCCE5721BA2D96E00DB1C17 /* Build configuration list for PBXNativeTarget "WalmartTests" */;
+			buildPhases = (
+				ADCCE5611BA2D96E00DB1C17 /* Sources */,
+				ADCCE5621BA2D96E00DB1C17 /* Frameworks */,
+				ADCCE5631BA2D96E00DB1C17 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ADCCE5671BA2D96E00DB1C17 /* PBXTargetDependency */,
+			);
+			name = WalmartTests;
+			productName = WalmartTests;
+			productReference = ADCCE5651BA2D96E00DB1C17 /* WalmartTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ADCCE5441BA2D96E00DB1C17 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = e6;
+				TargetAttributes = {
+					ADCCE54B1BA2D96E00DB1C17 = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 5PF3UMHS46;
+					};
+					ADCCE5641BA2D96E00DB1C17 = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 5PF3UMHS46;
+						TestTargetID = ADCCE54B1BA2D96E00DB1C17;
+					};
+				};
+			};
+			buildConfigurationList = ADCCE5471BA2D96E00DB1C17 /* Build configuration list for PBXProject "Walmart" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ADCCE5431BA2D96E00DB1C17;
+			productRefGroup = ADCCE54D1BA2D96E00DB1C17 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ADCCE54B1BA2D96E00DB1C17 /* Walmart */,
+				ADCCE5641BA2D96E00DB1C17 /* WalmartTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ADCCE54A1BA2D96E00DB1C17 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				786145361BA663E600368B9D /* blueArrow@2x.png in Resources */,
+				ADEDCF221BA8052A0000470F /* mapapi.bundle in Resources */,
+				7861453A1BA663E600368B9D /* whiteArrow@2x.png in Resources */,
+				786145331BA663E600368B9D /* blackArrow.png in Resources */,
+				786145381BA663E600368B9D /* grayArrow@2x.png in Resources */,
+				786145351BA663E600368B9D /* blueArrow.png in Resources */,
+				786145341BA663E600368B9D /* blackArrow@2x.png in Resources */,
+				786145371BA663E600368B9D /* grayArrow.png in Resources */,
+				786145391BA663E600368B9D /* whiteArrow.png in Resources */,
+				ADCCE55D1BA2D96E00DB1C17 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADCCE5631BA2D96E00DB1C17 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ADCCE5481BA2D96E00DB1C17 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				786145861BA6C4C200368B9D /* WALBoardView.m in Sources */,
+				786145711BA694C900368B9D /* WALTableViewCell.m in Sources */,
+				ADEDCE4A1BA7A6AF0000470F /* WALChangePasswordViewController.m in Sources */,
+				ADE5F8931BA6A4A300C1C304 /* NSString+Addition.m in Sources */,
+				7852D8271BA8FC8000645C7B /* WALAreaTotalVehicleViewController.m in Sources */,
+				7852D84D1BA9375100645C7B /* NSMutableArray+MK_Queue.m in Sources */,
+				786145891BA6CF1300368B9D /* WALCarService.m in Sources */,
+				ADCCE59F1BA2DAE100DB1C17 /* WALWaybillViewController.m in Sources */,
+				ADEDCF251BA8088E0000470F /* WALWaybillDetaillViewController.m in Sources */,
+				786145311BA663E600368B9D /* MessageInterceptor.m in Sources */,
+				ADCCE58F1BA2DA7E00DB1C17 /* RotationAwareNavigationController.m in Sources */,
+				786145831BA6C29100368B9D /* WALCarInfoView.m in Sources */,
+				ADE2A48D1BA426BC003CF7A1 /* AFSecurityPolicy.m in Sources */,
+				ADE2A48A1BA426BC003CF7A1 /* AFHTTPRequestOperationManager.m in Sources */,
+				ADE2A4891BA426BC003CF7A1 /* AFHTTPRequestOperation.m in Sources */,
+				ADCCE5A31BA2DAEE00DB1C17 /* WALSettingViewController.m in Sources */,
+				786145681BA6743100368B9D /* BaseViewController.m in Sources */,
+				ADE5F89A1BA6BB8B00C1C304 /* UIView+TKCategory.m in Sources */,
+				ADE2A4971BA426BC003CF7A1 /* UIButton+AFNetworking.m in Sources */,
+				ADE2A4951BA426BC003CF7A1 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				7861457D1BA6B7C100368B9D /* WALAreaTableViewCell.m in Sources */,
+				ADE2A4991BA426BC003CF7A1 /* UIProgressView+AFNetworking.m in Sources */,
+				ADCCE5891BA2DA7300DB1C17 /* JVFloatingDrawerSpringAnimator.m in Sources */,
+				ADE5F8AC1BA6C7A400C1C304 /* NetworkCheckUtil.m in Sources */,
+				ADCCE58B1BA2DA7300DB1C17 /* JVFloatingDrawerViewController.m in Sources */,
+				7852D83A1BA9218200645C7B /* GKBar.m in Sources */,
+				ADCCE57C1BA2DA5B00DB1C17 /* UIView+Addition.m in Sources */,
+				ADCCE57B1BA2DA5B00DB1C17 /* NSUserDefaults+Addition.m in Sources */,
+				786145621BA6708D00368B9D /* WALCarTrackViewController.m in Sources */,
+				7852D84A1BA9375100645C7B /* NSArray+MK_Block.m in Sources */,
+				AD0687DD1BA3C6FA00F66C7A /* NSArray+NSArray_Resource.m in Sources */,
+				ADE5F88A1BA67BD000C1C304 /* JSONKit.m in Sources */,
+				ADE2A4941BA426BC003CF7A1 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				ADE5F8991BA6BB8B00C1C304 /* TKAlertCenter.m in Sources */,
+				7852D84C1BA9375100645C7B /* NSMutableArray+MK_Misc.m in Sources */,
+				ADE2A4961BA426BC003CF7A1 /* UIAlertView+AFNetworking.m in Sources */,
+				ADCCE5921BA2DA8800DB1C17 /* WALBaseViewController.m in Sources */,
+				AD0687E31BA3D74D00F66C7A /* UIColor+Addition.m in Sources */,
+				ADE5F8841BA67A3D00C1C304 /* WALLoginService.m in Sources */,
+				ADE2A48B1BA426BC003CF7A1 /* AFHTTPSessionManager.m in Sources */,
+				ADE2A49B1BA426BC003CF7A1 /* UIWebView+AFNetworking.m in Sources */,
+				7852D83D1BA9218200645C7B /* UIColor+GraphKit.m in Sources */,
+				ADCCE5551BA2D96E00DB1C17 /* AppDelegate.mm in Sources */,
+				786145441BA6671E00368B9D /* WALCarTableViewCell.m in Sources */,
+				7861455F1BA6707B00368B9D /* WALCarPositionViewController.m in Sources */,
+				7852D8241BA8FC1900645C7B /* WALChildAreaVehicleViewController.m in Sources */,
+				ADCCE59B1BA2DAD600DB1C17 /* WALVehicleViewController.m in Sources */,
+				7861455C1BA6706B00368B9D /* WALFindCarTrackViewController.m in Sources */,
+				786145411BA6652B00368B9D /* WALCarDetailViewController.m in Sources */,
+				785AF4E41BA7B49F0065DEE7 /* WALStatusCount.m in Sources */,
+				ADE2A49A1BA426BC003CF7A1 /* UIRefreshControl+AFNetworking.m in Sources */,
+				ADE2A48E1BA426BC003CF7A1 /* AFURLConnectionOperation.m in Sources */,
+				788586E61BA7ED1F0004ADAA /* NSDate+Addition.m in Sources */,
+				7861452F1BA663E600368B9D /* EGORefreshTableHeaderView.m in Sources */,
+				7861456E1BA6780000368B9D /* WALFindCarViewController.m in Sources */,
+				786145181BA65BDD00368B9D /* WALTotalVehicleViewController.m in Sources */,
+				ADE2A48F1BA426BC003CF7A1 /* AFURLRequestSerialization.m in Sources */,
+				786145771BA6A14A00368B9D /* WALCarTapView.m in Sources */,
+				786145321BA663E600368B9D /* PullTableView.m in Sources */,
+				7852D82D1BA9089700645C7B /* WALReport.m in Sources */,
+				7852D83B1BA9218200645C7B /* GKBarGraph.m in Sources */,
+				ADEDCE4D1BA7A6E60000470F /* WALFeedBackViewController.m in Sources */,
+				ADE5F8A81BA6BFDF00C1C304 /* FXBlurView.m in Sources */,
+				785AF4EA1BA7C42C0065DEE7 /* WALCarDetail.m in Sources */,
+				7852D84E1BA9375100645C7B /* NSMutableArray+MK_Stack.m in Sources */,
+				ADE2A4911BA426BC003CF7A1 /* AFURLSessionManager.m in Sources */,
+				786145151BA65B6800368B9D /* ChoiceSegmentedView.m in Sources */,
+				786145741BA69EC900368B9D /* WALFindCarTableViewCell.m in Sources */,
+				786145651BA6711400368B9D /* WALTipsButton.m in Sources */,
+				7861453E1BA664B000368B9D /* DejalActivityView.m in Sources */,
+				ADE2A4901BA426BC003CF7A1 /* AFURLResponseSerialization.m in Sources */,
+				AD0687D71BA3BC6E00F66C7A /* WALSettingBtnView.m in Sources */,
+				788586E91BA802ED0004ADAA /* WALCarTrack.m in Sources */,
+				ADCCE5A61BA2DAF600DB1C17 /* YLYTabBarController.m in Sources */,
+				786145481BA668A800368B9D /* WALCar.m in Sources */,
+				786145801BA6B82800368B9D /* WALArea.m in Sources */,
+				7861451B1BA65BF000368B9D /* WALAreaVehicleViewController.m in Sources */,
+				7852D82A1BA9064600645C7B /* WALHomeService.m in Sources */,
+				785AF4E71BA7BA6C0065DEE7 /* WALChildVehicleViewController.m in Sources */,
+				786145301BA663E600368B9D /* LoadMoreTableFooterView.m in Sources */,
+				7861456B1BA6774600368B9D /* WALChooseView.m in Sources */,
+				ADCCE5521BA2D96E00DB1C17 /* main.m in Sources */,
+				7861457A1BA6A43300368B9D /* WALTipsLabel.m in Sources */,
+				ADCCE5961BA2DAB300DB1C17 /* WALHomeViewController.m in Sources */,
+				788586EC1BA805D20004ADAA /* WALCarPlayTrack.m in Sources */,
+				ADE5F87E1BA66A4A00C1C304 /* WALLoginViewController.m in Sources */,
+				ADE5F87B1BA6667200C1C304 /* WALTextField.m in Sources */,
+				ADE5F88D1BA6968500C1C304 /* WALUser.m in Sources */,
+				7852D84B1BA9375100645C7B /* NSArray+MK_Misc.m in Sources */,
+				ADCCE58A1BA2DA7300DB1C17 /* JVFloatingDrawerView.m in Sources */,
+				ADE2A48C1BA426BC003CF7A1 /* AFNetworkReachabilityManager.m in Sources */,
+				ADEDCE471BA7A6960000470F /* WALSystemSettingViewController.m in Sources */,
+				ADE5F8871BA67B2300C1C304 /* DesEncryptDecipher.m in Sources */,
+				788586E31BA7CF660004ADAA /* WALSimpleCar.m in Sources */,
+				ADE2A4981BA426BC003CF7A1 /* UIImageView+AFNetworking.m in Sources */,
+				AD0687E01BA3CEAC00F66C7A /* NSDictionary+NSDictionary_Addition.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADCCE5611BA2D96E00DB1C17 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADCCE56C1BA2D96E00DB1C17 /* WalmartTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ADCCE5671BA2D96E00DB1C17 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADCCE54B1BA2D96E00DB1C17 /* Walmart */;
+			targetProxy = ADCCE5661BA2D96E00DB1C17 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ADCCE55E1BA2D96E00DB1C17 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ADCCE55F1BA2D96E00DB1C17 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ADCCE56D1BA2D96E00DB1C17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "db3b76bb-8d10-412d-a6f4-27faeeaabd89";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		ADCCE56E1BA2D96E00DB1C17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "db3b76bb-8d10-412d-a6f4-27faeeaabd89";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ADCCE5701BA2D96E00DB1C17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Walmart",
+				);
+				GCC_PREFIX_HEADER = Walmart/PrefixHeader.pch;
+				INFOPLIST_FILE = Walmart/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		ADCCE5711BA2D96E00DB1C17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Walmart",
+				);
+				GCC_PREFIX_HEADER = Walmart/PrefixHeader.pch;
+				INFOPLIST_FILE = Walmart/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		ADCCE5731BA2D96E00DB1C17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WalmartTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Walmart.app/Walmart";
+			};
+			name = Debug;
+		};
+		ADCCE5741BA2D96E00DB1C17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WalmartTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Walmart.app/Walmart";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ADCCE5471BA2D96E00DB1C17 /* Build configuration list for PBXProject "Walmart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADCCE56D1BA2D96E00DB1C17 /* Debug */,
+				ADCCE56E1BA2D96E00DB1C17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADCCE56F1BA2D96E00DB1C17 /* Build configuration list for PBXNativeTarget "Walmart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADCCE5701BA2D96E00DB1C17 /* Debug */,
+				ADCCE5711BA2D96E00DB1C17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADCCE5721BA2D96E00DB1C17 /* Build configuration list for PBXNativeTarget "WalmartTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADCCE5731BA2D96E00DB1C17 /* Debug */,
+				ADCCE5741BA2D96E00DB1C17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ADCCE5441BA2D96E00DB1C17 /* Project object */;
+}
