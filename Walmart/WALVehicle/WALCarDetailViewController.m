@@ -13,7 +13,7 @@
 #import "WALCarTapView.h"
 #import "WALCarService.h"
 
-@interface WALCarDetailViewController ()
+@interface WALCarDetailViewController () <UIAlertViewDelegate>
 
 @property (nonatomic, strong) UILabel *plateNumberLabel;
 @property (nonatomic, strong) UILabel *timeLabel;
@@ -79,6 +79,17 @@
     self.temperature2Label.value = [NSString stringWithFormat:@"%@℃", self.carDetail.T2];
     self.carTapView.car = self.car;
 }
+
+#pragma mark -- alertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", alertView.message]]];
+    }
+}
+
+#pragma mark -- getter
 
 - (UILabel *)plateNumberLabel
 {
@@ -183,7 +194,10 @@
         _carTapView = [[WALCarTapView alloc] initWithFrame:CGRectMake(0, self.view.height - 32, self.view.width, 32)];
         __weak typeof(self) weakSelf = self;
         _carTapView.phoneBlock = ^(WALCar *car) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", car.telPhone]]];
+            if (car.telPhone.length > 0) {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"确认拨打电话" message:car.telPhone delegate:weakSelf cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
+                [alertView show];
+            }
         };
         _carTapView.positionBlock = ^(WALCar *car) {
             WALCarPositionViewController *carPositionViewController = [[WALCarPositionViewController alloc] init];

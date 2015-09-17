@@ -14,7 +14,7 @@
 #import "PullTableView.h"
 #import "WALCarService.h"
 
-@interface WALChildVehicleViewController () <UITableViewDataSource, UITableViewDelegate, PullTableViewDelegate>
+@interface WALChildVehicleViewController () <UITableViewDataSource, UITableViewDelegate, PullTableViewDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) PullTableView *tableView;
 @property (nonatomic, strong) NSArray *contentsArray;
@@ -135,7 +135,10 @@
     WALCar *car = self.filterCarsArray[indexPath.row];
     carTableViewCell.width = self.tableView.width;
     carTableViewCell.phoneBlock = ^(WALCar *car) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", car.telPhone]]];
+        if (car.telPhone.length > 0) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"确认拨打电话" message:car.telPhone delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
+            [alertView show];
+        }
     };
     carTableViewCell.positionBlock = ^(WALCar *car) {
         WALCarPositionViewController *carPositionViewController = [[WALCarPositionViewController alloc] init];
@@ -160,6 +163,15 @@
     carDetailViewController.car = self.filterCarsArray[indexPath.row];
     carDetailViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:carDetailViewController animated:YES];
+}
+
+#pragma mark -- alertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", alertView.message]]];
+    }
 }
 
 #pragma mark -- getter

@@ -25,6 +25,9 @@
     car.speed = [dictionary strValue:@"Speed"];
     car.status = [dictionary strValue:@"Status"];
     car.telPhone = [dictionary strValue:@"TelPhone"];
+    if (car.telPhone.length != 11) {
+        car.telPhone = @"";
+    }
     car.vehicleID = [dictionary strValue:@"VehicleID"];
     return car;
 }
