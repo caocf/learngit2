@@ -24,9 +24,13 @@
     if (_car != car) {
         _car = car;
         self.plateNumberLabel.text = car.regName;
+        self.plateNumberLabel.width = [self.plateNumberLabel.text sizeWithFont:self.plateNumberLabel.font].width;
+        self.speedLabel.left = self.plateNumberLabel.right + 5;
         self.speedLabel.text = [NSString stringWithFormat:@"%@ km/h", car.speed];
         self.timeLabel.text = car.GPSTime;
+        self.speedLabel.centerY = self.timeLabel.centerY = self.plateNumberLabel.centerY;
         self.addressLabel.text = car.placeName;
+        self.addressLabel.width = [self.addressLabel.text sizeWithFont:self.addressLabel.font].width;
     }
 }
 
@@ -35,7 +39,9 @@
 - (UILabel *)plateNumberLabel
 {
     if (!_plateNumberLabel) {
-        _plateNumberLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 32)];
+        _plateNumberLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 9, 100, 15)];
+        _plateNumberLabel.font = Font(15);
+        _plateNumberLabel.textColor = RGB(0x222222);
         [self addSubview:_plateNumberLabel];
     }
     return _plateNumberLabel;
@@ -44,7 +50,9 @@
 - (UILabel *)speedLabel
 {
     if (!_speedLabel) {
-        _speedLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.plateNumberLabel.right, 0, 100, 32)];
+        _speedLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.plateNumberLabel.right, 0, 100, 10)];
+        _speedLabel.font = Font(10);
+        _speedLabel.textColor = RGB(0x888888);
         [self addSubview:_speedLabel];
     }
     return _speedLabel;
@@ -53,7 +61,10 @@
 - (UILabel *)timeLabel
 {
     if (!_timeLabel) {
-        _timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.speedLabel.right, 0, 100, 32)];
+        _timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.width - 150, 0, 142, 32)];
+        _timeLabel.textAlignment = NSTextAlignmentRight;
+        _timeLabel.font = Font(10);
+        _timeLabel.textColor = RGB(0x888888);
         [self addSubview:_timeLabel];
     }
     return _timeLabel;
@@ -62,7 +73,14 @@
 - (UILabel *)addressLabel
 {
     if (!_addressLabel) {
-        _addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.plateNumberLabel.bottom, 100, 32)];
+        UIImageView *positionImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.plateNumberLabel.left, self.plateNumberLabel.bottom + 10, 14, 14)];
+        positionImageView.image = [UIImage imageNamed:@"icon_g30_location.png"];
+        [self addSubview:positionImageView];
+        
+        _addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(positionImageView.right + 5, self.plateNumberLabel.bottom, 100, 12)];
+        _addressLabel.font = Font(12);
+        _addressLabel.textColor = RGB(0x666666);
+        _addressLabel.centerY = positionImageView.centerY;
         [self addSubview:_addressLabel];
     }
     return _addressLabel;

@@ -69,6 +69,37 @@
     }];
 }
 
+- (CGFloat)cellHeightWithCar:(WALCar *)car
+{
+    NSString *info = [NSString stringWithFormat:@"%@;%@", car.eInfo, car.aInfo];
+    NSArray *infoArray = [info componentsSeparatedByString:@";"];
+    CGFloat outGap = 8;
+    CGFloat inGap = 5;
+    CGFloat widthLimit = self.tableView.width - outGap * 2;
+    CGFloat labelHeight = 10 + 2 *inGap;
+    CGFloat totalWidth = 0;
+    CGFloat totalHeight = 88;
+    BOOL hasInfoLabel = NO;
+    for (NSString *string in infoArray) {
+        if (string.length <= 0) {
+            continue;
+        }
+        hasInfoLabel = YES;
+        CGFloat labelWidth = [string sizeWithFont:Font(10)].width + inGap * 2;
+        if (totalWidth + labelWidth > widthLimit) {
+            totalHeight += labelHeight + outGap;
+            totalWidth = labelWidth + outGap;
+        } else {
+            totalWidth += labelWidth + outGap;
+        }
+    }
+    if (hasInfoLabel) {
+        return totalHeight + labelHeight + 10;
+    } else {
+        return totalHeight;
+    }
+}
+
 #pragma mark - PullTableViewDelegate
 
 - (void)pullTableViewDidTriggerRefresh:(PullTableView *)pullTableView
@@ -85,7 +116,8 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 32 * 3;
+    WALCar *car = self.filterCarsArray[indexPath.row];
+    return [self cellHeightWithCar:car] + 8;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -136,6 +168,7 @@
 {
     if (_tableView == nil) {
         _tableView = [[PullTableView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height - 64 - 44 - 49)];
+        _tableView.backgroundColor = RGB(0xf0f0f0);
         _tableView.dataSource = self;
         _tableView.delegate = self;
         _tableView.pullDelegate = self;

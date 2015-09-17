@@ -25,6 +25,9 @@
         [self.phoneButton setTitle:@"电话联系" forState:UIControlStateNormal];
         [self.positionButton setTitle:@"位置跟踪" forState:UIControlStateNormal];
         [self.trackButton setTitle:@"轨迹回放" forState:UIControlStateNormal];
+        if (car.telPhone.length <= 0) {
+            self.phoneButton.enabled = NO;
+        }
         self.phoneButton.width = self.width/3.0;
         self.positionButton.left = self.phoneButton.right;
         self.positionButton.width = self.width/3.0;
@@ -58,10 +61,13 @@
 {
     if (!_phoneButton) {
         _phoneButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _phoneButton.frame = CGRectMake(0, 0, 100, 32);
+        _phoneButton.frame = CGRectMake(0, 0, 100, self.height);
         [_phoneButton addTarget:self action:@selector(didClickPhoneButton:) forControlEvents:UIControlEventTouchUpInside];
-        [_phoneButton setTitleColor:RGB(0x333333) forState:UIControlStateNormal];
-        _phoneButton.layer.borderColor = RGB(0x666666).CGColor;
+        _phoneButton.titleLabel.font = Font(11);
+        [_phoneButton setTitleColor:RGB(0x666666) forState:UIControlStateNormal];
+        [_phoneButton setTitleColor:RGB(0x333333) forState:UIControlStateDisabled];
+        [_phoneButton setImage:[UIImage imageNamed:@"icon_g26_phone.png"] forState:UIControlStateNormal];
+        _phoneButton.layer.borderColor = RGB(kLineColor).CGColor;
         _phoneButton.layer.borderWidth = 0.5;
         [self addSubview:_phoneButton];
     }
@@ -72,10 +78,13 @@
 {
     if (!_positionButton) {
         _positionButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _positionButton.frame = CGRectMake(self.phoneButton.right, 0, 100, 32);
+        _positionButton.frame = CGRectMake(self.phoneButton.right, 0, 100, self.phoneButton.height);
         [_positionButton addTarget:self action:@selector(didClickPositionButton:) forControlEvents:UIControlEventTouchUpInside];
-        [_positionButton setTitleColor:RGB(0x333333) forState:UIControlStateNormal];
-        _positionButton.layer.borderColor = RGB(0x666666).CGColor;
+        [_positionButton setTitleColor:RGB(0x666666) forState:UIControlStateNormal];
+        [_positionButton setTitleColor:RGB(0x333333) forState:UIControlStateDisabled];
+        [_positionButton setImage:[UIImage imageNamed:@"icon_g26_locate.png"] forState:UIControlStateNormal];
+        _positionButton.titleLabel.font = self.phoneButton.titleLabel.font;
+        _positionButton.layer.borderColor = self.phoneButton.layer.borderColor;
         _positionButton.layer.borderWidth = 0.5;
         [self addSubview:_positionButton];
     }
@@ -86,10 +95,13 @@
 {
     if (!_trackButton) {
         _trackButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _trackButton.frame = CGRectMake(self.positionButton.right, 0, 100, 32);
+        _trackButton.frame = CGRectMake(self.positionButton.right, 0, 100, self.positionButton.height);
         [_trackButton addTarget:self action:@selector(didClickTrackButton:) forControlEvents:UIControlEventTouchUpInside];
-        [_trackButton setTitleColor:RGB(0x333333) forState:UIControlStateNormal];
-        _trackButton.layer.borderColor = RGB(0x666666).CGColor;
+        [_trackButton setTitleColor:RGB(0x666666) forState:UIControlStateNormal];
+        [_trackButton setTitleColor:RGB(0x333333) forState:UIControlStateDisabled];
+        [_trackButton setImage:[UIImage imageNamed:@"icon_g26_locus.png"] forState:UIControlStateNormal];
+        _trackButton.titleLabel.font = self.phoneButton.titleLabel.font;
+        _trackButton.layer.borderColor = self.phoneButton.layer.borderColor;
         _trackButton.layer.borderWidth = 0.5;
         [self addSubview:_trackButton];
     }

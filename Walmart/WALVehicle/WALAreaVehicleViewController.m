@@ -130,7 +130,7 @@
     if (!_searchBar) {
         _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 44)];
         _searchBar.barTintColor = [UIColor whiteColor];
-        _searchBar.layer.borderColor = RGB(0x666666).CGColor;
+        _searchBar.layer.borderColor = RGB(kLineColor).CGColor;
         _searchBar.layer.borderWidth = 0.5;
         _searchBar.delegate = self;
         _searchBar.placeholder = @"搜索区域名称";

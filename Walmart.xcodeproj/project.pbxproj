@@ -1209,6 +1209,7 @@
 				);
 				GCC_PREFIX_HEADER = Walmart/PrefixHeader.pch;
 				INFOPLIST_FILE = Walmart/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1228,6 +1229,7 @@
 				);
 				GCC_PREFIX_HEADER = Walmart/PrefixHeader.pch;
 				INFOPLIST_FILE = Walmart/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

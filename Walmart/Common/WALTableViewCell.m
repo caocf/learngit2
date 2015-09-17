@@ -24,7 +24,7 @@
 {
     if (!_lineView) {
         _lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 95, self.width, 1)];
-        _lineView.backgroundColor = RGB(0x333333);
+        _lineView.backgroundColor = RGB(kLineColor);
         [self.contentView addSubview:_lineView];
     }
     return _lineView;

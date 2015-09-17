@@ -129,7 +129,7 @@
     for (NSString *title in titleArray) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(left, gap, width, width);
-        button.layer.borderColor = RGB(0x666666).CGColor;
+        button.layer.borderColor = RGB(kLineColor).CGColor;
         button.layer.borderWidth = 0.5;
         button.layer.cornerRadius = width/2.0;
         button.layer.masksToBounds = YES;
@@ -150,7 +150,7 @@
     
     [self.view addSubview:scrollView];
     UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, scrollView.bottom, scrollView.width, 0.5)];
-    lineView.backgroundColor = RGB(0x666666);
+    lineView.backgroundColor = RGB(kLineColor);
     [self.view addSubview:lineView];
 }
 #pragma mark - GKBarGraphDataSource
@@ -217,6 +217,7 @@
                      segmentedNumber:[contents count]
                             contents:contents
                               images:nil
+                    backgroundColors:nil
                               colors:@[[UIColor blueColor], [UIColor redColor]]
                          selectedNum:0];
         __weak typeof(self) weakSelf = self;

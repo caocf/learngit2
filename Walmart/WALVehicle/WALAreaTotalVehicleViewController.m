@@ -138,6 +138,7 @@
                      segmentedNumber:[_contentsArray count]
                             contents:_contentsArray
                               images:nil
+                    backgroundColors:nil
                               colors:@[[UIColor blueColor], [UIColor blackColor]]
                          selectedNum:0];
         __weak typeof(self) weakSelf = self;

@@ -71,7 +71,7 @@ static NSInteger kColumnNumber = 5;
         [self addSubview:view];
         
         UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0.5, self.width, 0.5)];
-        lineView.backgroundColor = RGB(0x333333);
+        lineView.backgroundColor = RGB(kLineColor);
         [view addSubview:lineView];
         
         CGFloat left = 0;
