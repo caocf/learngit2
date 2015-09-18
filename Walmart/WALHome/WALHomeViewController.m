@@ -152,17 +152,21 @@
     lineView.backgroundColor = RGB(kLineColor);
     [self.view addSubview:lineView];
 }
+
 #pragma mark - GKBarGraphDataSource
 
-- (NSInteger)numberOfBars {
+- (NSInteger)numberOfBars
+{
     return [self.dataArray count];
 }
 
-- (NSNumber *)valueForBarAtIndex:(NSInteger)index {
+- (NSNumber *)valueForBarAtIndex:(NSInteger)index
+{
     return [self.dataArray objectAtIndex:index];
 }
 
-- (UIColor *)colorForBarAtIndex:(NSInteger)index {
+- (UIColor *)colorForBarAtIndex:(NSInteger)index
+{
     NSArray *colors = @[[UIColor gk_turquoiseColor],
                         [UIColor gk_peterRiverColor],
                         [UIColor gk_alizarinColor],
@@ -173,18 +177,21 @@
     return [colors objectAtIndex:(index % colors.count)];
 }
 
-- (CFTimeInterval)animationDurationForBarAtIndex:(NSInteger)index {
+- (CFTimeInterval)animationDurationForBarAtIndex:(NSInteger)index
+{
     CGFloat percentage = [[self valueForBarAtIndex:index] doubleValue];
     CGFloat max = [[self.dataArray valueForKeyPath:@"@max.intValue"] doubleValue];
     percentage = (percentage / max);
     return (self.barGraph.animationDuration * percentage);
 }
 
-- (NSString *)titleForBarAtIndex:(NSInteger)index {
+- (NSString *)titleForBarAtIndex:(NSInteger)index
+{
     return [self.nameArray objectAtIndex:index];
 }
 
-- (NSString *)title2ForBarAtIndex:(NSInteger)index {
+- (NSString *)title2ForBarAtIndex:(NSInteger)index
+{
     return [[self.dataArray objectAtIndex:index] stringValue];
 }
 
