@@ -52,7 +52,7 @@
     self.currentViewController = self.childVehicleViewControllerRun;
     [self.view addSubview:self.currentViewController.view];
     
-    [self.carService loadAreaCarListWithType:YLYRunStatusAbnormal areaID:self.area.ID completion:^(BOOL success, NSArray *carsArray, WALStatusCount *statusCount, NSString *message) {
+    [self.carService loadAreaCarListWithType:YLYRunStatusAbnormal areaID:self.area.ID completion:^(BOOL success, BOOL hasMore, NSArray *carsArray, WALStatusCount *statusCount, NSString *message) {
         self.segmentedView.contentsArray = @[[NSString stringWithFormat:@"运行 %d", statusCount.runningCount], [NSString stringWithFormat:@"停车 %d", statusCount.stopCount], [NSString stringWithFormat:@"报警 %d", statusCount.alarmCount], [NSString stringWithFormat:@"异常 %d", statusCount.abnormalCount]];
     }];
 }
@@ -140,7 +140,8 @@
                               images:nil
                     backgroundColors:nil
                               colors:@[[UIColor blueColor], [UIColor blackColor]]
-                         selectedNum:0];
+                         selectedNum:0
+                            fontSize:15];
         __weak typeof(self) weakSelf = self;
         _segmentedView.forumSegmentedBlock = ^(NSInteger clickNumber){
             [weakSelf didClickChoiceSegmentView:clickNumber];

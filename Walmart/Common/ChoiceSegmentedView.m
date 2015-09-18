@@ -83,6 +83,7 @@
     backgroundColors:(NSArray *)backgroundColors
               colors:(NSArray *)colors
          selectedNum:(NSInteger)selectedNum
+            fontSize:(CGFloat)fontSize
 {
     _colors = colors;
     _backgroundColors = backgroundColors;
@@ -92,7 +93,7 @@
     _selectedButtonArray = [NSMutableArray array];
     for (int i = 0; i < segmentedNumber; i++) {
         UIButton *segmentedButton = [[UIButton alloc] initWithFrame:CGRectMake(self.width / segmentedNumber * i, 1, self.width / segmentedNumber, self.height - 2)];
-        [segmentedButton.titleLabel setFont:Helvetica_Font(15)];
+        segmentedButton.titleLabel.font = Font(fontSize);
         [segmentedButton setTitle:[contents objectAtIndex:i] forState:UIControlStateNormal];
         segmentedButton.tag = i;
         [segmentedButton addTarget:self action:@selector(didClickButton1:) forControlEvents:UIControlEventTouchUpInside];

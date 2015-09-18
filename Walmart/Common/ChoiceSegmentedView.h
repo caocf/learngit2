@@ -29,7 +29,8 @@ typedef void (^selectSegmentedBlock)(NSInteger clickNumber);
               images:(NSArray *)images
     backgroundColors:(NSArray *)backgroundColors
               colors:(NSArray *)colors
-         selectedNum:(NSInteger)selectedNum;
+         selectedNum:(NSInteger)selectedNum
+            fontSize:(CGFloat)fontSize;
 - (void)setWithContents:(NSArray *)contents
                  colors:(NSArray *)colors;
 

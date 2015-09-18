@@ -11,17 +11,35 @@
 #import "WALSimpleCar.h"
 #import "WALArea.h"
 
+static NSInteger kNumberPerPage = 20;
+
 @implementation WALCarService
+{
+    NSInteger _pageNumber;
+}
+
+- (id)init
+{
+    if (self = [super init]) {
+        _pageNumber = 1;
+    }
+    return self;
+}
+
+- (void)resetCarListOffset
+{
+    _pageNumber = 1;
+}
 
 - (void)loadCarListWithType:(NSInteger)type
-                 completion:(void (^)(BOOL success, NSArray *carsArray, WALStatusCount *statusCount, NSString *message))completion
+                 completion:(void (^)(BOOL success, BOOL hasMore, NSArray *carsArray, WALStatusCount *statusCount, NSString *message))completion
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", @"application/json", nil];
     NSDictionary *originalParameters = @{@"refresh":@"0",
                                          @"type":[@(type) stringValue],
-                                         @"pagesize":@"10000",
-                                         @"curpage":@"1",
+                                         @"pagesize":[@(kNumberPerPage) stringValue],
+                                         @"curpage":[@(_pageNumber) stringValue],
                                          @"webgisuserid":[NSUserDefaults loadWalUesr].webGisUserID,
                                          @"version":[NSUserDefaults version]
                                          };
@@ -35,30 +53,35 @@
                  for (NSDictionary *dictionary in responseObject[@"monitArr"]) {
                      [carArray addObject:[WALCar carWithDictionary:dictionary]];
                  }
-                 completion(YES, carArray, [WALStatusCount statusCountWithDictionary:responseObject[@"stat"]], responseObject[@"msg"]);
+                 if ([carArray count] == kNumberPerPage) {
+                     _pageNumber++;
+                     completion(YES, YES, carArray, [WALStatusCount statusCountWithDictionary:responseObject[@"stat"]], responseObject[@"msg"]);
+                 } else {
+                     completion(YES, NO, carArray, [WALStatusCount statusCountWithDictionary:responseObject[@"stat"]], responseObject[@"msg"]);
+                 }
              } else if (status == YLYStatusVersionExpire) {
                  [NSUserDefaults saveVersion:responseObject[@"version"][@"vercode"]];
                  [self loadCarListWithType:type completion:completion];
              } else {
-                 completion(NO, nil, nil, responseObject[@"msg"]);
+                 completion(NO, NO, nil, nil, responseObject[@"msg"]);
              }
          }
          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             completion(NO, nil, nil, @"error");
+             completion(NO, NO, nil, nil, @"error");
          }];
 }
 
 - (void)loadAreaCarListWithType:(NSInteger)type
                          areaID:(NSString *)areaID
-                     completion:(void (^)(BOOL success, NSArray *carsArray, WALStatusCount *statusCount, NSString *message))completion
+                     completion:(void (^)(BOOL success, BOOL hasMore, NSArray *carsArray, WALStatusCount *statusCount, NSString *message))completion
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", @"application/json", nil];
     NSDictionary *originalParameters = @{@"areaid":areaID,
                                          @"refresh":@"1",
                                          @"type":[@(type) stringValue],
-                                         @"pagesize":@"10000",
-                                         @"curpage":@"1",
+                                         @"pagesize":[@(kNumberPerPage) stringValue],
+                                         @"curpage":[@(_pageNumber) stringValue],
                                          @"webgisuserid":[NSUserDefaults loadWalUesr].webGisUserID,
                                          @"version":[NSUserDefaults version]
                                          };
@@ -72,16 +95,21 @@
                  for (NSDictionary *dictionary in responseObject[@"monitArr"]) {
                      [carArray addObject:[WALCar carWithDictionary:dictionary]];
                  }
-                 completion(YES, carArray, [WALStatusCount statusCountWithDictionary:responseObject[@"stat"]], responseObject[@"msg"]);
+                 if ([carArray count] == kNumberPerPage) {
+                     _pageNumber++;
+                     completion(YES, YES, carArray, [WALStatusCount statusCountWithDictionary:responseObject[@"stat"]], responseObject[@"msg"]);
+                 } else {
+                     completion(YES, NO, carArray, [WALStatusCount statusCountWithDictionary:responseObject[@"stat"]], responseObject[@"msg"]);
+                 }
              } else if (status == YLYStatusVersionExpire) {
                  [NSUserDefaults saveVersion:responseObject[@"version"][@"vercode"]];
                  [self loadAreaCarListWithType:type areaID:areaID completion:completion];
              } else {
-                 completion(NO, nil, nil, responseObject[@"msg"]);
+                 completion(NO, NO, nil, nil, responseObject[@"msg"]);
              }
          }
          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             completion(NO, nil, nil, @"error");
+             completion(NO, NO, nil, nil, @"error");
          }];
 }
 

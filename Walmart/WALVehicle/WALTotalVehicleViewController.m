@@ -49,7 +49,7 @@
     self.currentViewController = self.childVehicleViewControllerRun;
     [self.view addSubview:self.currentViewController.view];
     
-    [self.carService loadCarListWithType:YLYRunStatusAbnormal completion:^(BOOL success, NSArray *carsArray, WALStatusCount *statusCount, NSString *message) {
+    [self.carService loadCarListWithType:YLYRunStatusAbnormal completion:^(BOOL success, BOOL hasMore, NSArray *carsArray, WALStatusCount *statusCount, NSString *message) {
         self.segmentedView.contents2Array = @[[NSString stringWithFormat:@"运行 %d", statusCount.runningCount], [NSString stringWithFormat:@"停车 %d", statusCount.stopCount], [NSString stringWithFormat:@"报警 %d", statusCount.alarmCount], [NSString stringWithFormat:@"异常 %d", statusCount.abnormalCount]];
     }];
 }

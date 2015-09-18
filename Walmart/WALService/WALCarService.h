@@ -21,11 +21,12 @@ typedef NS_ENUM(NSInteger, WALSearchTimeType) {
 
 @interface WALCarService : NSObject
 
+- (void)resetCarListOffset;
 - (void)loadCarListWithType:(NSInteger)type
-                 completion:(void (^)(BOOL success, NSArray *carsArray, WALStatusCount *statusCount, NSString *message))completion;
+                 completion:(void (^)(BOOL success, BOOL hasMore, NSArray *carsArray, WALStatusCount *statusCount, NSString *message))completion;
 - (void)loadAreaCarListWithType:(NSInteger)type
                          areaID:(NSString *)areaID
-                     completion:(void (^)(BOOL success, NSArray *carsArray, WALStatusCount *statusCount, NSString *message))completion;
+                     completion:(void (^)(BOOL success, BOOL hasMore, NSArray *carsArray, WALStatusCount *statusCount, NSString *message))completion;
 - (void)loadCarDetailWithVehicleID:(NSString *)vehicleID
                         completion:(void (^)(BOOL success, WALCarDetail *carDetail, NSString *message))completion;
 - (void)loadSimpleCarList:(void (^)(BOOL success, NSArray *simpleCarList, NSString *message))completion;

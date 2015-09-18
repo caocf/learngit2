@@ -29,7 +29,8 @@
 - (UIImageView *)imageView
 {
     if (!_imageView) {
-        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.height, self.height)];
+        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.height - 72)/2.0, (self.height - 72)/2.0, 72, 72)];
+        _imageView.backgroundColor = [UIColor yellowColor];
         [self addSubview:_imageView];
     }
     return _imageView;
@@ -38,7 +39,9 @@
 - (UILabel *)textLabel
 {
     if (!_textLabel) {
-        _textLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.imageView.right, 0, self.width - self.imageView.right, self.height)];
+        _textLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.imageView.right + 5, 0, self.width - self.imageView.right - 10, self.height)];
+        _textLabel.numberOfLines = 2;
+        _textLabel.font = Font(11);
         _textLabel.textColor = RGB(0x666666);
         [self addSubview:_textLabel];
     }

@@ -18,10 +18,10 @@
 
 @property (nonatomic, strong) PullTableView *tableView;
 @property (nonatomic, strong) NSArray *contentsArray;
-@property (nonatomic, strong) NSArray *carsArray;
-@property (nonatomic, strong) NSArray *filterCarsArray;
+@property (nonatomic, strong) NSMutableArray *filterCarsArray;
 @property (nonatomic, strong) WALCarService *carService;
 @property (nonatomic, assign) YLYRunStatus runStatus;
+@property (nonatomic, assign) BOOL hasMore;
 
 @end
 
@@ -60,11 +60,12 @@
 - (void)refreshTableView
 {
     self.tableView.pullTableIsRefreshing = YES;
-    [self.carService loadAreaCarListWithType:_runStatus areaID:self.area.ID completion:^(BOOL success, NSArray *carsArray, WALStatusCount *statusCount, NSString *message) {
+    [self.carService resetCarListOffset];
+    [self.carService loadAreaCarListWithType:_runStatus areaID:self.area.ID completion:^(BOOL success, BOOL hasMore, NSArray *carsArray, WALStatusCount *statusCount, NSString *message) {
         [[TKAlertCenter defaultCenter] postAlertWithMessage:message];
         self.tableView.pullTableIsRefreshing = NO;
         if (success) {
-            self.carsArray = self.filterCarsArray = carsArray;
+            self.filterCarsArray = [NSMutableArray arrayWithArray:carsArray];
             [self.tableView reloadData];
         }
     }];
@@ -79,7 +80,18 @@
 
 - (void)pullTableViewDidTriggerLoadMore:(PullTableView *)pullTableView
 {
-    self.tableView.pullTableIsLoadingMore = NO;
+    if (!_hasMore) {
+        self.tableView.pullTableIsLoadingMore = NO;
+        return;
+    }
+    [self.carService loadCarListWithType:_runStatus completion:^(BOOL success, BOOL hasMore, NSArray *carsArray, WALStatusCount *statusCount, NSString *message) {
+        self.tableView.pullTableIsLoadingMore = NO;
+        if (success) {
+            [self.filterCarsArray addObjectsFromArray:carsArray];
+            self.hasMore = hasMore;
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 #pragma mark - tableViewDataSource/Delegate
@@ -140,8 +152,8 @@
         _tableView.height = self.area ? _tableView.height + 49 : _tableView.height;
         _tableView.dataSource = self;
         _tableView.delegate = self;
-//        _tableView.pullDelegate = self;
-//        _tableView.pullTableViewEnable = YES;
+        _tableView.pullDelegate = self;
+        _tableView.pullTableViewEnable = YES;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [self.view addSubview:_tableView];
     }

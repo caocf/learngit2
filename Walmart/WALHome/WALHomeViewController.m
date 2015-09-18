@@ -26,6 +26,7 @@
 @property (nonatomic, assign) WALFDCType FDCType;
 @property (nonatomic, assign) NSInteger selectedIndex;
 @property (nonatomic, strong) GKBarGraph *barGraph;
+@property (nonatomic, strong) UIScrollView *scrollView;
 
 @end
 
@@ -48,6 +49,7 @@
     // Do any additional setup after loading the view.
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationItem.title = @"首页";
+    self.view.backgroundColor = RGB(0xf0f0f0);
     
 //    [DejalBezelActivityView activityViewForView:self.view withLabel:@"正在获取数据,请稍候..."];
 //    [self.homeService loadBoard:^(BOOL success, NSString *content, NSString *message) {
@@ -120,8 +122,9 @@
 {
     CGFloat gap = 10;
     CGFloat width = 60;
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, self.segmentedView.bottom + 10, self.view.width, width + gap * 2)];
-    scrollView.showsHorizontalScrollIndicator = NO;
+    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, self.segmentedView.bottom, self.view.width, width + gap * 2)];
+    _scrollView.backgroundColor = [UIColor whiteColor];
+    _scrollView.showsHorizontalScrollIndicator = NO;
     NSArray *titleArray = @[@"出货\n总量", @"出货\n车次", @"准时到\n店车次", @"延误\n车次", @"延误到店\n的店数", @"LOS%"];
     CGFloat left = gap;
     NSMutableArray *buttonsArray = [NSMutableArray array];
@@ -129,27 +132,27 @@
     for (NSString *title in titleArray) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(left, gap, width, width);
-        button.layer.borderColor = RGB(kLineColor).CGColor;
-        button.layer.borderWidth = 0.5;
+        button.layer.borderColor = RGB(0xe4e4e4).CGColor;
+        button.layer.borderWidth = 2.5;
         button.layer.cornerRadius = width/2.0;
         button.layer.masksToBounds = YES;
         button.titleLabel.numberOfLines = 2;
         button.titleLabel.font = Font(12);
-        [button setTitleColor:RGB(0xff0000) forState:UIControlStateNormal];
+        [button setTitleColor:RGB(0xaaaaaa) forState:UIControlStateNormal];
         [button setTitleColor:RGB(0xffffff) forState:UIControlStateSelected];
         [button setBackgroundImage:[UIImage imageNamed:@"open_icon.png"] forState:UIControlStateSelected];
         [button setTitle:title forState:UIControlStateNormal];
         button.tag = tag++;
         [button addTarget:self action:@selector(didClickButton:) forControlEvents:UIControlEventTouchUpInside];
-        [scrollView addSubview:button];
+        [_scrollView addSubview:button];
         [buttonsArray addObject:button];
         left = left + width + gap;
     }
     self.buttonsArray = buttonsArray;
-    scrollView.contentSize = CGSizeMake(MAX(scrollView.width, left), scrollView.height);
+    _scrollView.contentSize = CGSizeMake(MAX(_scrollView.width, left), _scrollView.height);
     
-    [self.view addSubview:scrollView];
-    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, scrollView.bottom, scrollView.width, 0.5)];
+    [self.view addSubview:_scrollView];
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, _scrollView.bottom - 0.5, _scrollView.width, 0.5)];
     lineView.backgroundColor = RGB(kLineColor);
     [self.view addSubview:lineView];
 }
@@ -200,7 +203,7 @@
 - (WALBoardView *)boardView
 {
     if (!_boardView) {
-        _boardView = [[WALBoardView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 44)];
+        _boardView = [[WALBoardView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 52)];
         [self.view addSubview:_boardView];
     }
     return  _boardView;
@@ -209,21 +212,25 @@
 - (ChoiceSegmentedView *)segmentedView
 {
     if (!_segmentedView) {
-        _segmentedView = [[ChoiceSegmentedView alloc] initWithFrame:CGRectMake(0, self.boardView.bottom + 10, self.view.width, 44)];
-        _segmentedView.backgroundColor = [UIColor clearColor];
+        _segmentedView = [[ChoiceSegmentedView alloc] initWithFrame:CGRectMake(0, self.boardView.bottom + 8, self.view.width, 30)];
+        UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _segmentedView.width, 0.5)];
+        lineView.backgroundColor = RGB(kLineColor);
+        [_segmentedView addSubview:lineView];
+        _segmentedView.backgroundColor = [UIColor whiteColor];
         NSArray *contents = @[@"昨日", @"今日"];
         [_segmentedView setWithSize2:CGSizeMake(_segmentedView.width, _segmentedView.height)
                    backImageViewName:nil
                      segmentedNumber:[contents count]
                             contents:contents
                               images:nil
-                    backgroundColors:nil
-                              colors:@[[UIColor blueColor], [UIColor redColor]]
-                         selectedNum:0];
+                    backgroundColors:@[RGB(0xf5f5f5), [UIColor clearColor]]
+                              colors:@[RGB(0x666666), RGB(0x222222)]
+                         selectedNum:0
+                            fontSize:12];
         __weak typeof(self) weakSelf = self;
         _segmentedView.forumSegmentedBlock = ^(NSInteger clickNumber){
             NSInteger index = WALFDCTypeYesterday - clickNumber;
-            [weakSelf didClickChoiceSegmentView:index];
+//            [weakSelf didClickChoiceSegmentView:index];
         };
         [self.view addSubview:_segmentedView];
     }
@@ -233,9 +240,14 @@
 - (GKBarGraph *)barGraph
 {
     if (!_barGraph) {
-        _barGraph = [[GKBarGraph alloc] initWithFrame:CGRectMake(0, self.segmentedView.bottom + 30 + 60 + 10, self.view.width, self.view.height - self.segmentedView.bottom - 30 - 60 - 20)];
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, self.scrollView.bottom, self.view.width, self.view.height - self.scrollView.bottom)];
+        view.backgroundColor = RGB(0xffffff);
+        [self.view addSubview:view];
+        
+        _barGraph = [[GKBarGraph alloc] initWithFrame:CGRectMake(0, 10, self.view.width, view.height - 20)];
         _barGraph.dataSource = self;
-        [self.view addSubview:_barGraph];
+        _barGraph.backgroundColor = [UIColor whiteColor];
+        [view addSubview:_barGraph];
     }
     return _barGraph;
 }

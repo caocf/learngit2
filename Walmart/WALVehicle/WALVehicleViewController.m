@@ -106,7 +106,8 @@
                               images:nil
                     backgroundColors:@[[UIColor whiteColor], RGB(kMainColor)]
                               colors:@[RGB(kMainColor), [UIColor whiteColor]]
-                         selectedNum:0];
+                         selectedNum:0
+                            fontSize:15];
         __weak typeof(self) weakSelf = self;
         _segmentedView.forumSegmentedBlock = ^(NSInteger clickNumber){
             [weakSelf didClickChoiceSegmentView:clickNumber];
