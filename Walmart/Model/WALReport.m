@@ -14,13 +14,13 @@
 {
     WALReport *report = [[WALReport alloc] init];
     report.FDC = [dictionary strValue:@"FDC"];
-    report.LOS = [dictionary strValue:@"LOS"];
-    report.totalOutBound = [dictionary strValue:@"OutBoundTotal"];
-    report.shipperTrailer = [dictionary strValue:@"ShipperTrailer"];
-    report.onTimeTrailer = [dictionary strValue:@"OnTimeTrailer"];
-    report.delayTrailer = [dictionary strValue:@"DelayTrailer"];
-    report.delayStoreCount = [dictionary strValue:@"DelayStoreCounts"];
-    report.realCarNum = [dictionary strValue:@"RealCarNum"];
+    report.LOS = [dictionary numberValue:@"LOS"];
+    report.totalOutBound = [dictionary numberValue:@"OutBoundTotal"];
+    report.shipperTrailer = [dictionary numberValue:@"ShipperTrailer"];
+    report.onTimeTrailer = [dictionary numberValue:@"OnTimeTrailer"];
+    report.delayTrailer = [dictionary numberValue:@"DelayTrailer"];
+    report.delayStoreCount = [dictionary numberValue:@"DelayStoreCounts"];
+    report.realCarNum = [dictionary numberValue:@"RealCarNum"];
     return report;
 }
 

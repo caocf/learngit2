@@ -20,13 +20,13 @@ typedef NS_ENUM(NSInteger, WALFDCBarType) {
 @interface WALReport : NSObject
 
 @property (nonatomic, strong) NSString *FDC;
-@property (nonatomic, strong) NSString *LOS;
-@property (nonatomic, strong) NSString *totalOutBound;
-@property (nonatomic, strong) NSString *shipperTrailer;
-@property (nonatomic, strong) NSString *onTimeTrailer;
-@property (nonatomic, strong) NSString *delayTrailer;
-@property (nonatomic, strong) NSString *delayStoreCount;
-@property (nonatomic, strong) NSString *realCarNum;
+@property (nonatomic, strong) NSNumber *LOS;
+@property (nonatomic, strong) NSNumber *totalOutBound;
+@property (nonatomic, strong) NSNumber *shipperTrailer;
+@property (nonatomic, strong) NSNumber *onTimeTrailer;
+@property (nonatomic, strong) NSNumber *delayTrailer;
+@property (nonatomic, strong) NSNumber *delayStoreCount;
+@property (nonatomic, strong) NSNumber *realCarNum;
 
 + (WALReport *)reportWithDictionary:(NSDictionary *)dictionary;
 

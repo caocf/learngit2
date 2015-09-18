@@ -110,11 +110,7 @@
     NSArray *FDCArray = _FDCType == WALFDCTypeToday ? self.todayFDCArray : self.yesterdayFDCArray;
     self.nameArray = [FDCArray valueForKeyPath:@"FDC"];
     self.dataArray = [FDCArray valueForKeyPath:keyArray[_selectedIndex]];
-    self.dataArray = [self.dataArray mk_map:^(NSString *item) {
-        return @([item integerValue]);
-    }];
-    CGFloat max = [[self.dataArray valueForKeyPath:@"@max.intValue"] doubleValue];
-    self.barGraph.max = max;
+    self.barGraph.max = [[self.dataArray valueForKeyPath:@"@max.intValue"] doubleValue];
     [self.barGraph draw];
 }
 
@@ -167,20 +163,14 @@
 }
 
 - (UIColor *)colorForBarAtIndex:(NSInteger)index {
-    id colors = @[[UIColor gk_turquoiseColor],
-                  [UIColor gk_peterRiverColor],
-                  [UIColor gk_alizarinColor],
-                  [UIColor gk_amethystColor],
-                  [UIColor gk_emerlandColor],
-                  [UIColor gk_sunflowerColor],
-                  [UIColor gk_turquoiseColor],
-                  [UIColor gk_peterRiverColor],
-                  [UIColor gk_alizarinColor],
-                  [UIColor gk_amethystColor],
-                  [UIColor gk_emerlandColor],
-                  [UIColor gk_sunflowerColor]
-                  ];
-    return [colors objectAtIndex:index];
+    NSArray *colors = @[[UIColor gk_turquoiseColor],
+                        [UIColor gk_peterRiverColor],
+                        [UIColor gk_alizarinColor],
+                        [UIColor gk_amethystColor],
+                        [UIColor gk_emerlandColor],
+                        [UIColor gk_sunflowerColor]
+                        ];
+    return [colors objectAtIndex:(index % colors.count)];
 }
 
 - (CFTimeInterval)animationDurationForBarAtIndex:(NSInteger)index {
@@ -204,6 +194,7 @@
 {
     if (!_boardView) {
         _boardView = [[WALBoardView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 52)];
+        _boardView.backgroundColor = [UIColor whiteColor];
         [self.view addSubview:_boardView];
     }
     return  _boardView;
