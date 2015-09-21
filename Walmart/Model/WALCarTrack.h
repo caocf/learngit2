@@ -8,6 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+@interface WALCoor : NSObject
+
+@property (nonatomic, strong) NSString *lon;
+@property (nonatomic, strong) NSString *lat;
+
++ (WALCoor *)coorWithDictionary:(NSDictionary *)dictionary;
+
+@end
+
 @interface WALCarTrack : NSObject
 
 @property (nonatomic, strong) NSString *startPlace;

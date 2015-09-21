@@ -39,10 +39,10 @@
     self.carInfoView.car = self.car;
     [DejalBezelActivityView activityViewForView:self.view withLabel:@"正在获取数据,请稍候..."];
     [self.carService loadMapMonitWithVehicleID:self.car.vehicleID completion:^(BOOL success,  WALCar *car, NSString *message) {
-        self.carInfoView.car = car;
         [DejalBezelActivityView removeView];
         [[TKAlertCenter defaultCenter] postAlertWithMessage:message];
         if (success) {
+            self.carInfoView.car = car;
             BMKPointAnnotation *annotation = [[BMKPointAnnotation alloc] init];
             CLLocationCoordinate2D coor;
             coor.latitude = [car.lat doubleValue];
