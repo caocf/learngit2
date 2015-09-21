@@ -53,7 +53,7 @@
     [self.view addSubview:self.currentViewController.view];
     
     [self.carService loadAreaCarListWithType:YLYRunStatusAbnormal areaID:self.area.ID completion:^(BOOL success, BOOL hasMore, NSArray *carsArray, WALStatusCount *statusCount, NSString *message) {
-        self.segmentedView.contentsArray = @[[NSString stringWithFormat:@"运行 %d", statusCount.runningCount], [NSString stringWithFormat:@"停车 %d", statusCount.stopCount], [NSString stringWithFormat:@"报警 %d", statusCount.alarmCount], [NSString stringWithFormat:@"异常 %d", statusCount.abnormalCount]];
+        self.segmentedView.contents2Array = @[[NSString stringWithFormat:@"运行 %d", statusCount.runningCount], [NSString stringWithFormat:@"停车 %d", statusCount.stopCount], [NSString stringWithFormat:@"报警 %d", statusCount.alarmCount], [NSString stringWithFormat:@"异常 %d", statusCount.abnormalCount]];
     }];
 }
 
@@ -133,15 +133,8 @@
     if (!_segmentedView) {
         _segmentedView = [[ChoiceSegmentedView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 44)];
         _segmentedView.backgroundColor = [UIColor clearColor];
-        [_segmentedView setWithSize2:CGSizeMake(_segmentedView.width, _segmentedView.height)
-                   backImageViewName:nil
-                     segmentedNumber:[_contentsArray count]
-                            contents:_contentsArray
-                              images:nil
-                    backgroundColors:nil
-                              colors:@[[UIColor blueColor], [UIColor blackColor]]
-                         selectedNum:0
-                            fontSize:15];
+        [_segmentedView setWithContents:_contentsArray
+                                 colors:@[[UIColor greenColor], [UIColor purpleColor], [UIColor redColor], [UIColor grayColor]]];
         __weak typeof(self) weakSelf = self;
         _segmentedView.forumSegmentedBlock = ^(NSInteger clickNumber){
             [weakSelf didClickChoiceSegmentView:clickNumber];
