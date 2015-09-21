@@ -8,6 +8,7 @@
 
 #import "WALCarTrackViewController.h"
 #import <BaiduMapAPI/BMKPolylineView.h>
+#import "WALCarStopPosition.h"
 
 @interface WALCarTrackViewController () <BMKMapViewDelegate>
 
@@ -28,6 +29,7 @@
 @property (nonatomic, strong) BMKMapView *mapView;
 @property (nonatomic, strong) BMKPointAnnotation *annotation;
 @property (nonatomic, assign) BMKCoordinateRegion originRegion;
+@property (nonatomic, strong) NSArray *carStopArray;
 
 @end
 
@@ -70,12 +72,14 @@
         CGFloat maxLon = 0;
         for (int i = 0; i < 6; i++) {
             NSArray *pointArray = [self.trackArray[i] componentsSeparatedByString:@","];
-            coords[i].latitude = [pointArray[0] doubleValue];
-            coords[i].longitude = [pointArray[1] doubleValue];
-            minLat = MIN(coords[i].latitude, minLat);
-            maxLat = MAX(coords[i].latitude, maxLat);
-            minLon = MIN(coords[i].longitude, minLon);
-            maxLon = MAX(coords[i].longitude, maxLon);
+            if ([pointArray count] >= 2) {
+                coords[i].latitude = [pointArray[0] doubleValue];
+                coords[i].longitude = [pointArray[1] doubleValue];
+                minLat = MIN(coords[i].latitude, minLat);
+                maxLat = MAX(coords[i].latitude, maxLat);
+                minLon = MIN(coords[i].longitude, minLon);
+                maxLon = MAX(coords[i].longitude, maxLon);
+            }
         }
         
         //构建BMKPolyline,使用分段纹理
@@ -103,6 +107,22 @@
                     self.playButton.enabled = YES;
                 }
             }];
+        }
+    }];
+    
+    [self.carService loadCarStopListWithVehicleID:self.vehicleID startTime:startTime endTime:endTime completion:^(BOOL success, NSArray *posArray, NSString *message) {
+        if (success) {
+            self.carStopArray = posArray;
+            NSMutableArray *annotationArray = [NSMutableArray array];
+            for (WALCarStopPosition *position in posArray) {
+                BMKPointAnnotation *annotation = [[BMKPointAnnotation alloc] init];
+                CLLocationCoordinate2D coor;
+                coor.latitude = [position.lat doubleValue];
+                coor.longitude = [position.lon doubleValue];
+                annotation.coordinate = coor;
+                [annotationArray addObject:annotation];
+            }
+            [self.mapView addAnnotations:annotationArray];
         }
     }];
     self.plateNumberLabel.text = self.plateNumber;
@@ -165,7 +185,7 @@
             coords[i].longitude = [pointArray[1] doubleValue];
         }
         self.annotation.coordinate = coords[_playIndex];
-        if (self.mapView.annotations.count <= 0) {
+        if (![self.mapView viewForAnnotation:self.annotation]) {
             [self.mapView addAnnotation:self.annotation];
         }
         BMKCoordinateRegion region = self.mapView.region;

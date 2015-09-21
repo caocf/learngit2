@@ -22,6 +22,7 @@
 		785AF4E41BA7B49F0065DEE7 /* WALStatusCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 785AF4E31BA7B49F0065DEE7 /* WALStatusCount.m */; };
 		785AF4E71BA7BA6C0065DEE7 /* WALChildVehicleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 785AF4E61BA7BA6C0065DEE7 /* WALChildVehicleViewController.m */; };
 		785AF4EA1BA7C42C0065DEE7 /* WALCarDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 785AF4E91BA7C42C0065DEE7 /* WALCarDetail.m */; };
+		785FBBE91BAFA8E500317C9B /* WALCarStopPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 785FBBE81BAFA8E500317C9B /* WALCarStopPosition.m */; settings = {ASSET_TAGS = (); }; };
 		786145151BA65B6800368B9D /* ChoiceSegmentedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 786145141BA65B6800368B9D /* ChoiceSegmentedView.m */; };
 		786145181BA65BDD00368B9D /* WALTotalVehicleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 786145171BA65BDD00368B9D /* WALTotalVehicleViewController.m */; };
 		7861451B1BA65BF000368B9D /* WALAreaVehicleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7861451A1BA65BF000368B9D /* WALAreaVehicleViewController.m */; };
@@ -169,6 +170,8 @@
 		785AF4E61BA7BA6C0065DEE7 /* WALChildVehicleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALChildVehicleViewController.m; sourceTree = "<group>"; };
 		785AF4E81BA7C42C0065DEE7 /* WALCarDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALCarDetail.h; sourceTree = "<group>"; };
 		785AF4E91BA7C42C0065DEE7 /* WALCarDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALCarDetail.m; sourceTree = "<group>"; };
+		785FBBE71BAFA8E500317C9B /* WALCarStopPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALCarStopPosition.h; sourceTree = "<group>"; };
+		785FBBE81BAFA8E500317C9B /* WALCarStopPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALCarStopPosition.m; sourceTree = "<group>"; };
 		786145131BA65B6800368B9D /* ChoiceSegmentedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoiceSegmentedView.h; sourceTree = "<group>"; };
 		786145141BA65B6800368B9D /* ChoiceSegmentedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoiceSegmentedView.m; sourceTree = "<group>"; };
 		786145161BA65BDD00368B9D /* WALTotalVehicleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALTotalVehicleViewController.h; sourceTree = "<group>"; };
@@ -498,6 +501,8 @@
 				788586EB1BA805D20004ADAA /* WALCarPlayTrack.m */,
 				7852D82B1BA9089700645C7B /* WALReport.h */,
 				7852D82C1BA9089700645C7B /* WALReport.m */,
+				785FBBE71BAFA8E500317C9B /* WALCarStopPosition.h */,
+				785FBBE81BAFA8E500317C9B /* WALCarStopPosition.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1074,6 +1079,7 @@
 				ADE5F87E1BA66A4A00C1C304 /* WALLoginViewController.m in Sources */,
 				ADE5F87B1BA6667200C1C304 /* WALTextField.m in Sources */,
 				ADE5F88D1BA6968500C1C304 /* WALUser.m in Sources */,
+				785FBBE91BAFA8E500317C9B /* WALCarStopPosition.m in Sources */,
 				7852D84B1BA9375100645C7B /* NSArray+MK_Misc.m in Sources */,
 				ADCCE58A1BA2DA7300DB1C17 /* JVFloatingDrawerView.m in Sources */,
 				ADE2A48C1BA426BC003CF7A1 /* AFNetworkReachabilityManager.m in Sources */,

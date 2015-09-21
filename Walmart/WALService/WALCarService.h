@@ -47,5 +47,9 @@ typedef NS_ENUM(NSInteger, WALSearchTimeType) {
 - (void)loadAreaList:(void (^)(BOOL success, NSArray *areaArray, NSString *message))completion;
 - (void)loadCarListWithAreaName:(NSString *)areaName
                      completion:(void (^)(BOOL success, NSArray *areaArray, NSString *message))completion;
+- (void)loadCarStopListWithVehicleID:(NSString *)vehicleID
+                           startTime:(NSString *)startTime
+                             endTime:(NSString *)endTime
+                          completion:(void (^)(BOOL success, NSArray *posArray, NSString *message))completion;
 
 @end

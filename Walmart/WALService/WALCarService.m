@@ -10,6 +10,7 @@
 #import "AFHTTPRequestOperationManager.h"
 #import "WALSimpleCar.h"
 #import "WALArea.h"
+#import "WALCarStopPosition.h"
 
 static NSInteger kNumberPerPage = 20;
 
@@ -366,6 +367,45 @@ static NSInteger kNumberPerPage = 20;
              } else if (status == YLYStatusVersionExpire) {
                  [NSUserDefaults saveVersion:responseObject[@"version"][@"vercode"]];
                  [self loadAreaList:completion];
+             } else {
+                 completion(NO, nil, responseObject[@"msg"]);
+             }
+         }
+         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             completion(NO, nil, @"error");
+         }];
+}
+
+- (void)loadCarStopListWithVehicleID:(NSString *)vehicleID
+                           startTime:(NSString *)startTime
+                             endTime:(NSString *)endTime
+                          completion:(void (^)(BOOL success, NSArray *posArray, NSString *message))completion
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", @"application/json", nil];
+    NSDictionary *originalParameters = @{@"vehicleid":vehicleID,
+                                         @"stime":startTime,
+                                         @"etime":endTime,
+                                         @"version":[NSUserDefaults version],
+                                         @"webgisuserid":[NSUserDefaults loadWalUesr].webGisUserID
+                                         };
+    NSDictionary *parameters = @{@"sid":[DesEncryptDecipher base64StringWithDictionary:originalParameters]};
+    [manager GET:[NSString stringWithFormat:@"%@/Walmart/Dynamiclist/GetCarStopListAjax", WALBaseURL]
+      parameters:parameters
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             NSInteger status = [responseObject[@"status"] integerValue];
+             if (status == YLYStatusSuccess) {
+                 NSMutableArray *posArray = [NSMutableArray array];
+                 for (NSDictionary *dictionary in responseObject[@"stopArr"]) {
+                     [posArray addObject:[WALCarStopPosition carStopPositionWithDictionary:dictionary]];
+                 }
+                 completion(YES, posArray, responseObject[@"msg"]);
+             } else if (status == YLYStatusVersionExpire) {
+                 [NSUserDefaults saveVersion:responseObject[@"version"][@"vercode"]];
+                 [self loadCarStopListWithVehicleID:vehicleID
+                                          startTime:startTime
+                                            endTime:endTime
+                                         completion:completion];
              } else {
                  completion(NO, nil, responseObject[@"msg"]);
              }
