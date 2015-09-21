@@ -87,7 +87,7 @@ static NSInteger kNumberPerPage = 20;
                                          @"version":[NSUserDefaults version]
                                          };
     NSDictionary *parameters = @{@"sid":[DesEncryptDecipher base64StringWithDictionary:originalParameters]};
-    [manager GET:[NSString stringWithFormat:@"%@/MgtApp/GetIndexAreaStatInfo", WALBaseURL]
+    [manager GET:[NSString stringWithFormat:@"%@/Dynamiclist/GetIndexAreaStatInfo", WALBaseURL]
       parameters:parameters
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              NSInteger status = [responseObject[@"status"] integerValue];
