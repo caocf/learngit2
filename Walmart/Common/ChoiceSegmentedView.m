@@ -21,18 +21,18 @@
 - (void)setWithText:(NSString *)text selected:(BOOL)selected color:(UIColor *)color
 {
     NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:text];
-    [str addAttribute:NSFontAttributeName value:Font(16) range:NSMakeRange(0, str.length)];
+    [str addAttribute:NSFontAttributeName value:Font(14) range:NSMakeRange(0, str.length)];
     if (selected) {
         [str addAttribute:NSForegroundColorAttributeName value:RGB(0x0f91db) range:NSMakeRange(0, str.length)];
         if (str.length >= 3) {
-            [str addAttribute:NSFontAttributeName value:Font(11) range:NSMakeRange(3, str.length - 3)];
+            [str addAttribute:NSFontAttributeName value:Font(12) range:NSMakeRange(3, str.length - 3)];
         }
     } else {
         if (str.length >= 2) {
             [str addAttribute:NSForegroundColorAttributeName value:RGB(0x666666) range:NSMakeRange(0, 2)];
             if (str.length >= 3) {
                 [str addAttribute:NSForegroundColorAttributeName value:RGB(0x999999) range:NSMakeRange(3, str.length - 3)];
-                [str addAttribute:NSFontAttributeName value:Font(11) range:NSMakeRange(3, str.length - 3)];
+                [str addAttribute:NSFontAttributeName value:Font(12) range:NSMakeRange(3, str.length - 3)];
             }
         }
     }
@@ -130,7 +130,7 @@
                  colors:(NSArray *)colors
 {
     UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, self.height - 0.5, self.width, 0.5)];
-    lineView.backgroundColor = RGB(kLineColor);
+    lineView.backgroundColor = RGB(0xd7d7d7);
     [self addSubview:lineView];
     
     _selectedButtonArray = [NSMutableArray array];

@@ -17,7 +17,7 @@
 //账号密码yyt：4008861656
 #define WALVersion @"3"
 #define ServiceSuccess 1
-#define kMainColor 0x007cc8
+#define kMainColor 0x007cc3
 #define kLineColor 0xe5e5e5
 #define RGB(x) [UIColor colorWithRed:((x & 0xff0000) >> 16)/255.0 green:((x & 0x00ff00) >> 8)/255.0 blue:(x & 0x0000ff)/255.0 alpha:1.0]
 #define RGBA(x, a) [UIColor colorWithRed:((x & 0xff0000) >> 16)/255.0 green:((x & 0x00ff00) >> 8)/255.0 blue:(x & 0x0000ff)/255.0 alpha:a]

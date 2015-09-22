@@ -93,10 +93,10 @@
 - (ChoiceSegmentedView *)segmentedView
 {
     if (!_segmentedView) {
-        _segmentedView = [[ChoiceSegmentedView alloc] initWithFrame:CGRectMake(0, 0, 180, 40)];
+        _segmentedView = [[ChoiceSegmentedView alloc] initWithFrame:CGRectMake(0, 0, 180, 30)];
         _segmentedView.layer.borderColor = [UIColor whiteColor].CGColor;
         _segmentedView.layer.borderWidth = 1.0;
-        _segmentedView.layer.cornerRadius = 3.0;
+        _segmentedView.layer.cornerRadius = 2.5;
         _segmentedView.backgroundColor = [UIColor clearColor];
         NSArray *contents = @[@"全部车辆", @"区域车辆"];
         [_segmentedView setWithSize2:CGSizeMake(_segmentedView.width, _segmentedView.height)
@@ -107,7 +107,7 @@
                     backgroundColors:@[[UIColor whiteColor], RGB(kMainColor)]
                               colors:@[RGB(kMainColor), [UIColor whiteColor]]
                          selectedNum:0
-                            fontSize:15];
+                            fontSize:14];
         __weak typeof(self) weakSelf = self;
         _segmentedView.forumSegmentedBlock = ^(NSInteger clickNumber){
             [weakSelf didClickChoiceSegmentView:clickNumber];

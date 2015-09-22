@@ -39,8 +39,8 @@
 - (UILabel *)plateNumberLabel
 {
     if (!_plateNumberLabel) {
-        _plateNumberLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 9, 100, 15)];
-        _plateNumberLabel.font = Font(15);
+        _plateNumberLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 12, 100, 16)];
+        _plateNumberLabel.font = Font(16);
         _plateNumberLabel.textColor = RGB(0x222222);
         [self addSubview:_plateNumberLabel];
     }
@@ -50,8 +50,8 @@
 - (UILabel *)speedLabel
 {
     if (!_speedLabel) {
-        _speedLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.plateNumberLabel.right, 0, 100, 10)];
-        _speedLabel.font = Font(10);
+        _speedLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.plateNumberLabel.right, 0, 100, 12)];
+        _speedLabel.font = Font(12);
         _speedLabel.textColor = RGB(0x888888);
         [self addSubview:_speedLabel];
     }
@@ -61,10 +61,10 @@
 - (UILabel *)timeLabel
 {
     if (!_timeLabel) {
-        _timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.width - 150, 0, 142, 32)];
+        _timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.width - 150, 0, 142, 12)];
         _timeLabel.textAlignment = NSTextAlignmentRight;
-        _timeLabel.font = Font(10);
-        _timeLabel.textColor = RGB(0x888888);
+        _timeLabel.font = Font(12);
+        _timeLabel.textColor = RGB(0xbbbbbb);
         [self addSubview:_timeLabel];
     }
     return _timeLabel;
@@ -73,13 +73,13 @@
 - (UILabel *)addressLabel
 {
     if (!_addressLabel) {
-        UIImageView *positionImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.plateNumberLabel.left, self.plateNumberLabel.bottom + 10, 14, 14)];
+        UIImageView *positionImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.plateNumberLabel.left, self.plateNumberLabel.bottom + 10, 15, 15)];
         positionImageView.image = [UIImage imageNamed:@"icon_g30_location.png"];
         [self addSubview:positionImageView];
         
-        _addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(positionImageView.right + 5, self.plateNumberLabel.bottom, 100, 12)];
-        _addressLabel.font = Font(12);
-        _addressLabel.textColor = RGB(0x666666);
+        _addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(positionImageView.right + 5, self.plateNumberLabel.bottom, 100, 15)];
+        _addressLabel.font = Font(15);
+        _addressLabel.textColor = RGB(0x555555);
         _addressLabel.centerY = positionImageView.centerY;
         [self addSubview:_addressLabel];
     }

@@ -80,7 +80,7 @@
     CGFloat widthLimit = self.tableView.width - outGap * 2;
     CGFloat labelHeight = 10 + 2 *inGap;
     CGFloat totalWidth = 0;
-    CGFloat totalHeight = 88;
+    CGFloat totalHeight = 97;
     BOOL hasInfoLabel = NO;
     for (NSString *string in infoArray) {
         if (string.length <= 0) {
@@ -130,7 +130,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     WALCar *car = self.filterCarsArray[indexPath.row];
-    return [self cellHeightWithCar:car] + 8;
+    return [self cellHeightWithCar:car] + 10;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

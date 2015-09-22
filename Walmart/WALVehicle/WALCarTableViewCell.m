@@ -59,7 +59,7 @@
 {
     NSString *info = [NSString stringWithFormat:@"%@;%@", car.eInfo, car.aInfo];
     NSArray *infoArray = [info componentsSeparatedByString:@";"];
-    CGFloat outGap = 8;
+    CGFloat outGap = 10;
     CGFloat inGap = 5;
     CGFloat widthLimit = self.width - outGap * 2;
     CGFloat labelHeight = 10 + 2 *inGap;
@@ -96,10 +96,10 @@
         totalHeight = totalHeight + labelHeight;
         self.statusView.frame = CGRectMake(outGap, self.carInfoView.bottom + 10, widthLimit, totalHeight);
         self.carTapView.frame = CGRectMake(0, self.statusView.bottom + 10, self.width, 30);
-        self.bgView.height = 88 + totalHeight + 10;
+        self.bgView.height = 97 + totalHeight + 10;
     } else {
         self.carTapView.frame = CGRectMake(0, self.carInfoView.bottom + 10, self.width, 30);
-        self.bgView.height = 88;
+        self.bgView.height = 97;
     }
 }
 
@@ -108,7 +108,7 @@
 - (UIView *)bgView
 {
     if (!_bgView) {
-        _bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 8, self.width, 88)];
+        _bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 10, self.width, 97)];
         _bgView.backgroundColor = RGB(0xffffff);
         self.contentView.backgroundColor = RGB(0xf0f0f0);
         [self.contentView addSubview:_bgView];
@@ -123,7 +123,7 @@
 - (WALCarInfoView *)carInfoView
 {
     if (!_carInfoView) {
-        _carInfoView = [[WALCarInfoView alloc] initWithFrame:CGRectMake(0, 0, self.width, 48)];
+        _carInfoView = [[WALCarInfoView alloc] initWithFrame:CGRectMake(0, 0, self.width, 53)];
         [self.bgView addSubview:_carInfoView];
     }
     return _carInfoView;
@@ -141,7 +141,7 @@
 - (WALCarTapView *)carTapView
 {
     if (!_carTapView) {
-        _carTapView = [[WALCarTapView alloc] initWithFrame:CGRectMake(0, self.carInfoView.bottom, self.width, 30)];
+        _carTapView = [[WALCarTapView alloc] initWithFrame:CGRectMake(0, self.carInfoView.bottom, self.width, 34)];
         _carTapView.phoneBlock = self.phoneBlock;
         _carTapView.positionBlock = self.positionBlock;
         _carTapView.trackBlock = self.trackBlock;

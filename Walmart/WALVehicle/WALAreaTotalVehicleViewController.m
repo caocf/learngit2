@@ -134,7 +134,7 @@
         _segmentedView = [[ChoiceSegmentedView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 44)];
         _segmentedView.backgroundColor = [UIColor clearColor];
         [_segmentedView setWithContents:_contentsArray
-                                 colors:@[[UIColor greenColor], [UIColor purpleColor], [UIColor redColor], [UIColor grayColor]]];
+                                 colors:@[RGB(0x70ba0d), RGB(0x7770a3), RGB(0xd00202), RGB(0xacacac)]];
         __weak typeof(self) weakSelf = self;
         _segmentedView.forumSegmentedBlock = ^(NSInteger clickNumber){
             [weakSelf didClickChoiceSegmentView:clickNumber];
