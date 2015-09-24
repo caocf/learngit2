@@ -29,7 +29,7 @@
 - (UIImageView *)imageView
 {
     if (!_imageView) {
-        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.height - 72)/2.0, (self.height - 72)/2.0, 72, 72)];
+        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.height - 36)/2.0, (self.height - 36)/2.0, 36, 36)];
         _imageView.backgroundColor = [UIColor yellowColor];
         [self addSubview:_imageView];
     }

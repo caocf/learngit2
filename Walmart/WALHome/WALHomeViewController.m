@@ -51,14 +51,14 @@
     self.navigationItem.title = @"首页";
     self.view.backgroundColor = RGB(0xf0f0f0);
     
-//    [DejalBezelActivityView activityViewForView:self.view withLabel:@"正在获取数据,请稍候..."];
-//    [self.homeService loadBoard:^(BOOL success, NSString *content, NSString *message) {
-//        [DejalBezelActivityView removeView];
-//        [[TKAlertCenter defaultCenter] postAlertWithMessage:message];
-//        if (success) {
-//            [self.boardView setWithText:content imageName:nil];
-//        }
-//    }];
+    [DejalBezelActivityView activityViewForView:self.view withLabel:@"正在获取数据,请稍候..."];
+    [self.homeService loadBoard:^(BOOL success, NSString *content, NSString *message) {
+        [DejalBezelActivityView removeView];
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:message];
+        if (success) {
+            [self.boardView setWithText:content imageName:nil];
+        }
+    }];
     [self setupUI];
 //    [self didClickChoiceSegmentView:_FDCType];
 }
@@ -71,11 +71,15 @@
 
 - (void)didClickChoiceSegmentView:(NSInteger)selectedIndex
 {
-    _FDCType = selectedIndex;
-    if ((_FDCType == WALFDCTypeYesterday && self.yesterdayFDCArray.count > 0) || (_FDCType == WALFDCTypeToday && self.todayFDCArray.count > 0)) {
+    if ((selectedIndex == WALFDCTypeYesterday && self.yesterdayFDCArray.count > 0) || (selectedIndex == WALFDCTypeToday && self.todayFDCArray.count > 0)) {
+        if (selectedIndex == _FDCType) {
+            return;
+        }
+        _FDCType = selectedIndex;
         [self drawBar];
         return;
     }
+    _FDCType = selectedIndex;
     [DejalBezelActivityView activityViewForView:self.view withLabel:@"正在获取数据,请稍候..."];
     [self.homeService loadFDCWithType:_FDCType completion:^(BOOL success, NSArray *reportArray, NSString *message) {
         [DejalBezelActivityView removeView];
@@ -93,6 +97,9 @@
 
 - (void)didClickButton:(UIButton *)sender
 {
+    if (_selectedIndex == sender.tag) {
+        return;
+    }
     _selectedIndex = sender.tag;
     [self drawBar];
 }
@@ -102,8 +109,10 @@
     for (UIButton *button in self.buttonsArray) {
         if (_selectedIndex == button.tag) {
             button.selected = YES;
+            button.backgroundColor = RGB(0x0f91db);
         } else {
             button.selected = NO;
+            button.backgroundColor = RGB(0xffffff);
         }
     }
     NSArray *keyArray = @[@"totalOutBound", @"shipperTrailer", @"onTimeTrailer", @"delayTrailer", @"delayStoreCount", @"LOS"];
@@ -136,7 +145,6 @@
         button.titleLabel.font = Font(12);
         [button setTitleColor:RGB(0xaaaaaa) forState:UIControlStateNormal];
         [button setTitleColor:RGB(0xffffff) forState:UIControlStateSelected];
-        [button setBackgroundImage:[UIImage imageNamed:@"open_icon.png"] forState:UIControlStateSelected];
         [button setTitle:title forState:UIControlStateNormal];
         button.tag = tag++;
         [button addTarget:self action:@selector(didClickButton:) forControlEvents:UIControlEventTouchUpInside];
@@ -182,7 +190,7 @@
     CGFloat percentage = [[self valueForBarAtIndex:index] doubleValue];
     CGFloat max = [[self.dataArray valueForKeyPath:@"@max.intValue"] doubleValue];
     percentage = (percentage / max);
-    return (self.barGraph.animationDuration * percentage);
+    return 0;//(self.barGraph.animationDuration * percentage);
 }
 
 - (NSString *)titleForBarAtIndex:(NSInteger)index
