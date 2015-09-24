@@ -87,7 +87,7 @@
     }
     else if(animated)
     {
-        _currentlyAnimating = YES;
+//        _currentlyAnimating = YES;
     }
     
     return [super popViewControllerAnimated:animated];
