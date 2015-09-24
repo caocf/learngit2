@@ -10,8 +10,8 @@
     },
     {
       "idiom" : "universal",
-      "scale" : "3x",
-      "filename" : "my_center.png"
+      "filename" : "my_center.png",
+      "scale" : "3x"
     }
   ],
   "info" : {

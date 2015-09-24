@@ -16,7 +16,7 @@
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", @"application/json", nil];
-    NSDictionary *originalParameters = @{@"time":@"1",
+    NSDictionary *originalParameters = @{@"time":@"3",
                                          @"webgisuserid":[NSUserDefaults loadWalUesr].webGisUserID,
                                          @"version":[NSUserDefaults version]
                                          };
