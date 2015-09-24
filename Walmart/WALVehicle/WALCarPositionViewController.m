@@ -48,11 +48,25 @@
             coor.latitude = [car.lat doubleValue];
             coor.longitude = [car.lon doubleValue];
             annotation.coordinate = coor;
-            annotation.title = @"这里是北京";
+            annotation.title = car.placeName;
             [self.mapView addAnnotation:annotation];
             [self.locationButton sendActionsForControlEvents:UIControlEventTouchUpInside];
         }
     }];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [_mapView viewWillAppear];
+    _mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [_mapView viewWillDisappear];
+    _mapView.delegate = nil; // 不用时，置nil
 }
 
 - (void)didReceiveMemoryWarning {
