@@ -9,6 +9,7 @@
 #import "WALHomeService.h"
 #import "AFHTTPRequestOperationManager.h"
 #import "WALReport.h"
+#import "WALBoard.h"
 
 @implementation WALHomeService
 
@@ -16,7 +17,7 @@
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", @"application/json", nil];
-    NSDictionary *originalParameters = @{@"time":@"3",
+    NSDictionary *originalParameters = @{@"time":@"3000",
                                          @"webgisuserid":[NSUserDefaults loadWalUesr].webGisUserID,
                                          @"version":[NSUserDefaults version]
                                          };
@@ -26,8 +27,16 @@
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              NSInteger status = [responseObject[@"status"] integerValue];
              if (status == YLYStatusSuccess) {
-                 //completion(YES, responseObject[@"noticeArr"], responseObject[@"msg"]);
-                 completion(YES, nil, responseObject[@"msg"]);
+                 NSMutableArray *boardArray = [NSMutableArray array];
+                 for (NSDictionary *dictionary in responseObject[@"noticeArr"]) {
+                     [boardArray addObject:[WALBoard boardWithDictionary:dictionary]];
+                 }
+                 if ([boardArray count] > 0) {
+                     WALBoard *board = boardArray.firstObject;
+                     completion(YES, board.content, responseObject[@"msg"]);
+                 } else {
+                     completion(YES, nil, responseObject[@"msg"]);
+                 }
              } else if (status == YLYStatusVersionExpire) {
                  [NSUserDefaults saveVersion:responseObject[@"version"][@"vercode"]];
                  [self loadBoard:completion];

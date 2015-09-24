@@ -19,6 +19,7 @@
 		7852D84C1BA9375100645C7B /* NSMutableArray+MK_Misc.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852D8451BA9375100645C7B /* NSMutableArray+MK_Misc.m */; };
 		7852D84D1BA9375100645C7B /* NSMutableArray+MK_Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852D8471BA9375100645C7B /* NSMutableArray+MK_Queue.m */; };
 		7852D84E1BA9375100645C7B /* NSMutableArray+MK_Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852D8491BA9375100645C7B /* NSMutableArray+MK_Stack.m */; };
+		78564CF01BB3A9DD0067DCE5 /* WALBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 78564CEF1BB3A9DD0067DCE5 /* WALBoard.m */; settings = {ASSET_TAGS = (); }; };
 		785AF4E41BA7B49F0065DEE7 /* WALStatusCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 785AF4E31BA7B49F0065DEE7 /* WALStatusCount.m */; };
 		785AF4E71BA7BA6C0065DEE7 /* WALChildVehicleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 785AF4E61BA7BA6C0065DEE7 /* WALChildVehicleViewController.m */; };
 		785AF4EA1BA7C42C0065DEE7 /* WALCarDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 785AF4E91BA7C42C0065DEE7 /* WALCarDetail.m */; };
@@ -164,6 +165,8 @@
 		7852D8471BA9375100645C7B /* NSMutableArray+MK_Queue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+MK_Queue.m"; sourceTree = "<group>"; };
 		7852D8481BA9375100645C7B /* NSMutableArray+MK_Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+MK_Stack.h"; sourceTree = "<group>"; };
 		7852D8491BA9375100645C7B /* NSMutableArray+MK_Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+MK_Stack.m"; sourceTree = "<group>"; };
+		78564CEE1BB3A9DD0067DCE5 /* WALBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALBoard.h; sourceTree = "<group>"; };
+		78564CEF1BB3A9DD0067DCE5 /* WALBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALBoard.m; sourceTree = "<group>"; };
 		785AF4E21BA7B49F0065DEE7 /* WALStatusCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALStatusCount.h; sourceTree = "<group>"; };
 		785AF4E31BA7B49F0065DEE7 /* WALStatusCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALStatusCount.m; sourceTree = "<group>"; };
 		785AF4E51BA7BA6C0065DEE7 /* WALChildVehicleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALChildVehicleViewController.h; sourceTree = "<group>"; };
@@ -503,6 +506,8 @@
 				7852D82C1BA9089700645C7B /* WALReport.m */,
 				785FBBE71BAFA8E500317C9B /* WALCarStopPosition.h */,
 				785FBBE81BAFA8E500317C9B /* WALCarStopPosition.m */,
+				78564CEE1BB3A9DD0067DCE5 /* WALBoard.h */,
+				78564CEF1BB3A9DD0067DCE5 /* WALBoard.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1008,6 +1013,7 @@
 				ADE2A4891BA426BC003CF7A1 /* AFHTTPRequestOperation.m in Sources */,
 				ADCCE5A31BA2DAEE00DB1C17 /* WALSettingViewController.m in Sources */,
 				786145681BA6743100368B9D /* BaseViewController.m in Sources */,
+				78564CF01BB3A9DD0067DCE5 /* WALBoard.m in Sources */,
 				ADE5F89A1BA6BB8B00C1C304 /* UIView+TKCategory.m in Sources */,
 				ADE2A4971BA426BC003CF7A1 /* UIButton+AFNetworking.m in Sources */,
 				ADE2A4951BA426BC003CF7A1 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
