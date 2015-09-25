@@ -37,7 +37,7 @@
     self.plateNumberButton.tips = @"车牌号码";
     self.timeButton.tips = @"查询时长";
     [self.searchButton setTitle:@"查询" forState:UIControlStateNormal];
-    _timeArray = @[@"今天", @"昨天", @"三天内"];
+    _timeArray = @[@"今天", @"昨天", @"三天内", @"四天内", @"五天内", @"六天内", @"七天内"];
     _selectedTimeRow = 0;
     self.vehicleID = self.car.vehicleID;
     self.plateNumber = self.car.regName;

@@ -17,6 +17,10 @@ typedef NS_ENUM(NSInteger, WALSearchTimeType) {
     WALSearchTimeTypeToday,
     WALSearchTimeTypeYesterday,
     WALSearchTimeTypeThreeday,
+    WALSearchTimeTypeFourday,
+    WALSearchTimeTypeFiveday,
+    WALSearchTimeTypeSixday,
+    WALSearchTimeTypeSevenday
 };
 
 @interface WALCarService : NSObject

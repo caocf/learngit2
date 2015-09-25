@@ -89,13 +89,7 @@
 + (NSDate *)dateWithType:(NSInteger)type
 {
     NSTimeInterval secondsOneDay = 24 * 60 * 60;
-    if (type == 1) {
-        return [NSDate dateWithTimeIntervalSinceNow:-secondsOneDay];
-    } else if (type == 2) {
-        return [NSDate dateWithTimeIntervalSinceNow:-secondsOneDay * 2];
-    } else {
-        return [NSDate date];
-    }
+    return [NSDate dateWithTimeIntervalSinceNow:-secondsOneDay * type];
 }
 
 + (NSString *)startStringWithType:(NSInteger)type
