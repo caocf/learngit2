@@ -10,6 +10,6 @@
 
 @interface WALBoardView : UIView
 
-- (void)setWithText:(NSString *)text imageName:(NSString *)imageName;
+- (void)setWithText:(NSString *)text;
 
 @end

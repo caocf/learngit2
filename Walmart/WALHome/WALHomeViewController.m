@@ -56,7 +56,7 @@
         [DejalBezelActivityView removeView];
         [[TKAlertCenter defaultCenter] postAlertWithMessage:message];
         if (success) {
-            [self.boardView setWithText:content imageName:nil];
+            [self.boardView setWithText:content];
         }
     }];
     [self setupUI];

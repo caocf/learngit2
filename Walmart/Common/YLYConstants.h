@@ -10,10 +10,10 @@
 #define Walmart_Constants_h
 #define BaiduMapAK @"FlZKZK64IneHCGm2f5IcEvr2"
 //外网
-//#define WALBaseURL @"http://cdis.app.e6gpshk.com"
+#define WALBaseURL @"http://cdis.app.e6gpshk.com"
 //#define WALBaseURL @"http://cdis.app.e6xayf.com"
 //内网
-#define WALBaseURL @"http://192.168.0.23:1458"
+//#define WALBaseURL @"http://192.168.0.23:1458"
 //账号密码yyt：4008861656
 #define WALVersion @"3"
 #define ServiceSuccess 1
