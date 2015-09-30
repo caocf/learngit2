@@ -12,5 +12,9 @@
 
 @property (nonatomic, strong) NSString *tip;
 @property (nonatomic, strong) NSString *value;
+@property (nonatomic, assign) BOOL isAlarm;
+@property (nonatomic, assign) NSInteger numberOfLines;
+
+- (void)setAttributedValueWithKey:(NSString *)key unit:(NSString *)unit;
 
 @end

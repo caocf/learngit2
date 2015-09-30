@@ -62,7 +62,7 @@
         _phoneButton.backgroundColor = RGB(0xf8f8f8);
         [_phoneButton setTitleColor:RGB(0x929292) forState:UIControlStateNormal];
         [_phoneButton setTitleColor:RGB(0xcccccc) forState:UIControlStateDisabled];
-        [_phoneButton setImage:[UIImage imageNamed:@"icon_g26_phone.png"] forState:UIControlStateNormal];
+        [_phoneButton setImage:[UIImage imageNamed:@"icon_b30_phone.png"] forState:UIControlStateNormal];
         _phoneButton.layer.borderColor = RGB(kLineColor).CGColor;
         _phoneButton.layer.borderWidth = 0.5;
         [self addSubview:_phoneButton];
@@ -78,7 +78,7 @@
         [_positionButton addTarget:self action:@selector(didClickPositionButton:) forControlEvents:UIControlEventTouchUpInside];
         [_positionButton setTitleColor:RGB(0x929292) forState:UIControlStateNormal];
         [_positionButton setTitleColor:RGB(0xcccccc) forState:UIControlStateDisabled];
-        [_positionButton setImage:[UIImage imageNamed:@"icon_g26_locate.png"] forState:UIControlStateNormal];
+        [_positionButton setImage:[UIImage imageNamed:@"icon_b30_locate.png"] forState:UIControlStateNormal];
         _positionButton.backgroundColor = self.phoneButton.backgroundColor;
         _positionButton.titleLabel.font = self.phoneButton.titleLabel.font;
         _positionButton.layer.borderColor = self.phoneButton.layer.borderColor;
@@ -96,7 +96,7 @@
         [_trackButton addTarget:self action:@selector(didClickTrackButton:) forControlEvents:UIControlEventTouchUpInside];
         [_trackButton setTitleColor:RGB(0x929292) forState:UIControlStateNormal];
         [_trackButton setTitleColor:RGB(0xcccccc) forState:UIControlStateDisabled];
-        [_trackButton setImage:[UIImage imageNamed:@"icon_g26_locus.png"] forState:UIControlStateNormal];
+        [_trackButton setImage:[UIImage imageNamed:@"icon_b30_locus.png"] forState:UIControlStateNormal];
         _trackButton.backgroundColor = self.phoneButton.backgroundColor;
         _trackButton.titleLabel.font = self.phoneButton.titleLabel.font;
         _trackButton.layer.borderColor = self.phoneButton.layer.borderColor;

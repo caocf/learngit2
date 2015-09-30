@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		780F768D1BBBC40B00778505 /* WALSegmentButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F768C1BBBC40B00778505 /* WALSegmentButton.m */; settings = {ASSET_TAGS = (); }; };
 		7852D8241BA8FC1900645C7B /* WALChildAreaVehicleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852D8231BA8FC1900645C7B /* WALChildAreaVehicleViewController.m */; };
 		7852D8271BA8FC8000645C7B /* WALAreaTotalVehicleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852D8261BA8FC8000645C7B /* WALAreaTotalVehicleViewController.m */; };
 		7852D82A1BA9064600645C7B /* WALHomeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852D8291BA9064600645C7B /* WALHomeService.m */; };
@@ -139,6 +140,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		780F768B1BBBC40B00778505 /* WALSegmentButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALSegmentButton.h; sourceTree = "<group>"; };
+		780F768C1BBBC40B00778505 /* WALSegmentButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALSegmentButton.m; sourceTree = "<group>"; };
 		7852D8221BA8FC1900645C7B /* WALChildAreaVehicleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALChildAreaVehicleViewController.h; sourceTree = "<group>"; };
 		7852D8231BA8FC1900645C7B /* WALChildAreaVehicleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALChildAreaVehicleViewController.m; sourceTree = "<group>"; };
 		7852D8251BA8FC8000645C7B /* WALAreaTotalVehicleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALAreaTotalVehicleViewController.h; sourceTree = "<group>"; };
@@ -623,6 +626,8 @@
 		ADCCE57D1BA2DA6B00DB1C17 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				780F768B1BBBC40B00778505 /* WALSegmentButton.h */,
+				780F768C1BBBC40B00778505 /* WALSegmentButton.m */,
 				786145691BA6774600368B9D /* WALChooseView.h */,
 				7861456A1BA6774600368B9D /* WALChooseView.m */,
 				786145631BA6711400368B9D /* WALTipsButton.h */,
@@ -1094,6 +1099,7 @@
 				788586E31BA7CF660004ADAA /* WALSimpleCar.m in Sources */,
 				ADE2A4981BA426BC003CF7A1 /* UIImageView+AFNetworking.m in Sources */,
 				AD0687E01BA3CEAC00F66C7A /* NSDictionary+NSDictionary_Addition.m in Sources */,
+				780F768D1BBBC40B00778505 /* WALSegmentButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1166,7 +1172,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "db3b76bb-8d10-412d-a6f4-27faeeaabd89";
+				PROVISIONING_PROFILE = "46bd903a-fee9-49e2-80fa-893dd57dbbcd";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1203,7 +1209,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "db3b76bb-8d10-412d-a6f4-27faeeaabd89";
+				PROVISIONING_PROFILE = "46bd903a-fee9-49e2-80fa-893dd57dbbcd";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

@@ -7,16 +7,16 @@
 //
 
 #import "WALAreaTableViewCell.h"
+#import "WALSegmentButton.h"
 
-static CGFloat kSubHeight = 22;
-static CGFloat kGap = 5;
+static CGFloat kGap = 10;
 
 @interface WALAreaTableViewCell ()
 
 @property (nonatomic, strong) UILabel *nameLabel;
-@property (nonatomic, strong) UILabel *runningLabel;
-@property (nonatomic, strong) UILabel *stopLabel;
-@property (nonatomic, strong) UILabel *offlineLabel;
+@property (nonatomic, strong) WALSegmentButton *runningButton;
+@property (nonatomic, strong) WALSegmentButton *stopButton;
+@property (nonatomic, strong) WALSegmentButton *offlineButton;
 
 @end
 
@@ -37,10 +37,11 @@ static CGFloat kGap = 5;
     if (_area != area) {
         _area = area;
         self.nameLabel.text = area.name;
-        self.runningLabel.text = [NSString stringWithFormat:@"运行 %@", area.runningCount];
-        self.stopLabel.text = [NSString stringWithFormat:@"停车 %@", area.stopCount];
-        self.offlineLabel.text = [NSString stringWithFormat:@"掉线 %@", area.offlineCount];
-        self.lineView.top = 43;
+        [self.runningButton setWithText:[NSString stringWithFormat:@"运行 %@", area.runningCount] selected:NO color:RGB(0x70ba0d)];
+        [self.stopButton setWithText:[NSString stringWithFormat:@"停车 %@", area.stopCount] selected:NO color:RGB(0x7770a3)];
+        [self.offlineButton setWithText:[NSString stringWithFormat:@"异常 %@", area.offlineCount] selected:NO color:RGB(0xacacac)];
+        self.lineView.backgroundColor = RGB(0xd7d7d7);
+        self.lineView.top = 63.4;
     }
 }
 
@@ -49,52 +50,48 @@ static CGFloat kGap = 5;
 - (UILabel *)nameLabel
 {
     if (!_nameLabel) {
-        _nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(kGap, 0, 100, kSubHeight)];
+        self.contentView.backgroundColor = [UIColor whiteColor];
+        
+        _nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(kGap, 10, self.width, 16)];
+        _nameLabel.textColor = RGB(0x222222);
+        _nameLabel.font = Font(16);
         [self.contentView addSubview:_nameLabel];
+        
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_lg30_arrowEnter.png"]];
+        imageView.frame = CGRectMake(self.width - 25, 24.5, 15, 15);
+        [self.contentView addSubview:imageView];
     }
     return _nameLabel;
 }
 
-- (UILabel *)runningLabel
+- (WALSegmentButton *)runningButton
 {
-    if (!_runningLabel) {
-        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(kGap, self.nameLabel.bottom, 10, 10)];
-        view.backgroundColor = [UIColor greenColor];
-        [self.contentView addSubview:view];
-        
-        _runningLabel = [[UILabel alloc] initWithFrame:CGRectMake(view.right + kGap, self.nameLabel.bottom, 100, kSubHeight)];
-        [self.contentView addSubview:_runningLabel];
-        view.centerY = _runningLabel.centerY;
+    if (!_runningButton) {
+        _runningButton = [WALSegmentButton buttonWithType:UIButtonTypeCustom];
+        _runningButton.frame = CGRectMake(kGap, self.nameLabel.bottom + 10, (self.width - 16) / 3.0, 18);
+        [self.contentView addSubview:_runningButton];
     }
-    return _runningLabel;
+    return _runningButton;
 }
 
-- (UILabel *)stopLabel
+- (WALSegmentButton *)stopButton
 {
-    if (!_stopLabel) {
-        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(self.runningLabel.right + kGap, self.nameLabel.bottom, 10, 10)];
-        view.backgroundColor = [UIColor purpleColor];
-        [self.contentView addSubview:view];
-        
-        _stopLabel = [[UILabel alloc] initWithFrame:CGRectMake(view.right + kGap, self.nameLabel.bottom, 100, kSubHeight)];
-        [self.contentView addSubview:_stopLabel];
-        view.centerY = _stopLabel.centerY;
+    if (!_stopButton) {
+        _stopButton = [WALSegmentButton buttonWithType:UIButtonTypeCustom];
+        _stopButton.frame = CGRectMake(self.runningButton.right, self.runningButton.top, self.runningButton.width, 18);
+        [self.contentView addSubview:_stopButton];
     }
-    return _stopLabel;
+    return _stopButton;
 }
 
-- (UILabel *)offlineLabel
+- (WALSegmentButton *)offlineButton
 {
-    if (!_offlineLabel) {
-        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(self.stopLabel.right + kGap, self.nameLabel.bottom, 10, 10)];
-        view.backgroundColor = [UIColor grayColor];
-        [self.contentView addSubview:view];
-        
-        _offlineLabel = [[UILabel alloc] initWithFrame:CGRectMake(view.right + kGap, self.nameLabel.bottom, 100, kSubHeight)];
-        [self.contentView addSubview:_offlineLabel];
-        view.centerY = _offlineLabel.centerY;
+    if (!_offlineButton) {
+        _offlineButton = [WALSegmentButton buttonWithType:UIButtonTypeCustom];
+        _offlineButton.frame = CGRectMake(self.stopButton.right, self.runningButton.top, self.runningButton.width, 18);
+        [self.contentView addSubview:_offlineButton];
     }
-    return _offlineLabel;
+    return _offlineButton;
 }
 
 @end

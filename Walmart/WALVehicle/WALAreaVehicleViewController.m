@@ -36,6 +36,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = RGB(0xe5e5e5);
+    
     [self setupResultLabelWithCarArray:[NSArray array]];
     [self.tableView reloadData];
     
@@ -73,10 +75,11 @@
 - (void)setupResultLabelWithCarArray:(NSArray *)carArray
 {
     if (carArray.count > 0) {
-        NSString *numString = [@(carArray.count) stringValue];
-        NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"查询到%@个有车辆的区域", numString]];
-        [str addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:NSMakeRange(3, numString.length)];
-        self.resultLabel.attributedText = str;
+        //        NSString *numString = [@(carArray.count) stringValue];
+        //        NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"查询到%@个有车辆的区域", numString]];
+        //        [str addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:NSMakeRange(3, numString.length)];
+        //        self.resultLabel.attributedText = str;
+        self.resultLabel.text = [NSString stringWithFormat:@"查询到%lu个有车辆的区域", (unsigned long)carArray.count];
     } else {
         self.resultLabel.text = @"此区域中无车辆";
     }
@@ -93,7 +96,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 44;
+    return 64;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -128,10 +131,12 @@
 - (UISearchBar *)searchBar
 {
     if (!_searchBar) {
-        _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 44)];
+        _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(10, 10, self.view.width - 20, 32)];
         _searchBar.barTintColor = [UIColor whiteColor];
+        _searchBar.tintColor = [UIColor whiteColor];
         _searchBar.layer.borderColor = RGB(kLineColor).CGColor;
         _searchBar.layer.borderWidth = 0.5;
+        _searchBar.layer.cornerRadius = 2.5;
         _searchBar.delegate = self;
         _searchBar.placeholder = @"搜索区域名称";
         [self.view addSubview:_searchBar];
@@ -142,8 +147,9 @@
 - (UILabel *)resultLabel
 {
     if (!_resultLabel) {
-        _resultLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.searchBar.bottom, self.view.width, 32)];
-        _resultLabel.textColor = RGB(0x666666);
+        _resultLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.searchBar.bottom + 10, self.view.width, 11)];
+        _resultLabel.textColor = RGB(0x888888);
+        _resultLabel.font = Font(11);
         _resultLabel.textAlignment = NSTextAlignmentCenter;
         [self.view addSubview:_resultLabel];
     }
@@ -153,7 +159,8 @@
 - (UITableView *)tableView
 {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, self.resultLabel.bottom, self.view.width, self.view.height - 64 - self.resultLabel.bottom - 49) style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, self.resultLabel.bottom + 10, self.view.width, self.view.height - 64 - self.resultLabel.bottom - 10 - 49) style:UITableViewStylePlain];
+        _tableView.backgroundColor = RGB(0xffffff);
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.dataSource = self;
         _tableView.delegate = self;

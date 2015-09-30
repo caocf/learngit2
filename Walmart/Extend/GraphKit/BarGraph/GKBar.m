@@ -68,9 +68,11 @@ static CFTimeInterval kDefaultAnimationDuration = 1.0;
     self.animated = YES;
     self.animationDuration = kDefaultAnimationDuration;
     self.clipsToBounds = YES;
-    self.cornerRadius = 2.0;
+    //    self.cornerRadius = 2.0;
+    self.cornerRadius = 0.0;
     self.foregroundColor = [UIColor gk_turquoiseColor];
-    self.backgroundColor = [UIColor gk_silverColor];
+    //    self.backgroundColor = [UIColor gk_silverColor];
+    self.backgroundColor = [UIColor clearColor];
     _percentage = 0;
 }
 
@@ -117,7 +119,7 @@ static CFTimeInterval kDefaultAnimationDuration = 1.0;
     CGFloat startX = (self.frame.size.width * (_percentage / self.max));
     CGFloat endX = (self.frame.size.width * value);
     [path moveToPoint:CGPointMake(startX, startY)];
-	[path addLineToPoint:CGPointMake(endX, startY)];
+    [path addLineToPoint:CGPointMake(endX, startY)];
     return path;
 }
 
@@ -152,7 +154,7 @@ static CFTimeInterval kDefaultAnimationDuration = 1.0;
 
 - (void)setForegroundColor:(UIColor *)foregroundColor {
     _foregroundColor = foregroundColor;
-
+    
     self.layer.sublayers = nil;
     CGFloat temp = _percentage;
     [self setPercentage:0 animated:NO];

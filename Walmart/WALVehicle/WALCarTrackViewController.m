@@ -66,19 +66,13 @@
         [[TKAlertCenter defaultCenter] postAlertWithMessage:message];
         if (success) {
             self.trackArray = carTrack.positionArray;
-//            self.trackArray = @[@"23.122833,113.86124599999999", @"24.122833,113.86124599999999", @"23.122833,114.86124599999999", @"25.122833,113.86124599999999", @"23.122833,115.86124599999999", @"26.122833,113.86124599999999"];
             CLLocationCoordinate2D coords[10000] = {0};
             CGFloat minLat = MAXFLOAT;
             CGFloat maxLat = 0;
             CGFloat minLon = MAXFLOAT;
             CGFloat maxLon = 0;
             NSInteger i = 0;
-//            for (int i = 0; i < 6; i++) {
             for (WALCoor *coor in self.trackArray) {
-//                NSArray *pointArray = [self.trackArray[i] componentsSeparatedByString:@","];
-//                if ([pointArray count] >= 2) {
-//                    coords[i].latitude = [pointArray[0] doubleValue];
-//                    coords[i].longitude = [pointArray[1] doubleValue];
                 coords[i].latitude = [coor.lat doubleValue];
                 coords[i].longitude = [coor.lon doubleValue];
                 minLat = MIN(coords[i].latitude, minLat);
@@ -86,7 +80,6 @@
                 minLon = MIN(coords[i].longitude, minLon);
                 maxLon = MAX(coords[i].longitude, maxLon);
                 i++;
-//                }
             }
             
             //构建BMKPolyline,使用分段纹理
@@ -108,7 +101,6 @@
             [self.carService loadCarPlayTrackListWithVehicleID:self.vehicleID startTime:startTime endTime:endTime completion:^(BOOL success, WALCarPlayTrack *carPlayTrack, NSString *message) {
                 if (success) {
                     self.playArray = carPlayTrack.trackArray;
-//                    self.playArray = @[@"23.122833,113.86124599999999", @"24.122833,113.86124599999999", @"23.122833,114.86124599999999", @"25.122833,113.86124599999999", @"23.122833,115.86124599999999", @"26.122833,113.86124599999999"];
                     self.playButton.enabled = YES;
                 }
             }];
@@ -197,13 +189,6 @@
         self.playTimeLabel.text = carPlayPosition.time;
         self.speedLabel.text = carPlayPosition.speed;
         self.milleageLabel.text = carPlayPosition.milleage;
-//        CLLocationCoordinate2D coords[6] = {0};
-//        for (int i = 0; i < 6; i++) {
-//            NSArray *pointArray = [self.trackArray[i] componentsSeparatedByString:@","];
-//            coords[i].latitude = [pointArray[0] doubleValue];
-//            coords[i].longitude = [pointArray[1] doubleValue];
-//        }
-//        self.annotation.coordinate = coords[_playIndex];
         CLLocationCoordinate2D coor;
         coor.latitude = [carPlayPosition.lat doubleValue];
         coor.longitude = [carPlayPosition.lon doubleValue];
@@ -231,7 +216,6 @@
     if ([annotation isKindOfClass:[BMKPointAnnotation class]]) {
         BMKPinAnnotationView *newAnnotationView = [[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"myAnnotation"];
         newAnnotationView.pinColor = BMKPinAnnotationColorPurple;
-        newAnnotationView.animatesDrop = YES;// 设置该标注点动画显示
         newAnnotationView.layer.transform = CATransform3DMakeRotation((M_PI / 2.0 / 180.0) * 180.0f, 0.0f, 0.0f, 1.0f);
         return newAnnotationView;
     }
@@ -256,7 +240,10 @@
 {
     if (!_mapView) {
         _mapView = [[BMKMapView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.bottomView.top)];
+        _mapView.rotateEnabled = NO;
+        _mapView.showMapScaleBar = YES;
         _mapView.delegate = self;
+        _mapView.minZoomLevel = 5;
         [self.view addSubview:_mapView];
     }
     return _mapView;

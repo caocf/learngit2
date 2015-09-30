@@ -10,12 +10,6 @@
 
 typedef void (^selectSegmentedBlock)(NSInteger clickNumber);
 
-@interface WALSegmentButton : UIButton
-
-- (void)setWithText:(NSString *)text selected:(BOOL)selected color:(UIColor *)color;
-
-@end
-
 @interface ChoiceSegmentedView : UIView
 
 @property (nonatomic, copy) selectSegmentedBlock forumSegmentedBlock;
