@@ -9,6 +9,12 @@
 @interface WALAnnotationView : BMKPinAnnotationView
 
 @property (nonatomic, strong) NSString *imageName;
+
+@end
+
+@interface WALTrackAnnotationView : BMKAnnotationView
+
+@property (nonatomic, strong) NSString *imageName;
 @property (nonatomic, assign) NSInteger angle;
 
 @end

@@ -103,7 +103,7 @@
     if ([annotation isKindOfClass:[BMKPointAnnotation class]]) {
 //        BMKPinAnnotationView *newAnnotationView = [[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"myAnnotation"];
 //        newAnnotationView.pinColor = BMKPinAnnotationColorPurple;
-        WALAnnotationView *newAnnotationView = [[WALAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"myAnnotation"];
+        WALTrackAnnotationView *newAnnotationView = [[WALTrackAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"myAnnotation"];
         newAnnotationView.imageName = @"gjo.png";
         return newAnnotationView;
     }

@@ -16,13 +16,37 @@
 
 @implementation WALAnnotationView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)setImageName:(NSString *)imageName
+{
+    self.imageView.image = [UIImage imageNamed:imageName];
 }
-*/
+
+- (UIImageView *)imageView
+{
+    if (!_imageView) {
+        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 23, 34)];
+        [self addSubview:_imageView];
+    }
+    return _imageView;
+}
+
+@end
+
+@interface WALTrackAnnotationView ()
+
+@property (nonatomic, strong) UIImageView *imageView;
+
+@end
+
+@implementation WALTrackAnnotationView
+
+/*
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 
 - (void)setImageName:(NSString *)imageName
 {

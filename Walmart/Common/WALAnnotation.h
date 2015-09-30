@@ -12,5 +12,6 @@
 
 @property (nonatomic, assign) NSInteger angle;
 @property (nonatomic, strong) NSString *imageName;
+@property (nonatomic, assign) BOOL isTrack;
 
 @end

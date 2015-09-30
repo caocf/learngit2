@@ -185,14 +185,14 @@
 {
     _played = !_played;
     if (_played) {
-        [self.playButton setBackgroundImage:[UIImage imageNamed:@"icon_locus_pause.png"] forState:UIControlStateNormal];
+        [self.playButton setImage:[UIImage imageNamed:@"icon_locus_pause.png"] forState:UIControlStateNormal];
         self.playView.hidden = NO;
         self.playView.top = self.bottomView.top - 64;
         self.playView.height = 64;
         self.addressLabel.hidden = YES;
         self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerfire) userInfo:nil repeats:YES];
     } else {
-        [self.playButton setBackgroundImage:[UIImage imageNamed:@"icon_locus_play.png"] forState:UIControlStateNormal];
+        [self.playButton setImage:[UIImage imageNamed:@"icon_locus_play.png"] forState:UIControlStateNormal];
         WALCarPlayPosition *carPlayPosition = self.playArray[_playIndex];
         [self.timer invalidate];
         [self.mapView removeAnnotation:self.annotation];
@@ -227,6 +227,7 @@
         self.annotation.coordinate = coor;
         self.annotation.angle = [carPlayPosition.direction integerValue];
         self.annotation.imageName = @"gjo.png";
+        self.annotation.isTrack = YES;
 //        if (![self.mapView viewForAnnotation:self.annotation]) {
 //            [self.mapView addAnnotation:self.annotation];
 //        }
@@ -266,12 +267,19 @@
 {
     if ([annotation isKindOfClass:[WALAnnotation class]]) {
 //        BMKPinAnnotationView *newAnnotationView = [[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"myAnnotation"];
-//        newAnnotationView.pinColor = BMKPinAnnotationColorPurple;
-        WALAnnotationView *newAnnotationView = [[WALAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"myAnnotation"];
+        //        newAnnotationView.pinColor = BMKPinAnnotationColorPurple;
         WALAnnotation *walAnnotation = annotation;
-        newAnnotationView.imageName = walAnnotation.imageName;
-        newAnnotationView.angle = walAnnotation.angle;
-        return newAnnotationView;
+        if (walAnnotation.isTrack) {
+            WALTrackAnnotationView *newAnnotationView = [[WALTrackAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"myTrackAnnotation"];
+            newAnnotationView.imageName = walAnnotation.imageName;
+            newAnnotationView.angle = walAnnotation.angle;
+            return newAnnotationView;
+        } else {
+            WALAnnotationView *newAnnotationView = [[WALAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"myAnnotation"];
+            WALAnnotation *walAnnotation = annotation;
+            newAnnotationView.imageName = walAnnotation.imageName;
+            return newAnnotationView;
+        }
     }
     return nil;
 }
@@ -434,8 +442,8 @@
 {
     if (!_searchButton) {
         _searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_searchButton setBackgroundImage:[UIImage imageNamed:@"icon_g42_search.png"] forState:UIControlStateNormal];
-        _searchButton.frame = CGRectMake(self.view.width - 100, 12, 40, 40);
+        [_searchButton setImage:[UIImage imageNamed:@"icon_g42_search.png"] forState:UIControlStateNormal];
+        _searchButton.frame = CGRectMake(self.view.width - 62, (58 - 21)/2.0, 21, 21);
         [_searchButton addTarget:self action:@selector(didClickSearchButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.bottomView addSubview:_searchButton];
     }
@@ -446,8 +454,8 @@
 {
     if (!_playButton) {
         _playButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_playButton setBackgroundImage:[UIImage imageNamed:@"icon_locus_play.png"] forState:UIControlStateNormal];
-        _playButton.frame = CGRectMake(self.view.width - 50, 12, 40, 40);
+        [_playButton setImage:[UIImage imageNamed:@"icon_locus_play.png"] forState:UIControlStateNormal];
+        _playButton.frame = CGRectMake(self.view.width - 31, self.searchButton.top, 21, 21);
         [_playButton addTarget:self action:@selector(didClickPlayButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.bottomView addSubview:_playButton];
     }
