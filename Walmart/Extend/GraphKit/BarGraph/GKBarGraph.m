@@ -62,7 +62,8 @@ static CGFloat kDefaultAnimationDuration = 2.0;
 - (void)_init {
     self.animationDuration = kDefaultAnimationDuration;
     self.barHeight = kDefaultBarHeight;
-    self.barWidth = kDefaultBarWidth;
+//    self.barWidth = kDefaultBarWidth;
+    self.barWidth = (self.width - kDefaultLabelWidth * 2 - 10);
     self.marginBar = kDefaultBarMargin;
 }
 

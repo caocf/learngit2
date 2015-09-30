@@ -30,7 +30,7 @@
         self.timeLabel.text = car.GPSTime;
         self.speedLabel.centerY = self.timeLabel.centerY = self.plateNumberLabel.centerY;
         self.addressLabel.text = car.placeName;
-        self.addressLabel.width = [self.addressLabel.text sizeWithFont:self.addressLabel.font].width;
+        self.addressLabel.width = MIN([self.addressLabel.text sizeWithFont:self.addressLabel.font].width, self.width - 30);
     }
 }
 

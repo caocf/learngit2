@@ -22,6 +22,7 @@
 @property (nonatomic, strong) WALCarService *carService;
 @property (nonatomic, assign) YLYRunStatus runStatus;
 @property (nonatomic, assign) BOOL hasMore;
+@property (nonatomic, assign) BOOL begin;
 
 @end
 
@@ -32,6 +33,7 @@
     if (self = [super init]) {
         _carService = [[WALCarService alloc] init];
         _runStatus = runStatus;
+        _begin = YES;
     }
     return self;
 }
@@ -44,16 +46,16 @@
     [self refreshTableView];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
 - (void)dealloc
 {
     _tableView.delegate = nil;
     _tableView.dataSource = nil;
     _tableView.pullDelegate = nil;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,7 +69,12 @@
 {
     self.tableView.pullTableIsRefreshing = YES;
     [self.carService resetCarListOffset];
+    if (_begin) {
+        _begin = NO;
+        [DejalBezelActivityView activityViewForView:self.view withLabel:@"正在获取数据,请稍候..."];
+    }
     [self.carService loadCarListWithType:_runStatus completion:^(BOOL success, BOOL hasMore, NSArray *carsArray, WALStatusCount *statusCount, NSString *message) {
+        [DejalBezelActivityView removeView];
         [[TKAlertCenter defaultCenter] postAlertWithMessage:message];
         self.tableView.pullTableIsRefreshing = NO;
         self.hasMore = hasMore;

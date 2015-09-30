@@ -60,7 +60,7 @@
         }
     }];
     [self setupUI];
-//    [self didClickChoiceSegmentView:_FDCType];
+    [self didClickChoiceSegmentView:_FDCType];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -229,14 +229,14 @@
                      segmentedNumber:[contents count]
                             contents:contents
                               images:nil
-                    backgroundColors:@[RGB(0xf5f5f5), [UIColor clearColor]]
-                              colors:@[RGB(0x666666), RGB(0x222222)]
+                    backgroundColors:@[[UIColor clearColor], RGB(0xf5f5f5)]
+                              colors:@[RGB(0x222222), RGB(0x666666)]
                          selectedNum:0
                             fontSize:12];
         __weak typeof(self) weakSelf = self;
         _segmentedView.forumSegmentedBlock = ^(NSInteger clickNumber){
             NSInteger index = WALFDCTypeYesterday - clickNumber;
-//            [weakSelf didClickChoiceSegmentView:index];
+            [weakSelf didClickChoiceSegmentView:index];
         };
         [self.view addSubview:_segmentedView];
     }
