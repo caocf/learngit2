@@ -8,6 +8,7 @@
 
 #import "WALCarPositionViewController.h"
 #import "WALCarInfoView.h"
+#import "WALAnnotationView.h"
 #import "WALCarService.h"
 
 @interface WALCarPositionViewController () <BMKMapViewDelegate>
@@ -100,8 +101,10 @@
 - (BMKAnnotationView *)mapView:(BMKMapView *)mapView viewForAnnotation:(id <BMKAnnotation>)annotation
 {
     if ([annotation isKindOfClass:[BMKPointAnnotation class]]) {
-        BMKPinAnnotationView *newAnnotationView = [[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"myAnnotation"];
-        newAnnotationView.pinColor = BMKPinAnnotationColorPurple;
+//        BMKPinAnnotationView *newAnnotationView = [[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"myAnnotation"];
+//        newAnnotationView.pinColor = BMKPinAnnotationColorPurple;
+        WALAnnotationView *newAnnotationView = [[WALAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"myAnnotation"];
+        newAnnotationView.imageName = @"gjo.png";
         return newAnnotationView;
     }
     return nil;

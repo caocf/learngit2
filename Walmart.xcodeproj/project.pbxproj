@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		780F768D1BBBC40B00778505 /* WALSegmentButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F768C1BBBC40B00778505 /* WALSegmentButton.m */; settings = {ASSET_TAGS = (); }; };
+		780F76901BBBC7D600778505 /* WALAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F768F1BBBC7D600778505 /* WALAnnotationView.m */; settings = {ASSET_TAGS = (); }; };
+		780F76931BBBD4BC00778505 /* WALAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F76921BBBD4BC00778505 /* WALAnnotation.m */; settings = {ASSET_TAGS = (); }; };
+		780F76961BBBE11900778505 /* WALTextFieldButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F76951BBBE11900778505 /* WALTextFieldButton.m */; settings = {ASSET_TAGS = (); }; };
 		7852D8241BA8FC1900645C7B /* WALChildAreaVehicleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852D8231BA8FC1900645C7B /* WALChildAreaVehicleViewController.m */; };
 		7852D8271BA8FC8000645C7B /* WALAreaTotalVehicleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852D8261BA8FC8000645C7B /* WALAreaTotalVehicleViewController.m */; };
 		7852D82A1BA9064600645C7B /* WALHomeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852D8291BA9064600645C7B /* WALHomeService.m */; };
@@ -142,6 +145,12 @@
 /* Begin PBXFileReference section */
 		780F768B1BBBC40B00778505 /* WALSegmentButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALSegmentButton.h; sourceTree = "<group>"; };
 		780F768C1BBBC40B00778505 /* WALSegmentButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALSegmentButton.m; sourceTree = "<group>"; };
+		780F768E1BBBC7D600778505 /* WALAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALAnnotationView.h; sourceTree = "<group>"; };
+		780F768F1BBBC7D600778505 /* WALAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALAnnotationView.m; sourceTree = "<group>"; };
+		780F76911BBBD4BC00778505 /* WALAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALAnnotation.h; sourceTree = "<group>"; };
+		780F76921BBBD4BC00778505 /* WALAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALAnnotation.m; sourceTree = "<group>"; };
+		780F76941BBBE11900778505 /* WALTextFieldButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALTextFieldButton.h; sourceTree = "<group>"; };
+		780F76951BBBE11900778505 /* WALTextFieldButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALTextFieldButton.m; sourceTree = "<group>"; };
 		7852D8221BA8FC1900645C7B /* WALChildAreaVehicleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALChildAreaVehicleViewController.h; sourceTree = "<group>"; };
 		7852D8231BA8FC1900645C7B /* WALChildAreaVehicleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WALChildAreaVehicleViewController.m; sourceTree = "<group>"; };
 		7852D8251BA8FC8000645C7B /* WALAreaTotalVehicleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WALAreaTotalVehicleViewController.h; sourceTree = "<group>"; };
@@ -645,6 +654,12 @@
 				786145851BA6C4C200368B9D /* WALBoardView.m */,
 				ADE5F8791BA6667200C1C304 /* WALTextField.h */,
 				ADE5F87A1BA6667200C1C304 /* WALTextField.m */,
+				780F768E1BBBC7D600778505 /* WALAnnotationView.h */,
+				780F768F1BBBC7D600778505 /* WALAnnotationView.m */,
+				780F76911BBBD4BC00778505 /* WALAnnotation.h */,
+				780F76921BBBD4BC00778505 /* WALAnnotation.m */,
+				780F76941BBBE11900778505 /* WALTextFieldButton.h */,
+				780F76951BBBE11900778505 /* WALTextFieldButton.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1013,11 +1028,13 @@
 				786145311BA663E600368B9D /* MessageInterceptor.m in Sources */,
 				ADCCE58F1BA2DA7E00DB1C17 /* RotationAwareNavigationController.m in Sources */,
 				786145831BA6C29100368B9D /* WALCarInfoView.m in Sources */,
+				780F76901BBBC7D600778505 /* WALAnnotationView.m in Sources */,
 				ADE2A48D1BA426BC003CF7A1 /* AFSecurityPolicy.m in Sources */,
 				ADE2A48A1BA426BC003CF7A1 /* AFHTTPRequestOperationManager.m in Sources */,
 				ADE2A4891BA426BC003CF7A1 /* AFHTTPRequestOperation.m in Sources */,
 				ADCCE5A31BA2DAEE00DB1C17 /* WALSettingViewController.m in Sources */,
 				786145681BA6743100368B9D /* BaseViewController.m in Sources */,
+				780F76961BBBE11900778505 /* WALTextFieldButton.m in Sources */,
 				78564CF01BB3A9DD0067DCE5 /* WALBoard.m in Sources */,
 				ADE5F89A1BA6BB8B00C1C304 /* UIView+TKCategory.m in Sources */,
 				ADE2A4971BA426BC003CF7A1 /* UIButton+AFNetworking.m in Sources */,
@@ -1046,6 +1063,7 @@
 				7852D83D1BA9218200645C7B /* UIColor+GraphKit.m in Sources */,
 				ADCCE5551BA2D96E00DB1C17 /* AppDelegate.mm in Sources */,
 				786145441BA6671E00368B9D /* WALCarTableViewCell.m in Sources */,
+				780F76931BBBD4BC00778505 /* WALAnnotation.m in Sources */,
 				7861455F1BA6707B00368B9D /* WALCarPositionViewController.m in Sources */,
 				7852D8241BA8FC1900645C7B /* WALChildAreaVehicleViewController.m in Sources */,
 				ADCCE59B1BA2DAD600DB1C17 /* WALVehicleViewController.m in Sources */,

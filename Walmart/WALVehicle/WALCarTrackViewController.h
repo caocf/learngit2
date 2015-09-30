@@ -12,6 +12,7 @@
 @interface WALCarTrackViewController : BaseViewController
 
 @property (nonatomic, assign) WALSearchTimeType timeType;
+@property (nonatomic, strong) NSArray *timeArray;
 @property (nonatomic, strong) NSString *vehicleID;
 @property (nonatomic, strong) NSString *plateNumber;
 
