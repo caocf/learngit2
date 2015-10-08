@@ -19,6 +19,7 @@
 - (void)setImageName:(NSString *)imageName
 {
     self.imageView.image = [UIImage imageNamed:imageName];
+    self.imageView.height = self.imageView.image.size.height / self.imageView.image.size.width * 23;
 }
 
 - (UIImageView *)imageView
@@ -51,6 +52,7 @@
 - (void)setImageName:(NSString *)imageName
 {
     self.imageView.image = [UIImage imageNamed:imageName];
+    self.imageView.height = self.imageView.image.size.height / self.imageView.image.size.width * 23;
 }
 
 - (void)setAngle:(NSInteger)angle

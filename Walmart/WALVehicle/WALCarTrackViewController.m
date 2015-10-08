@@ -34,6 +34,7 @@
 @property (nonatomic, strong) NSArray *carStopArray;
 @property (nonatomic, strong) UIButton *locationButton;
 @property (nonatomic, strong) UIView *zoomView;
+@property (nonatomic, strong) WALCarTrack *carTrack;
 
 @end
 
@@ -70,6 +71,7 @@
         [DejalBezelActivityView removeView];
         [[TKAlertCenter defaultCenter] postAlertWithMessage:message];
         if (success) {
+            self.carTrack = carTrack;
             self.trackArray = carTrack.positionArray;
             CLLocationCoordinate2D coords[10000] = {0};
             CGFloat minLat = MAXFLOAT;
@@ -181,46 +183,69 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)setupPlayViewWithPlayed:(BOOL)played
+{
+    if (played) {
+        self.addressLabel.hidden = YES;
+        self.milleageLabel.hidden = NO;
+        self.speedLabel.hidden = NO;
+        self.playTimeLabel.hidden = NO;
+        self.playView.height = 25;
+    } else {
+        self.addressLabel.hidden = NO;
+        self.milleageLabel.hidden = NO;
+        self.speedLabel.hidden = YES;
+        self.playTimeLabel.hidden = YES;
+        self.addressLabel.text = [NSString stringWithFormat:@"起点：%@\n终点：%@", self.carTrack.startPlace, self.carTrack.endPlace];
+        self.addressLabel.height = [self.addressLabel.text sizeWithFont:self.addressLabel.font constrainedToSize:CGSizeMake(self.playView.width - 10, MAXFLOAT)].height;
+        self.playView.height = self.addressLabel.height + 30;
+        self.milleageLabel.text = [NSString stringWithFormat:@"轨迹里程：%@ km", self.carTrack.totalMilleage];
+        self.milleageLabel.width = self.playView.width;
+    }
+}
+
 - (void)didClickPlayButton:(id)sender
 {
     _played = !_played;
     if (_played) {
         [self.playButton setImage:[UIImage imageNamed:@"icon_locus_pause.png"] forState:UIControlStateNormal];
-        self.playView.hidden = NO;
-        self.playView.top = self.bottomView.top - 64;
-        self.playView.height = 64;
-        self.addressLabel.hidden = YES;
         self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerfire) userInfo:nil repeats:YES];
+        [self timerfire];
     } else {
         [self.playButton setImage:[UIImage imageNamed:@"icon_locus_play.png"] forState:UIControlStateNormal];
         WALCarPlayPosition *carPlayPosition = self.playArray[_playIndex];
         [self.timer invalidate];
         [self.mapView removeAnnotation:self.annotation];
         [self.mapView setRegion:self.originRegion animated:YES];
-        [DejalBezelActivityView activityViewForView:self.view withLabel:@"正在获取数据,请稍候..."];
-        [self.carService loadPlaceNameWithVehicleID:self.vehicleID
-                                                lon:carPlayPosition.lon
-                                                lat:carPlayPosition.lat
-                                         completion:^(BOOL success, NSString *placeName, NSString *message) {
-                                             [DejalBezelActivityView removeView];
-                                             [[TKAlertCenter defaultCenter] postAlertWithMessage:message];
-                                             if (success) {
-                                                 self.playView.top = self.bottomView.top - 96;
-                                                 self.playView.height = 96;
-                                                 self.addressLabel.hidden = NO;
-                                                 self.addressLabel.text = placeName;
-                                             }
-                                         }];
+//        [DejalBezelActivityView activityViewForView:self.view withLabel:@"正在获取数据,请稍候..."];
+//        [self.carService loadPlaceNameWithVehicleID:self.vehicleID
+//                                                lon:carPlayPosition.lon
+//                                                lat:carPlayPosition.lat
+//                                         completion:^(BOOL success, NSString *placeName, NSString *message) {
+//                                             [DejalBezelActivityView removeView];
+//                                             [[TKAlertCenter defaultCenter] postAlertWithMessage:message];
+//                                             if (success) {
+//                                                 self.playView.height = 96;
+//                                                 self.addressLabel.hidden = NO;
+//                                                 self.addressLabel.text = placeName;
+//                                             }
+//                                         }];
     }
+    [self setupPlayViewWithPlayed:_played];
 }
 
 - (void)timerfire
 {
     if (_playIndex < self.playArray.count) {
         WALCarPlayPosition *carPlayPosition = self.playArray[_playIndex];
-        self.playTimeLabel.text = carPlayPosition.time;
-        self.speedLabel.text = carPlayPosition.speed;
-        self.milleageLabel.text = carPlayPosition.milleage;
+        self.milleageLabel.text = [NSString stringWithFormat:@"%@ km", carPlayPosition.milleage];
+        self.milleageLabel.width = [self.milleageLabel.text sizeWithFont:self.milleageLabel.font].width;
+        self.speedLabel.text = [NSString stringWithFormat:@"%@ km/h", carPlayPosition.speed];
+        self.speedLabel.width = [self.speedLabel.text sizeWithFont:self.speedLabel.font].width;
+        self.speedLabel.left = self.milleageLabel.right + 5;
+        self.playTimeLabel.text = [NSString stringWithFormat:@"%@", carPlayPosition.time];
+        self.playTimeLabel.width = [self.playTimeLabel.text sizeWithFont:self.playTimeLabel.font].width;
+        self.playTimeLabel.left = self.playView.width - self.playTimeLabel.width - 5;
         CLLocationCoordinate2D coor;
         coor.latitude = [carPlayPosition.lat doubleValue];
         coor.longitude = [carPlayPosition.lon doubleValue];
@@ -365,43 +390,52 @@
     if (!_playView) {
         _playView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 64)];
         _playView.backgroundColor = RGBA(0x000000, 0.5);
-        _playView.hidden = YES;
         [self.view addSubview:_playView];
     }
     return _playView;
 }
 
-- (UILabel *)playTimeLabel
-{
-    if (!_playTimeLabel) {
-        _playTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 150, 32)];
-        [self.playView addSubview:_playTimeLabel];
-    }
-    return _playTimeLabel;
-}
-
-- (UILabel *)speedLabel
-{
-    if (!_speedLabel) {
-        _speedLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.playTimeLabel.right, self.playTimeLabel.top, 150, 32)];
-        [self.playView addSubview:_speedLabel];
-    }
-    return _speedLabel;
-}
-
 - (UILabel *)milleageLabel
 {
     if (!_milleageLabel) {
-        _milleageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.playTimeLabel.bottom, 150, 32)];
+        _milleageLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, self.playView.width, 15)];
+        _milleageLabel.font = Font(15);
+        _milleageLabel.textColor = RGB(0xffffff);
         [self.playView addSubview:_milleageLabel];
     }
     return _milleageLabel;
 }
 
+- (UILabel *)speedLabel
+{
+    if (!_speedLabel) {
+        _speedLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.milleageLabel.right, self.milleageLabel.top, 150, 15)];
+        _speedLabel.font = Font(15);
+        _speedLabel.textColor = RGB(0xffffff);
+        [self.playView addSubview:_speedLabel];
+    }
+    return _speedLabel;
+}
+
+- (UILabel *)playTimeLabel
+{
+    if (!_playTimeLabel) {
+        _playTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.milleageLabel.top, 150, 12)];
+        _playTimeLabel.centerY = self.speedLabel.centerY;
+        _playTimeLabel.font = Font(12);
+        _playTimeLabel.textColor = RGB(0xffffff);
+        [self.playView addSubview:_playTimeLabel];
+    }
+    return _playTimeLabel;
+}
+
 - (UILabel *)addressLabel
 {
     if (!_addressLabel) {
-        _addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.milleageLabel.bottom, 150, 32)];
+        _addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.milleageLabel.left, self.milleageLabel.bottom, self.playView.width - 2 * self.milleageLabel.left, 32)];
+        _addressLabel.numberOfLines = 0;
+        _addressLabel.font = Font(15);
+        _addressLabel.textColor = RGB(0xffffff);
         [self.playView addSubview:_addressLabel];
     }
     return _addressLabel;
